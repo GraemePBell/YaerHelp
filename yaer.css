@@ -1,0 +1,4 @@
+html { margin:3em; }
+body { background-color: #f5f4d0; color:#543822; zoom:100%; }
+img.fullpage { clear: both; text-align: center; width:100%; max-height:95vh; object-fit:contain; }
+.toc_list { list-style: none;} .line-height { height:0;}

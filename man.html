@@ -1,33 +1,51 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+  "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
 
-<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
-
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
 <head>
 
-	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-	<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+	<meta http-equiv="X-UA-Compatible" content="ie=edge"/>
 	<title>Yet Another Ebook Reader</title>
 	<!-- Link to external CSS -->
-	<link href="./yaer.css" rel="stylesheet" type="text/css" />
+	<link href="./yaer.css" rel="stylesheet" type="text/css"/>
 
-	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+	<style>
+		@media screen and (max-width: 1080px) {
+			.responsive {
+				min-width: 25%;
+				max-height: 370px;
+			}
+		}
+
+		else {
+			.responsive {
+				min-width: 25%;
+				max-width: 25%;
+				max-height: 500px;
+				width: 25%;
+			}
+		}
+	</style>
 </head>
 
 <body>
 	<header style="text-align:center">
-		<h1>YaerZero</h1>
+		<h1><i>YaerZero</i></h1>
 		<h2>Yet Another Ebook Reader</h2>
+		<h3>Version 1.0</h3>
 	</header>
 	<main>
 		<div id="Description" width="50">
 			<div id="image" style="float:left;">
-				<img style="float:left" width="200px" src="yaer_fallback.png" />
+				<img style="float:left" width="200px" src="yaer_fallback.png"/>
 
 			</div>
 			<div id="text" style="float:right; margin-right:'20px'">
 				<h3>Description</h3>
-				<p>YaerZero is an ebook reader, currently supporting:</p>
+				<p><i>YaerZero </i>is an ebook reader, currently supporting:</p>
 				<p>
 				</p>
 				<ul>
@@ -40,14 +58,15 @@
 
 		</div>
 		<div style="clear:both">
-			<p>&#160;</p>
+			<p> </p>
 			<h4>ePub 2.x and 3.x</h4>
 			<p>
-				These are open standards for electronic books, created and maintained by the <b><a
-						href="https://idpf.org/epub/dir/">International Digital Publishing Forum</a></b> (IDPF). ePub
+				These are open standards for electronic books, created and maintained by the <b><a href="https://idpf.org/epub/dir/">International Digital Publishing Forum</a></b> (IDPF). ePub
 				files
-				are essentially zipped collections of XHTML files, images, CSS stylesheets, and metadata files. YaerZero
-				supports both ePub 2.x and ePub 3.x formats, allowing users to read a wide variety of ebooks with rich
+				are essentially zipped collections of XHTML files, images, CSS stylesheets, and metadata files.
+				<i>YaerZero
+				</i> supports both ePub 2.x and ePub 3.x formats, allowing users to read a wide variety of ebooks with
+				rich
 				formatting and multimedia content.
 			</p>
 			<p>
@@ -70,6 +89,12 @@
 					the Internet.</li>
 			</ul>
 			Plus many, many more
+		</div>
+		<div style="clear:both"><br/></div>
+		<div style="clear:both"><i>YaerZero</i> supports as much of these standards as is required to view most DRM-free
+			books
+			available at the time of writing. It does not support audiobook or synchronised audio-reading capabilities.
+			At all times it should, degrade gracefully.<br/> 
 			<p></p>
 			<h4>CBZ and CBR</h4>
 			<p>
@@ -78,19 +103,19 @@
 				image
 				files that represent the pages of the comic. YaerZero allows users to read CBZ and CBR files, providing
 				an
-				optimal reading experience for graphic content.
-			</p>
+				optimal reading experience for graphic content. Where the archive contains a ComicInfo.xml file,
+				YaerZero will use that to display Author, Artist, Title and any Description present.</p>
 			<p>
 				CBZ and CBR format comics can be found on various platforms, including:
 			</p>
 			<ul>
-				<li><a href="https://www.digitalcomicmuseum.com/">&nbsp; Digital Comic Museum</a> A free online library
+				<li><a href="https://www.digitalcomicmuseum.com/">Digital Comic Museum</a> A free online library
 					of
 					public domain Golden Age comics.</li>
-				<li><a href="https://getcomics.info/">GetComics</a>&nbsp; A website offering a wide range of free comic
+				<li><a href="https://getcomics.info/">GetComics</a>  A website offering a wide range of free comic
 					book
 					downloads in CBZ and CBR formats.</li>
-				<li><a href="https://comicbookplus.com/">Comic Book +</a>&nbsp; Welcome to Comic Book Plus, a massive
+				<li><a href="https://comicbookplus.com/">Comic Book +</a>  Welcome to Comic Book Plus, a massive
 					site
 					where every day is party day!
 					We are the original, and still the best site to read and download Golden Age comic books. We also
@@ -103,88 +128,128 @@
 			<p>
 				Collections of both free and paid content are available from many other sources as well. We highly
 				recommend supporting your favorite authors and artists by purchasing their work through legitimate
-				channels.
-			</p>
+				channels.</p>
 			<p>The <a href="https://humblebundle.com"><b>Humble Bundle</b></a> site is an excellent source for collected
 				works
-				in various fields and various formats at very reasonable prices. They regulary have text books, and
+				in various fields and various formats at very reasonable prices. They regularly have text books, and
 				comic collections at significant discounts.</p>
-			<p>A good source of information on eBook formats is <a
-					href="https://en.wikipedia.org/wiki/E-book#File_formats">Wikipedia's
+			<p>A good source of information on eBook formats is <a href="https://en.wikipedia.org/wiki/E-book#File_formats">Wikipedia's
 					E-book File Formats</a> article.</p>
+			<hr class="sigil_split_marker"/>
 
 			<div style="clear:both">
 				<h3>
-					The Inital User Experience
-				</h3>
-				<h4>🖥️ An Overview of YaerZero's Initial Interface</h4>
+					The Initial Experience - An Overview</h3>
+				<h4>🖥️ When You first launch <i>YaerZero</i></h4>
 
-				<p> The YaerZero application presents a clean and structured layout designed to manage and explore
-					digital
-					books. Its
-					interface is intuitive, with clearly defined sections and minimal distractions, making it suitable
-					for
-					both
-					casual
-					readers and meticulous archivists.
-
+				<img class="responsive" src="Screenshot 2025-12-12 190935.png" alt="YaerZero Initial Interface Screenshot" style="float: right;  margin-left:1em; "/>
+				<p>You will see an image resembling the one to the right:</p>
+				<p>At the top there should be the familiar menu bar with our application icon and name, some space, and
+					3 icons.</p>
+				<h5>The Menu Bar Icons</h5>
+				<ul>
+					<li><span style="font-family: 'Segoe Fluent Icons';"><b></b></span>  Help and
+						documentation.<br/><br/>
+					</li>
+					<li><span style="font-family: 'Segoe Fluent Icons';"><b></b></span>  Full Screen Experience
+						Toggle.<br/><br/>
+					</li>
+					<li><span style="font-family: 'Segoe Fluent Icons';"><b></b></span>  Theme Toggle.<br/><br/></li>
+				</ul>
+				<p>To the right, there is the usual Windows furniture - <b>Minimize</b>, <b>Maximize</b>/<b>Restore</b>,
+					and <b>Close</b> buttons.
 				</p>
-				<h4>📚 Recent Books Section</h4>
-				<p>
-					Located at the top left, this section displays a list of recently accessed books.
+				<hr/>
 
-					Each entry includes:
+				<h4>The Main Library Window </h4>
+				<p><br/></p>
+				<h5>The untitled top-left section</h5>
+				<p>We have our default cover, bearing the <i>YaerZero </i>name.</p>
+				<p>The image used for the application icon and for the default book cover is of <i>Trinity College
+						Library</i> in Dublin. This beautiful library is the current home of <i>The Book of Kells</i>.
+					The original photograph was taken by Graeme P. Bell and was the final image was created
+					using <i>Paint.NET</i>. No AI tools were used.</p>
+				<p>When there is a book selected, this image will change to the cover (if any) present in the selected
+					ebook. </p>
+				<p>The bar beneath the image will show roughly how much reading progress has been made in the selected
+					book. <b>Title</b>, <b>Author</b>, <b>Artist </b>and <b>Description </b>will be replaced by values
+					from the selected ebook.</p>
+				<h5>Recent Books</h5>
+				<p>
+					Located at the top right, this section displays a list of the six most recently accessed books,
+					including any that have been newly loaded.</p>
+				<p>Each entry includes:
 
 					A small book cover thumbnail for visual identification.
 
 					The book title displayed prominently.
 
-					The author's name listed below the title.
-
-					A timestamp indicating when the book was last opened, formatted as "Last Opened: [Date and Time]".
-
-					This section allows users to quickly resume reading their most recent selections.
-
-					Prominently features a book cover titled "Yaer Zero", set against a gothic-style library backdrop.
-
-					Below the cover, there are labeled placeholders for:
-
-					Title
-
-					Author
-
-					Artist
-
-					DescriptionThese fields are currently empty, suggesting dynamic population based on user interaction
-					or
-					metadata.
+					The author's name listed below the title. This section allows users to quickly resume reading their
+					most recent selections.
 
 				</p>
-				<h4>🗂️ Library Navigation</h4>
+				<h5>Library Navigation</h5>
 				<p>
-					A dedicated Library section allows users to browse their collection.
+					A dedicated Library section allows users to browse either their complete collection, or a filtered
+					view.</p>
+				<ul>
+					<li><span style="font-family: 'Segoe Fluent Icons';"><b></b></span> <b>Filter </b>drop-down
+						(default: "<b>All</b>"). This enables users to narrow down the displayed books based on
+						whether the book is an <b>ePub </b>or a <b>Comic/Graphic Novel</b>.<br/><br/></li>
 
-					Includes:
+					<li><span style="font-family: 'Segoe Fluent Icons';"><b></b></span> <b>Sort </b>drop-down (default:
+						"<b>Title</b>") to organize entries <b>Title </b>or <b>Author</b>.<br/><br/></li>
 
-					A filter dropdown (default: "All") for narrowing content by category or tag.
+					<li><span style="font-family: 'Segoe Fluent Icons';"><b></b></span> <b>Search </b>enables a search
+						box, which filters
+						the library in real-time based on the entered text, matching against either <b>Title </b>or
+						<b>Author</b>.
+					</li>
+				</ul>
 
-					A sort dropdown (default: "Title") to organize entries alphabetically or by other criteria.
 
-					A search icon (magnifying glass) for quick lookup functionality.
-
-				</p>
-				<h4>🔍 View Options</h4>
+				<h5>The Bottom Bar</h5>
 				<p>
-					A button labeled "Details View" is located at the bottom right, likely toggling between summary and
-					expanded
-					metadata
-					views for selected books.
+					At the bottom-left is the grayed-out <span style="font-family: 'Segoe Fluent Icons';"><b></b></span><b> Current Book</b> button.
+					When a
+					book is being read, this
+					will display the name of the book and selecting it will open up the book in the reading view.
 				</p>
-			</div>
-
-		</div>
+				<p>
+					The <b>Details View</b> button is a toggle. Initially, <i>YaerZero </i>loads with the library in
+					<b>Covers</b> mode, displaying book cover and reading progress for each volume in the library.
+					Swapping to <b>Details</b> mode displays A smaller version of the cover, Title and Author as well as
+					progress.
+				</p>
+				<p>
+					And finally we have the <span style="font-family: 'Segoe Fluent Icons';"><b></b></span>
+					<b>Add
+						Book</b> button - selecting this will bring up a multiple-select
+					file-picker
+					dialog box.
+					<br/>
+				</p>
+<br/><hr class="sigil_split_marker"/>
+<br/></div>
+<h3 style="clear: both;">Adding Books to <i>YaerZero</i></h3>
+<h4>By File Picker...</h4>
+<p>Books can be added using the file-picker dialog box to browse the users system. The user may import a single book and <i>YaerZero </i>will open the reader view as soon as it has processed enough to do so. Once the "working" indicator in the bottom right finishes, the book will be safely stored in the library and the full functionality of <i>YaerZero</i> will be available. If you import multiple books simultaneously, <i>YaerZero </i>will not return control until it imports all the selected books - you the user chooses to cancel the process.</p>
+<h4>By Double-Clicking, Right-Clicking/Long-Hold and Select...</h4>
+<p>If <i>YaerZero</i> is your default reader (for <b>.epub</b>, <b>.cbz</b> and <b>.cbr</b> files) double-clicking will import the book into your library and launch the reader view as soon as enough of the book has been processed. This may result in some images not being in-place, but do not be concerned - <i>YaerZero </i>will be working in the background and will finish importing. The user may even swap to another book in the library. Once the "working" indicator in the bottom right finishes, the new book will be safely stored in the library, with all elements in place. </p>
+<p><b>Drag-and-Drop...</b></p>
+<p>The user may use Drag-and-Drop to import single or multiple files, with the same caveats as using the file-picker.</p>
+<h4><b>Single Book vs Multiple Book Import</b></h4>
+<p>When importing multiple books, <i>YaerZero </i>will disable most of it's user-interface while working. If you import a single book, it will endeavor to return control as quickly as it can, presenting the ebook in readable form, disabling only those parts of the User Experience that require a completely processed book. This is recommended when the user has a single new book that they wish to read <i style="font-weight: bold;">now!</i> Multiple books may be imported <i>en-masse</i>, however this is only recommended when building a library from a pre-existing folder. It can be very slow.</p>
+<h4>Speed of processing.</h4>
+<p><i>YaerZero </i>imports ebooks by decompressing the original file and processing the contents into a format that can be rapidly presented back to the user. </p>
+<p>This process can be extremely swift for a plain <i>Gutenberg.org</i> <b>ePub </b>of a short story, or it may be much slower for an omnibus edition of a long-running graphic-novel series. </p>
+<p>The author has found that the very slowest books to process are generally heavily illustrated text books, by reputable publishers. They tend to have interesting structures (often requiring reformatting into canonical <b>ePub </b>format before they can be processed) and many hundreds, or even thousands, of relatively small images.</p>
+<p>At it's fastest, <i>YaerZero </i>will complete processing before the user realises it's even started. At it's slowest, it's time for a coffee. </p>
+<p>However, once a book is processed and present in the library, load times are extremely rapid.</p>
+<h4>Library Size </h4>
+<p><i>YaerZero</i> accesses local storage to store, manage and present books. A large processed library will eventually cause <i>YaerZero </i>to slow down in daily use. We have tested it with libraries of over 1500 books, of various kinds and it is still quite usable, but we do recommend smaller libraries of perhaps 200 processed books or less to keep performance snappy. We also note that while <b>ePub </b>formatted books are generally small (less than 1 Megabyte), Graphic Novels can run to many Gigabytes! Storing a processed version can be wasteful of space. Once they have been read, the user should remove them from the <i>YaerZero </i>library (<i>please </i>keep backups of your original books). </p>
+<hr class="sigil_split_marker"/>
+</div><div style="clear:both"><br/></div>
 	</main>
 </body>
-
-
 </html>

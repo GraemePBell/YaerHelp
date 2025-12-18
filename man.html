@@ -1,31 +1,216 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
-  "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
 
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+
 <head>
 
-	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-	<meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta http-equiv="X-UA-Compatible" content="ie=edge" />
 	<title>Yet Another Ebook Reader</title>
 	<!-- Link to external CSS -->
-	<link href="./yaer.css" rel="stylesheet" type="text/css"/>
+	<link href="./yaer.css" rel="stylesheet" type="text/css" />
 
-	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	<style>
-		@media screen and (max-width: 1080px) {
-			.responsive {
-				min-width: 25%;
-				max-height: 370px;
+		html {
+			font-size: 120%;
+			/* usually 16px */
+		}
+
+		body {
+			font-size: 1rem;
+			/* also 16px */
+		}
+
+		.responsive {
+			min-width: 5em;
+			width: 30vw;
+			max-width: 15em;
+		}
+
+		/* Mobile-friendly stacking */
+		@media (max-width: 600px) {
+			.triple {
+				flex-direction: column;
+				text-align: center;
+			}
+
+			.side-img {
+				width: 20em;
+				/* slightly larger on mobile if desired */
+			}
+
+			.move_text_left {
+				float: left;
 			}
 		}
 
 		else {
-			.responsive {
-				min-width: 25%;
-				max-width: 25%;
-				max-height: 500px;
-				width: 25%;
+			.move_text_left {
+				float: right;
+
+			}
+		}
+
+		.float-img {
+			float: left;
+			width: 200px;
+			margin: 0 1em 1em 0;
+			/* this creates the spacing you’re missing */
+		}
+
+		.float-text {
+			overflow: hidden;
+			/* prevents text from sliding under the float */
+		}
+
+		/* Mobile: stack vertically */
+		@media (max-width: 600px) {
+			.float-img {
+				float: none;
+				display: block;
+				margin: 0 auto 1em auto;
+			}
+
+			.float-text {
+				overflow: visible;
+			}
+		}
+
+		.quin {
+			display: grid;
+			grid-template-columns: auto 1fr auto;
+			grid-template-areas:
+				"left text1 right"
+				"left text2 right"
+				"left text3 right"
+				"left text4 right"
+				"left text5 right";
+			column-gap: 1em;
+			/* row-gap: 1em; */
+			align-items: start;
+		}
+
+		.left {
+			grid-area: left;
+		}
+
+		.right {
+			grid-area: right;
+		}
+
+		.text-1 {
+			grid-area: text1;
+		}
+
+		.text-2 {
+			grid-area: text2;
+		}
+
+		.text-3 {
+			grid-area: text3;
+		}
+
+		.text-4 {
+			grid-area: text4;
+		}
+
+		.text-5 {
+			grid-area: text5;
+		}
+
+		.side {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			width: 100%;
+			max-width: 20vw;
+		}
+
+		.side img {
+			width: 100%;
+			height: auto;
+			max-width: 100%;
+		}
+
+		@media (max-width: 1800px) {
+			.quin {
+				grid-template-columns: auto 1fr auto;
+				grid-template-areas:
+					"left text1 right"
+					"left text2 right"
+					"left text3 right"
+					"left text4 right"
+					"text5 text5 text5";
+			}
+		}
+
+
+		@media (max-width: 1600px) {
+			.quin {
+				grid-template-columns: auto 1fr auto;
+				grid-template-areas:
+					"left text1 right"
+					"left text2 right"
+					"left text3 right"
+					"text4 text4 text4"
+					"text5 text5 text5";
+			}
+		}
+
+		@media (max-width: 1200px) {
+			.quin {
+				grid-template-columns: auto 1fr auto;
+				grid-template-areas:
+					"left text1 right"
+					"left text2 right"
+					"text3 text3 text3"
+					"text4 text4 text4"
+					"text5 text5 text5";
+			}
+		}
+
+		@media (max-width: 900px) {
+			.quin {
+				grid-template-columns: auto 1fr auto;
+				grid-template-areas:
+					"left text1 right"
+					"text2 text2 text2"
+					"text3 text3 text3"
+					"text4 text4 text4"
+					"text5 text5 text5";
+			}
+		}
+
+		@media (max-width: 700px) {
+			.quin {
+				grid-template-columns: 1fr 1fr;
+				grid-template-areas:
+					"left right"
+					"text1 text1"
+					"text2 text2"
+					"text3 text3"
+					"text4 text4"
+					"text5 text5";
+
+				/* 		row-gap: 1em; */
+				.left,
+				.right {
+					justify-self: center;
+				}
+
+				.side {
+					max-width: 40vw;
+				}
+
+				.text-1,
+				.text-2,
+				.text-3,
+				.text-4,
+				.text-5 {
+					text-align: left;
+				}
 			}
 		}
 	</style>
@@ -38,16 +223,12 @@
 		<h3>Version 1.0</h3>
 	</header>
 	<main>
-		<div id="Description" width="50">
-			<div id="image" style="float:left;">
-				<img style="float:left" width="200px" src="yaer_fallback.png"/>
+		<div id="Description">
+			<img class="float-img" width="200" src="yaer_fallback.png" alt="">
 
-			</div>
-			<div id="text" style="float:right; margin-right:'20px'">
+			<div class="float-text" id="text">
 				<h3>Description</h3>
-				<p><i>YaerZero </i>is an ebook reader, currently supporting:</p>
-				<p>
-				</p>
+				<p><i>YaerZero</i> is an ebook reader, currently supporting:</p>
 				<ul>
 					<li>ePub 2.x</li>
 					<li>ePub 3.x</li>
@@ -55,13 +236,14 @@
 					<li>CBR format graphic novels and comics</li>
 				</ul>
 			</div>
-
 		</div>
+
 		<div style="clear:both">
 			<p> </p>
 			<h4>ePub 2.x and 3.x</h4>
 			<p>
-				These are open standards for electronic books, created and maintained by the <b><a href="https://idpf.org/epub/dir/">International Digital Publishing Forum</a></b> (IDPF). ePub
+				These are open standards for electronic books, created and maintained by the <b><a
+						href="https://idpf.org/epub/dir/">International Digital Publishing Forum</a></b> (IDPF). ePub
 				files
 				are essentially zipped collections of XHTML files, images, CSS stylesheets, and metadata files.
 				<i>YaerZero
@@ -90,11 +272,11 @@
 			</ul>
 			Plus many, many more
 		</div>
-		<div style="clear:both"><br/></div>
+		<div style="clear:both"><br /></div>
 		<div style="clear:both"><i>YaerZero</i> supports as much of these standards as is required to view most DRM-free
 			books
 			available at the time of writing. It does not support audiobook or synchronised audio-reading capabilities.
-			At all times it should, degrade gracefully.<br/> 
+			At all times it should, degrade gracefully.<br /> 
 			<p></p>
 			<h4>CBZ and CBR</h4>
 			<p>
@@ -133,36 +315,38 @@
 				works
 				in various fields and various formats at very reasonable prices. They regularly have text books, and
 				comic collections at significant discounts.</p>
-			<p>A good source of information on eBook formats is <a href="https://en.wikipedia.org/wiki/E-book#File_formats">Wikipedia's
+			<p>A good source of information on eBook formats is <a
+					href="https://en.wikipedia.org/wiki/E-book#File_formats">Wikipedia's
 					E-book File Formats</a> article.</p>
-			<hr class="sigil_split_marker"/>
+			<hr class="sigil_split_marker" />
 
 			<div style="clear:both">
 				<h3>
 					The Initial Experience - An Overview</h3>
 				<h4>🖥️ When You first launch <i>YaerZero</i></h4>
 
-				<img class="responsive" src="Screenshot 2025-12-12 190935.png" alt="YaerZero Initial Interface Screenshot" style="float: right;  margin-left:1em; "/>
+				<img class="responsive" src="Screenshot 2025-12-12 190935.png"
+					alt="YaerZero Initial Interface Screenshot" style="float: right;  margin-left:1em; " />
 				<p>You will see an image resembling the one to the right:</p>
 				<p>At the top there should be the familiar menu bar with our application icon and name, some space, and
 					3 icons.</p>
 				<h5>The Menu Bar Icons</h5>
 				<ul>
 					<li><span style="font-family: 'Segoe Fluent Icons';"><b></b></span>  Help and
-						documentation.<br/><br/>
+						documentation.<br /><br />
 					</li>
 					<li><span style="font-family: 'Segoe Fluent Icons';"><b></b></span>  Full Screen Experience
-						Toggle.<br/><br/>
+						Toggle.<br /><br />
 					</li>
-					<li><span style="font-family: 'Segoe Fluent Icons';"><b></b></span>  Theme Toggle.<br/><br/></li>
+					<li><span style="font-family: 'Segoe Fluent Icons';"><b></b></span>  Theme Toggle.<br /><br /></li>
 				</ul>
 				<p>To the right, there is the usual Windows furniture - <b>Minimize</b>, <b>Maximize</b>/<b>Restore</b>,
 					and <b>Close</b> buttons.
 				</p>
-				<hr/>
+				<hr width="25%" />
 
 				<h4>The Main Library Window </h4>
-				<p><br/></p>
+				<p><br /></p>
 				<h5>The untitled top-left section</h5>
 				<p>We have our default cover, bearing the <i>YaerZero </i>name.</p>
 				<p>The image used for the application icon and for the default book cover is of <i>Trinity College
@@ -195,10 +379,10 @@
 				<ul>
 					<li><span style="font-family: 'Segoe Fluent Icons';"><b></b></span> <b>Filter </b>drop-down
 						(default: "<b>All</b>"). This enables users to narrow down the displayed books based on
-						whether the book is an <b>ePub </b>or a <b>Comic/Graphic Novel</b>.<br/><br/></li>
+						whether the book is an <b>ePub </b>or a <b>Comic/Graphic Novel</b>.<br /><br /></li>
 
 					<li><span style="font-family: 'Segoe Fluent Icons';"><b></b></span> <b>Sort </b>drop-down (default:
-						"<b>Title</b>") to organize entries <b>Title </b>or <b>Author</b>.<br/><br/></li>
+						"<b>Title</b>") to organize entries <b>Title </b>or <b>Author</b>.<br /><br /></li>
 
 					<li><span style="font-family: 'Segoe Fluent Icons';"><b></b></span> <b>Search </b>enables a search
 						box, which filters
@@ -210,7 +394,8 @@
 
 				<h5>The Bottom Bar</h5>
 				<p>
-					At the bottom-left is the grayed-out <span style="font-family: 'Segoe Fluent Icons';"><b></b></span><b> Current Book</b> button.
+					At the bottom-left is the grayed-out <span
+						style="font-family: 'Segoe Fluent Icons';"><b></b></span><b> Current Book</b> button.
 					When a
 					book is being read, this
 					will display the name of the book and selecting it will open up the book in the reading view.
@@ -227,29 +412,115 @@
 						Book</b> button - selecting this will bring up a multiple-select
 					file-picker
 					dialog box.
-					<br/>
+					<br />
 				</p>
-<br/><hr class="sigil_split_marker"/>
-<br/></div>
-<h3 style="clear: both;">Adding Books to <i>YaerZero</i></h3>
-<h4>By File Picker...</h4>
-<p>Books can be added using the file-picker dialog box to browse the users system. The user may import a single book and <i>YaerZero </i>will open the reader view as soon as it has processed enough to do so. Once the "working" indicator in the bottom right finishes, the book will be safely stored in the library and the full functionality of <i>YaerZero</i> will be available. If you import multiple books simultaneously, <i>YaerZero </i>will not return control until it imports all the selected books - you the user chooses to cancel the process.</p>
-<h4>By Double-Clicking, Right-Clicking/Long-Hold and Select...</h4>
-<p>If <i>YaerZero</i> is your default reader (for <b>.epub</b>, <b>.cbz</b> and <b>.cbr</b> files) double-clicking will import the book into your library and launch the reader view as soon as enough of the book has been processed. This may result in some images not being in-place, but do not be concerned - <i>YaerZero </i>will be working in the background and will finish importing. The user may even swap to another book in the library. Once the "working" indicator in the bottom right finishes, the new book will be safely stored in the library, with all elements in place. </p>
-<p><b>Drag-and-Drop...</b></p>
-<p>The user may use Drag-and-Drop to import single or multiple files, with the same caveats as using the file-picker.</p>
-<h4><b>Single Book vs Multiple Book Import</b></h4>
-<p>When importing multiple books, <i>YaerZero </i>will disable most of it's user-interface while working. If you import a single book, it will endeavor to return control as quickly as it can, presenting the ebook in readable form, disabling only those parts of the User Experience that require a completely processed book. This is recommended when the user has a single new book that they wish to read <i style="font-weight: bold;">now!</i> Multiple books may be imported <i>en-masse</i>, however this is only recommended when building a library from a pre-existing folder. It can be very slow.</p>
-<h4>Speed of processing.</h4>
-<p><i>YaerZero </i>imports ebooks by decompressing the original file and processing the contents into a format that can be rapidly presented back to the user. </p>
-<p>This process can be extremely swift for a plain <i>Gutenberg.org</i> <b>ePub </b>of a short story, or it may be much slower for an omnibus edition of a long-running graphic-novel series. </p>
-<p>The author has found that the very slowest books to process are generally heavily illustrated text books, by reputable publishers. They tend to have interesting structures (often requiring reformatting into canonical <b>ePub </b>format before they can be processed) and many hundreds, or even thousands, of relatively small images.</p>
-<p>At it's fastest, <i>YaerZero </i>will complete processing before the user realises it's even started. At it's slowest, it's time for a coffee. </p>
-<p>However, once a book is processed and present in the library, load times are extremely rapid.</p>
-<h4>Library Size </h4>
-<p><i>YaerZero</i> accesses local storage to store, manage and present books. A large processed library will eventually cause <i>YaerZero </i>to slow down in daily use. We have tested it with libraries of over 1500 books, of various kinds and it is still quite usable, but we do recommend smaller libraries of perhaps 200 processed books or less to keep performance snappy. We also note that while <b>ePub </b>formatted books are generally small (less than 1 Megabyte), Graphic Novels can run to many Gigabytes! Storing a processed version can be wasteful of space. Once they have been read, the user should remove them from the <i>YaerZero </i>library (<i>please </i>keep backups of your original books). </p>
-<hr class="sigil_split_marker"/>
-</div><div style="clear:both"><br/></div>
+				<br />
+				<hr class="sigil_split_marker" />
+				<br />
+			</div>
+			<h3 style="clear: both;">Adding Books to <i>YaerZero</i></h3>
+			<h4>By File Picker...</h4>
+			<p>Books can be added using the file-picker dialog box to browse the users system. The user may import a
+				single book and <i>YaerZero </i>will open the reader view as soon as it has processed enough to do so.
+				Once the "working" indicator in the bottom right finishes, the book will be safely stored in the library
+				and the full functionality of <i>YaerZero</i> will be available. If you import multiple books
+				simultaneously, <i>YaerZero </i>will not return control until it imports all the selected books - you
+				the user chooses to cancel the process.</p>
+			<h4>By Double-Clicking, Right-Clicking/Long-Hold and Select...</h4>
+			<p>If <i>YaerZero</i> is your default reader (for <b>.epub</b>, <b>.cbz</b> and <b>.cbr</b> files)
+				double-clicking will import the book into your library and launch the reader view as soon as enough of
+				the book has been processed. This may result in some images not being in-place, but do not be concerned
+				- <i>YaerZero </i>will be working in the background and will finish importing. The user may even swap to
+				another book in the library. Once the "working" indicator in the bottom right finishes, the new book
+				will be safely stored in the library, with all elements in place. </p>
+			<p><b>Drag-and-Drop...</b></p>
+			<p>The user may use Drag-and-Drop to import single or multiple files, with the same caveats as using the
+				file-picker.</p>
+			<h4><b>Single Book vs Multiple Book Import</b></h4>
+			<p>When importing multiple books, <i>YaerZero </i>will disable most of it's user-interface while working. If
+				you import a single book, it will endeavor to return control as quickly as it can, presenting the ebook
+				in readable form, disabling only those parts of the User Experience that require a completely processed
+				book. This is recommended when the user has a single new book that they wish to read <i
+					style="font-weight: bold;">now!</i> Multiple books may be imported <i>en-masse</i>, however this is
+				only recommended when building a library from a pre-existing folder. It can be very slow.</p>
+			<h4>Speed of processing.</h4>
+			<p><i>YaerZero </i>imports ebooks by decompressing the original file and processing the contents into a
+				format that can be rapidly presented back to the user. </p>
+			<p>This process can be extremely swift for a plain <i>Gutenberg.org</i> <b>ePub </b>of a short story, or it
+				may be much slower for an omnibus edition of a long-running graphic-novel series. </p>
+			<p>The author has found that the very slowest books to process are generally heavily illustrated text books,
+				by reputable publishers. They tend to have interesting structures (often requiring reformatting into
+				canonical <b>ePub </b>format before they can be processed) and many hundreds, or even thousands, of
+				relatively small images.</p>
+			<p>At it's fastest, <i>YaerZero </i>will complete processing before the user realises it's even started. At
+				it's slowest, it's time for a coffee. </p>
+			<p>However, once a book is processed and present in the library, load times are extremely rapid.</p>
+			<h4>Library Size </h4>
+			<p><i>YaerZero</i> accesses local storage to store, manage and present books. A large processed library will
+				eventually cause <i>YaerZero </i>to slow down in daily use. We have tested it with libraries of over
+				1500 books, of various kinds and it is still quite usable, but we do recommend smaller libraries of
+				perhaps 200 processed books or less to keep performance snappy. We also note that while <b>ePub
+				</b>formatted books are generally small (less than 1 Megabyte), Graphic Novels can run to many
+				Gigabytes! Storing a processed version can be wasteful of space. Once they have been read, the user
+				should remove them from the <i>YaerZero </i>library (<i>please </i>keep backups of your original
+				books). </p>
+		</div>
+		<hr width="25%" />
+
+		<div class="quin">
+
+			<figure class="side left">
+				<img src="Screenshot 2025-12-12 191924.png" alt="Covers View">
+				<figcaption><i>Covers View</i></figcaption>
+			</figure>
+
+			<p class="text-1">
+				Now that the library has some books in it, the user may choose to view them in either
+				<b>Covers</b> mode (the default) or <b>Details</b> mode.
+			</p>
+
+
+			<p class="text-2">
+				Selecting (or Tapping) any book, in either mode (or in the <b>Recent Books</b> section) will display
+				that book in the Top Left, with the <b>Cover</b>, <b>Title</b>, <b>Author</b>, <b>Artist</b> (if
+				available) and <b>Description</b> (if available).
+			</p>
+
+
+			<p class="text-3">
+				Double-Tapping on the book in any of these three locations will open the book in the Reader View.
+				Once a book has been open in the reader view, the <b>Current Book</b> button in the bottom left will
+				become active, displaying the book title. Selecting this button will also open the book in the
+				Reader View.
+			</p>
+
+
+
+			<p class="text-4">
+				Hold-Tapping, or Right-Clicking on the book in any of these three locations will bring up a context
+				menu with options to <b>Open</b> the book in the Reader View, or <b>Remove</b> the book from the
+				library.
+			</p>
+
+
+			<p class="text-5">
+				The Library (in either Cover or Details view) can be scrolled using the mouse wheel, touchpad, or by
+				touch-dragging on touch-enabled devices. It also supports multiple selection using standard OS
+				methods (Shift-Click, Ctrl-Click, etc.) for batch removal.
+			</p>
+
+
+			<figure class="side right">
+				<img src="Screenshot 2025-12-12 192030.png" alt="Details View">
+				<figcaption><i>Details View</i></figcaption>
+			</figure>
+		</div>
+
+		<hr />
+
+		<hr />
+		<p style="text-align: center;">© 2024 LanaRoseWare. All rights reserved.</p>
 	</main>
 </body>
+
 </html>

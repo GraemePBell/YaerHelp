@@ -15,8 +15,14 @@
 	<style>
 		html {
 			font-size: 120%;
-			font-family: Arial, sans-serif;
-			/* usually 16px */
+			font-family:
+				system-ui,
+				-apple-system,
+				"Segoe UI",
+				Roboto,
+				Helvetica,
+				Arial,
+				sans-serif;
 		}
 
 		body {
@@ -185,7 +191,7 @@
 			}
 		}
 
-		@media (max-width: 700px) {
+		@media (max-width: 750px) {
 			.quin {
 				grid-template-columns: 1fr 1fr;
 				grid-template-areas:
@@ -520,13 +526,20 @@
 
 		<hr />
 		<h3>The Reader View</h3>
-		<img class="responsive" src="Screenshot 2025-12-18 141003.png" alt="Reader View Screenshot"
-			style="float: left;  margin-left:1em; " />
+		<div>
+			<img class="responsive" src="Screenshot 2025-12-18 141003.png" alt="Reader View Screenshot"
+				style="float: left;  margin-right:1em; max-width: 50%;" />
 
-		<p class="responsive" style="float:right">
-			The Reader View is where the user reads the selected book. It provides a clean, distraction-free
-			environment for enjoying ebooks and graphic novels.
-		</p>
+			<p>
+				The Reader View is an uncluttered, distraction-free
+				environment for enjoying ebooks and graphic novels. The user is presented with the content of their
+				selected book</p>
+			<p>
+				The interface is designed to minimize distractions, allowing readers to focus on the text and
+				images.
+				All User Interface controls are found at the edges of the app, away from the main content area.
+			</p>
+		</div>
 		<div style="clear:both"></div>
 		<hr />
 		<p style="text-align: center;">© 2024 LanaRoseWare. All rights reserved.</p>

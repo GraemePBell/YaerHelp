@@ -2,7 +2,7 @@ body {
 	background-color: #fffff0;
 	color: #000000;
 	zoom: 100%;
-	margin: 3em;
+	margin: 0;
 	font-size: 1rem;
 }
 
@@ -16,6 +16,18 @@ html {
 		Helvetica,
 		Arial,
 		sans-serif;
+}
+
+/* Full‑bleed strip */
+.full-bleed {
+	width: 100%;
+	height: auto;
+	display: block;
+}
+
+/* Normal page content */
+.content {
+	margin: 3em;
 }
 
 img.fullpage {

@@ -1,227 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+  "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
 
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en">
-
 <head>
 
-	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-	<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+	<meta http-equiv="X-UA-Compatible" content="ie=edge"/>
 	<title>Yet Another Ebook Reader</title>
 	<!-- Link to external CSS -->
-	<link href="./yaer.css" rel="stylesheet" type="text/css" />
+	<link href="./yaer.css" rel="stylesheet" type="text/css"/>
 
-	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-	<style>
-		html {
-			font-size: 120%;
-			font-family:
-				system-ui,
-				-apple-system,
-				"Segoe UI",
-				Roboto,
-				Helvetica,
-				Arial,
-				sans-serif;
-		}
-
-		body {
-			font-size: 1rem;
-
-			/* also 16px */
-		}
-
-		.responsive {
-			min-width: 5em;
-			width: 30vw;
-			max-width: 15em;
-		}
-
-		/* Mobile-friendly stacking */
-		@media (max-width: 600px) {
-			.triple {
-				flex-direction: column;
-				text-align: center;
-			}
-
-			.side-img {
-				width: 20em;
-				/* slightly larger on mobile if desired */
-			}
-
-			.move_text_left {
-				float: left;
-			}
-		}
-
-		else {
-			.move_text_left {
-				float: right;
-
-			}
-		}
-
-		.float-img {
-			float: left;
-			width: 200px;
-			margin: 0 1em 1em 0;
-			/* this creates the spacing you’re missing */
-		}
-
-		.float-text {
-			overflow: hidden;
-			/* prevents text from sliding under the float */
-		}
-
-		/* Mobile: stack vertically */
-		@media (max-width: 600px) {
-			.float-img {
-				float: none;
-				display: block;
-				margin: 0 auto 1em auto;
-			}
-
-			.float-text {
-				overflow: visible;
-			}
-		}
-
-		.quin {
-			display: grid;
-			grid-template-columns: auto 1fr auto;
-			grid-template-areas:
-				"left text1 right"
-				"left text2 right"
-				"left text3 right"
-				"left text4 right"
-				"left text5 right";
-			column-gap: 1em;
-			/* row-gap: 1em; */
-			align-items: start;
-		}
-
-		.left {
-			grid-area: left;
-		}
-
-		.right {
-			grid-area: right;
-		}
-
-		.text-1 {
-			grid-area: text1;
-		}
-
-		.text-2 {
-			grid-area: text2;
-		}
-
-		.text-3 {
-			grid-area: text3;
-		}
-
-		.text-4 {
-			grid-area: text4;
-		}
-
-		.text-5 {
-			grid-area: text5;
-		}
-
-		.side {
-			display: flex;
-			flex-direction: column;
-			align-items: center;
-			width: 100%;
-			max-width: 20vw;
-		}
-
-		.side img {
-			width: 100%;
-			height: auto;
-			max-width: 100%;
-		}
-
-		@media (max-width: 1800px) {
-			.quin {
-				grid-template-columns: auto 1fr auto;
-				grid-template-areas:
-					"left text1 right"
-					"left text2 right"
-					"left text3 right"
-					"left text4 right"
-					"text5 text5 text5";
-			}
-		}
-
-
-		@media (max-width: 1600px) {
-			.quin {
-				grid-template-columns: auto 1fr auto;
-				grid-template-areas:
-					"left text1 right"
-					"left text2 right"
-					"left text3 right"
-					"text4 text4 text4"
-					"text5 text5 text5";
-			}
-		}
-
-		@media (max-width: 1200px) {
-			.quin {
-				grid-template-columns: auto 1fr auto;
-				grid-template-areas:
-					"left text1 right"
-					"left text2 right"
-					"text3 text3 text3"
-					"text4 text4 text4"
-					"text5 text5 text5";
-			}
-		}
-
-		@media (max-width: 900px) {
-			.quin {
-				grid-template-columns: auto 1fr auto;
-				grid-template-areas:
-					"left text1 right"
-					"text2 text2 text2"
-					"text3 text3 text3"
-					"text4 text4 text4"
-					"text5 text5 text5";
-			}
-		}
-
-		@media (max-width: 750px) {
-			.quin {
-				grid-template-columns: 1fr 1fr;
-				grid-template-areas:
-					"left right"
-					"text1 text1"
-					"text2 text2"
-					"text3 text3"
-					"text4 text4"
-					"text5 text5";
-
-				/* 		row-gap: 1em; */
-				.left,
-				.right {
-					justify-self: center;
-				}
-
-				.side {
-					max-width: 40vw;
-				}
-
-				.text-1,
-				.text-2,
-				.text-3,
-				.text-4,
-				.text-5 {
-					text-align: left;
-				}
-			}
-		}
-	</style>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 </head>
 
 <body>
@@ -232,7 +22,7 @@
 	</header>
 	<main>
 		<div id="Description">
-			<img class="float-img" width="200" src="yaer_fallback.png" alt="">
+			<img class="float-img" width="200" src="yaer_fallback.png" alt=""/>
 
 			<div class="float-text" id="text">
 				<h3>Description</h3>
@@ -250,8 +40,7 @@
 			<p> </p>
 			<h4>ePub 2.x and 3.x</h4>
 			<p>
-				These are open standards for electronic books, created and maintained by the <b><a
-						href="https://idpf.org/epub/dir/">International Digital Publishing Forum</a></b> (IDPF). ePub
+				These are open standards for electronic books, created and maintained by the <b><a href="https://idpf.org/epub/dir/">International Digital Publishing Forum</a></b> (IDPF). ePub
 				files
 				are essentially zipped collections of XHTML files, images, CSS stylesheets, and metadata files.
 				<i>YaerZero
@@ -280,13 +69,13 @@
 			</ul>
 			Plus many, many more
 		</div>
-		<div style="clear:both"><br /></div>
+		<div style="clear:both"><br/></div>
 		<div style="clear:both"><i>YaerZero</i> supports as much of these standards as is required to view most DRM-free
 			books
 			available at the time of writing. It does not support audiobook or synchronised audio-reading capabilities.
-			At all times it should, degrade gracefully.<br /> 
+			At all times it should, degrade gracefully.<br/> 
 			<p></p>
-			<h4>CBZ and CBR</h4>
+			<h4>CBZ and CBR (CBx)</h4>
 			<p>
 				CBZ (Comic Book Zip) and CBR (Comic Book Rar) are popular formats for digital comics and graphic novels.
 				These formats are essentially compressed archives (ZIP for CBZ and RAR for CBR) containing a series of
@@ -295,8 +84,10 @@
 				an
 				optimal reading experience for graphic content. Where the archive contains a ComicInfo.xml file,
 				YaerZero will use that to display Author, Artist, Title and any Description present.</p>
+				
+			<p> We will refer to both of these formats as <b>CBx</b> except where the differences are important.
 			<p>
-				CBZ and CBR format comics can be found on various platforms, including:
+				CBx format comics can be found on various platforms, including:
 			</p>
 			<ul>
 				<li><a href="https://www.digitalcomicmuseum.com/">Digital Comic Museum</a> A free online library
@@ -304,7 +95,7 @@
 					public domain Golden Age comics.</li>
 				<li><a href="https://getcomics.info/">GetComics</a>  A website offering a wide range of free comic
 					book
-					downloads in CBZ and CBR formats.</li>
+					downloads in CBx formats.</li>
 				<li><a href="https://comicbookplus.com/">Comic Book +</a>  Welcome to Comic Book Plus, a massive
 					site
 					where every day is party day!
@@ -323,38 +114,36 @@
 				works
 				in various fields and various formats at very reasonable prices. They regularly have text books, and
 				comic collections at significant discounts.</p>
-			<p>A good source of information on eBook formats is <a
-					href="https://en.wikipedia.org/wiki/E-book#File_formats">Wikipedia's
+			<p>A good source of information on eBook formats is <a href="https://en.wikipedia.org/wiki/E-book#File_formats">Wikipedia's
 					E-book File Formats</a> article.</p>
-			<hr class="sigil_split_marker" />
+			<hr class="sigil_split_marker"/>
 
 			<div style="clear:both">
 				<h3>
 					The Initial Experience - An Overview</h3>
-				<h4>🖥️ When You first launch <i>YaerZero</i></h4>
+				<h4>When You first launch <i>YaerZero</i></h4>
 
-				<img class="responsive" src="Screenshot 2025-12-12 190935.png"
-					alt="YaerZero Initial Interface Screenshot" style="float: right;  margin-left:1em; " />
+				<img class="responsive" src="Screenshot 2025-12-12 190935.png" alt="YaerZero Initial Interface Screenshot" style="float: right;  margin-left:1em; "/>
 				<p>You will see an image resembling the one to the right:</p>
 				<p>At the top there should be the familiar menu bar with our application icon and name, some space, and
 					3 icons.</p>
 				<h5>The Menu Bar Icons</h5>
-				<ul>
-					<li><span style="font-family: 'Segoe Fluent Icons';"><b></b></span>  Help and
-						documentation.<br /><br />
+				<ul style="overflow:auto">
+					<li><span style="font-family: 'Segoe Fluent Icons'; font-size:16pt;"><b></b></span>  Help and
+						documentation.<br/><br/>
 					</li>
-					<li><span style="font-family: 'Segoe Fluent Icons';"><b></b></span>  Full Screen Experience
-						Toggle.<br /><br />
+					<li><span style="font-family: 'Segoe Fluent Icons'; font-size:16pt;"><b></b></span>  Full Screen Experience
+						Toggle.<br/><br/>
 					</li>
-					<li><span style="font-family: 'Segoe Fluent Icons';"><b></b></span>  Theme Toggle.<br /><br /></li>
+					<li><span style="font-family: 'Segoe Fluent Icons'; font-size:16pt;"><b></b></span>  Theme Toggle.<br/><br/></li>
 				</ul>
 				<p>To the right, there is the usual Windows furniture - <b>Minimize</b>, <b>Maximize</b>/<b>Restore</b>,
 					and <b>Close</b> buttons.
 				</p>
-				<hr width="25%" />
+				<hr width="25%"/>
 
 				<h4>The Main Library Window </h4>
-				<p><br /></p>
+				<p><br/></p>
 				<h5>The untitled top-left section</h5>
 				<p>We have our default cover, bearing the <i>YaerZero </i>name.</p>
 				<p>The image used for the application icon and for the default book cover is of <i>Trinity College
@@ -385,14 +174,14 @@
 					A dedicated Library section allows users to browse either their complete collection, or a filtered
 					view.</p>
 				<ul>
-					<li><span style="font-family: 'Segoe Fluent Icons';"><b></b></span> <b>Filter </b>drop-down
+					<li><span style="font-family: 'Segoe Fluent Icons'; font-size:16pt;"><b></b></span> <b>Filter </b>drop-down
 						(default: "<b>All</b>"). This enables users to narrow down the displayed books based on
-						whether the book is an <b>ePub </b>or a <b>Comic/Graphic Novel</b>.<br /><br /></li>
+						whether the book is an <b>ePub </b>or a <b>CBx</b>.<br/><br/></li>
 
-					<li><span style="font-family: 'Segoe Fluent Icons';"><b></b></span> <b>Sort </b>drop-down (default:
-						"<b>Title</b>") to organize entries <b>Title </b>or <b>Author</b>.<br /><br /></li>
+					<li><span style="font-family: 'Segoe Fluent Icons'; font-size:16pt;"><b></b></span> <b>Sort </b>drop-down (default:
+						"<b>Title</b>") to organize entries <b>Title </b>or <b>Author</b>.<br/><br/></li>
 
-					<li><span style="font-family: 'Segoe Fluent Icons';"><b></b></span> <b>Search </b>enables a search
+					<li><span style="font-family: 'Segoe Fluent Icons'; font-size:16pt;"><b></b></span> <b>Search </b>enables a search
 						box, which filters
 						the library in real-time based on the entered text, matching against either <b>Title </b>or
 						<b>Author</b>.
@@ -402,8 +191,7 @@
 
 				<h5>The Bottom Bar</h5>
 				<p>
-					At the bottom-left is the grayed-out <span
-						style="font-family: 'Segoe Fluent Icons';"><b></b></span><b> Current Book</b> button.
+					At the bottom-left is the grayed-out <span style="font-family: 'Segoe Fluent Icons'; font-size:16pt;"><b></b></span><b> Current Book</b> button.
 					When a
 					book is being read, this
 					will display the name of the book and selecting it will open up the book in the reading view.
@@ -415,16 +203,16 @@
 					progress.
 				</p>
 				<p>
-					And finally we have the <span style="font-family: 'Segoe Fluent Icons';"><b></b></span>
+					And finally we have the <span style="font-family: 'Segoe Fluent Icons'; font-size:16pt;"><b></b></span>
 					<b>Add
 						Book</b> button - selecting this will bring up a multiple-select
 					file-picker
 					dialog box.
-					<br />
+					<br/>
 				</p>
-				<br />
-				<hr class="sigil_split_marker" />
-				<br />
+				<br/>
+				<hr class="sigil_split_marker"/>
+				<br/>
 			</div>
 			<h3 style="clear: both;">Adding Books to <i>YaerZero</i></h3>
 			<h4>By File Picker...</h4>
@@ -448,14 +236,13 @@
 			<p>When importing multiple books, <i>YaerZero </i>will disable most of it's user-interface while working. If
 				you import a single book, it will endeavor to return control as quickly as it can, presenting the ebook
 				in readable form, disabling only those parts of the User Experience that require a completely processed
-				book. This is recommended when the user has a single new book that they wish to read <i
-					style="font-weight: bold;">now!</i> Multiple books may be imported <i>en-masse</i>, however this is
+				book. This is recommended when the user has a single new book that they wish to read <i style="font-weight: bold;">now!</i> Multiple books may be imported <i>en-masse</i>, however this is
 				only recommended when building a library from a pre-existing folder. It can be very slow.</p>
 			<h4>Speed of processing.</h4>
 			<p><i>YaerZero </i>imports ebooks by decompressing the original file and processing the contents into a
 				format that can be rapidly presented back to the user. </p>
 			<p>This process can be extremely swift for a plain <i>Gutenberg.org</i> <b>ePub </b>of a short story, or it
-				may be much slower for an omnibus edition of a long-running graphic-novel series. </p>
+				may be much slower for an omnibus edition <b>CBx</b> of a long-running graphic-novel series. </p>
 			<p>The author has found that the very slowest books to process are generally heavily illustrated text books,
 				by reputable publishers. They tend to have interesting structures (often requiring reformatting into
 				canonical <b>ePub </b>format before they can be processed) and many hundreds, or even thousands, of
@@ -468,17 +255,17 @@
 				eventually cause <i>YaerZero </i>to slow down in daily use. We have tested it with libraries of over
 				1500 books, of various kinds and it is still quite usable, but we do recommend smaller libraries of
 				perhaps 200 processed books or less to keep performance snappy. We also note that while <b>ePub
-				</b>formatted books are generally small (less than 1 Megabyte), Graphic Novels can run to many
+				</b>formatted books are generally small (less than 1 Megabyte), <b>CBx</b> Graphic Novels can run to many
 				Gigabytes! Storing a processed version can be wasteful of space. Once they have been read, the user
 				should remove them from the <i>YaerZero </i>library (<i>please </i>keep backups of your original
 				books). </p>
 		</div>
-		<hr width="25%" />
+		<hr width="25%"/>
 
 		<div class="quin">
 
 			<figure class="side left">
-				<img src="Screenshot 2025-12-12 191924.png" alt="Covers View">
+				<img src="Screenshot 2025-12-12 191924.png" alt="Covers View"/>
 				<figcaption><i>Covers View</i></figcaption>
 			</figure>
 
@@ -519,31 +306,90 @@
 
 
 			<figure class="side right">
-				<img src="Screenshot 2025-12-12 192030.png" alt="Details View">
+				<img src="Screenshot 2025-12-12 192030.png" alt="Details View"/>
 				<figcaption><i>Details View</i></figcaption>
 			</figure>
 		</div>
 
-		<hr />
+		<hr/>
 		<h3>The Reader View</h3>
 		<div>
-			<img class="responsive" src="Screenshot 2025-12-18 141003.png" alt="Reader View Screenshot"
-				style="float: left;  margin-right:1em; max-width: 50%;" />
+			<img class="responsive" src="Screenshot 2025-12-18 141003.png" alt="Reader View Screenshot" style="float: left;  margin-right:1em; max-width: 50%;"/>
 
 			<p>
-				The Reader View is an uncluttered, distraction-free
-				environment for enjoying ebooks and graphic novels. The user is presented with the content of their
-				selected book</p>
+				The <b>Reader</b> view is intended to minimize distractions, allowing readers to focus on the content of their chosen book.
+			</p>
 			<p>
-				The interface is designed to minimize distractions, allowing readers to focus on the text and
-				images.
 				All User Interface controls are found at the edges of the app, away from the main content area.
 			</p>
+			<h3>
+				The Title Bar
+			</h3>
+			<p>
+				In addition to the controls already described for the <b>Library</b> view, the Reader view adds two new buttons to the Title Bar for <b>ePub</b> books. They will not be present for <b>CBx</b> books.
+
+				</p>
+				<ul style="overflow:auto">
+					<li><span style="font-family: 'Segoe Fluent Icons'; font-size:16pt; "><b></b></span> <b>Increase Font Size</b>.<br/><br/></li>
+					<li><span style="font-family: 'Segoe Fluent Icons'; font-size:16pt; "><b></b></span> <b>Decrease Font Size</b>.<br/><br/></li>
+				</ul>
+
+			<p></p>
+			<p>
+				These allow adjustments to the document font size for reading comfort. <i>YaerZero</i> attempts to honour the books intended typography and does not support user-selected type faces.
+			</p>
+			<h3>
+				The Side Bar Buttons
+			</h3>
+			<p>
+				</p>
+					<ul style="overflow:auto">
+					<li><span style="font-family: 'Segoe Fluent Icons'; font-size:16pt; "><b></b></span>  <b>Page Left</b>.<br/><br/></li>
+					<li><span style="font-family: 'Segoe Fluent Icons'; font-size:16pt; "><b></b></span>  <b>Page Right</b>.<br/><br/></li>
+				</ul>
+			<p></p>
+			<p>
+				These buttons move through the book one page at a time. When going backwards through a chapter break, they go to the <i>end</i> of the previous chapter.
+			</p>
+			<p>
+				If the reading system has a mouse with a scroll-wheel, <i>YaerZero</i> will page through the loaded book, as if using these buttons - <i>scrollwheel-forward</i> for <i>page right</i>/<i>previous page</i> and <i>scrollwheel-back</i> for <i>page left</i>/<i>next page</i>.
+			</p>
+			<div style="clear:both"></div>
+			<h3>
+				The Bottom Bar
+			</h3>
+
+			<ul style="overflow:auto">
+				
+				<li><span style="font-family: 'Segoe Fluent Icons'; font-size:16pt; "><b></b></span>  <b>Library View</b>.<br/>Returns to the Library view. The current book remains loaded and retains the current read position, until another book is loaded. The views can be switched back and forth. Swapping to another book retains the reading position of the old book.<br/><br/></li>
+				
+				<li><span style="font-family: 'Segoe Fluent Icons'; font-size:16pt; "><b></b></span>  <b>Contents Page</b>.<br/>Shows a Contents Page. <i>YaerZero</i> uses the <b>ePub3 </b>contents page feature. For <b>ePub2</b>, we create an equivalent contents page from the <i>NCX</i> file. For <b>Comics</b>/<b>Graphic Novels</b>, we show an ordered page of thumbnails of all the images within the compressed archive. Selecting an item in the contents jumps to that position in the book, resetting the read position.<br/><br/></li>
+				
+				<li><span style="font-family: 'Segoe Fluent Icons'; font-size:16pt; "><b></b></span>  <b>Home</b>.<br/>For <b>all</b> books, return to the cover, resetting the read position of the book.<br/><br/></li>
+				
+				<li><span style="font-family: 'Segoe Fluent Icons'; font-size:16pt; "><b></b></span>  <b>Previous</b>.<br/>For <b>ePub</b> books, jumps to the <i>start</i> of the previous chapter, resetting the read position.<br/>
+				For <b>CBx</b> books, this jumps to the previous page. This is functionally equivalent to the Page Left button.<br/><br/></li>
+				
+				<li><span style="font-family: 'Segoe Fluent Icons'; font-size:16pt; "><b></b></span><b> Progress indicators</b><br/>
+				- A double bar for <b>ePub</b> books, with the top bar representing chapters and the lower indicating progress within the current chapter.<br/>
+				- A single bar for <b>Comics</b>/<b>Graphic Novels</b> indicating pages read.<br/><br/></li>
+				
+				<li><span style="font-family: 'Segoe Fluent Icons'; font-size:16pt; "><b></b></span>  <b>Next</b>.<br/>For <b>ePub</b> books, jumps to the <i>start</i> of the next chapter, resetting the read position.<br/>
+				For <b>CBx</b> format books, this jumps to the next page. This is functionally equivalent to the Page Right button.<br/><br/></li>
+				
+				<li><span style="font-family: 'Segoe Fluent Icons'; font-size:16pt; "><b></b></span>  <b>Final Page</b>.<br/>
+				For <b>ePub</b> books, this jumps to the <i>start</i> of the final chapter, resetting the read position.<br/>
+				For <b>CBx</b> books, this jumps to the last page image.<br/><br/></li>
+			</ul>
+			
+			<p>
+				In general, for each book, <i>YaerZero</i> remembers which paragraph (<b>ePub</b>) , or page (<b>CBx</b>) you last viewed.
+			</p>
+			
 		</div>
 		<div style="clear:both"></div>
-		<hr />
+		<hr/>
 		<p style="text-align: center;">© 2024 LanaRoseWare. All rights reserved.</p>
 	</main>
 </body>
-
 </html>

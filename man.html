@@ -435,7 +435,8 @@
 					indicating progress within the current chapter.<br />
 					- A single bar for <b>Comics</b>/<b>Graphic Novels</b> indicating pages read.<br /><br /></li>
 
-				<li><span
+				<li>
+					<span
 						style="font-family: 'Segoe Fluent Icons'; font-size:16pt; "><b></b></span>  <b>Next</b>.<br />For
 					<b>ePub</b> books, jumps to the <i>start</i> of the next chapter, resetting the read position.<br />
 					For <b>CBx</b> format books, this jumps to the next page. This is functionally equivalent to the
@@ -456,6 +457,65 @@
 
 		</div>
 		<div style="clear:both"></div>
+		<hr />
+		<h2> Credits and Acknowledgements</h2>
+		<p>The release version of <i>YaerZero</i> is the end of a very long road.</p>
+		<p>
+			<i>YaerZero</i> is currently written in C++17 using <i>Microsoft Visual Studio 2026 (Community Edition)</i>,
+			with embedded JavaScript, HTML and CSS where required.
+		</p>
+		<b>ePub</b> processing requires handling Zip decompression.
+		The unzip decompression algorithm is public domain. Many different C language implementations were examined
+		before deciding to implement a more focused C++ version better suited to the task required than a generalised
+		unzip library.
+		<p>
+			Once unzip was working and <b>ePub</b> processing was working, it seemed obvious to add <b>CBZ</b> support.
+			Indeed, it just worked, once it was on how to present the decompressed images to the existing UI.
+		</p>
+		<p>
+			<b>CBR</b> was a very different deal. Once decompressed, it would slot straight into the <b>CBZ</b> handling
+			pipeline. Decompression was the problem.
+		</p>
+		<p>
+			<b>CBR</b> uses <b>RAR</b> compression and that is proprietry to <a
+				href="https://www.win-rar.com/"><i>RARLAB</i></a>. The command-line and linkable-library unrar C++
+			source is publicly available on <a href="https://github.com/pmachapman/unrar">Github</a> free to use, as
+			long as it's not used to reverse-engineer the RAR compression format. The current README is available at the
+			link above. The current source license is available on the same page. Unrar also contains other sources that
+			require (and deserve) acknowledgement - please refer to <a
+				href="https://github.com/pmachapman/unrar/blob/master/acknow.txt"> acknow.txt</a> for further details.
+		</p>
+		<p>
+			Examination of the unrar source made it very obvious that it would require a either a significant rewrite to
+			fit into <i>YaerZero</i>, or to link in the compiled library. The decision was made to rewrite and avoid an
+			opaque black-box at the core of the application. Some of the original code <i>does</i> survive intact, and
+			none of the revised code would exist without being able to refer back to the original source.
+		</p>
+
+		<hr width="25%">
+
+		<h3>
+			AI statement.
+		</h3>
+		<p>
+			The first commit to this project was made in 2015. Well before any publicly available AI coding assistants
+			became available.
+		</p>
+		<p>
+			In May 2025, Copilot was integrated into Visual Studio 2022 and I was initially hostile to using it. I soon
+			discovered that it was a very good way of finding documentation - a process that has become very frustrating
+			over the years. I remember when the Win32 API reference and Stroustrup were all that was required, but those
+			days are long-passed.
+		</p>
+		<p>
+			With later revisions, I have found AI to be generally helpful at finding information outside of my core
+			competancies, but it is still overconfident, obsequious and prone to hallucination. While AI has been used
+			to review code, and suggest technical improvements, there is no purely AI generated code within
+			<i>YaerZero</i>. Most of it was written before AI was available. Nothing has been copy-pasted without
+			significant revision and testing.
+			The most frequent use, outside of finding documentation, has been for generating complex Regex expressions.
+		</p>
+
 		<hr />
 		<p style="text-align: center;">© 2024 LanaRoseWare. All rights reserved.</p>
 	</main>

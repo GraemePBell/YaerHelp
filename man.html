@@ -463,13 +463,14 @@
 			<i>YaerZero</i> is currently written in C++17 using <i>Microsoft Visual Studio 2026 (Community Edition)</i>,
 			with embedded JavaScript, HTML and CSS where required.
 		</p>
-		<b>ePub</b> processing requires handling Zip decompression.
-		The unzip decompression algorithm is public domain. Many different C language implementations were examined
-		before deciding to implement a more focused C++ version better suited to the task required than a generalised
-		unzip library.
+		<p><b>ePub</b> processing requires handling Zip decompression.
+			The unzip decompression algorithm is public domain. Many different C language implementations were examined
+			before deciding to implement a more focused C++ version, better suited to the task required than a
+			generalised unzip library.
+		</p>
 		<p>
 			Once unzip was working and <b>ePub</b> processing was working, it seemed obvious to add <b>CBZ</b> support.
-			Indeed, it just worked, once it was on how to present the decompressed images to the existing UI.
+			Indeed, it just worked, once a presentation format compatible with the existing UI was decided upon.
 		</p>
 		<p>
 			<b>CBR</b> was a very different deal. Once decompressed, it would slot straight into the <b>CBZ</b> handling
@@ -484,11 +485,39 @@
 			require (and deserve) acknowledgement - please refer to <a
 				href="https://github.com/pmachapman/unrar/blob/master/acknow.txt"> acknow.txt</a> for further details.
 		</p>
+		<p> Unrar has a long history. Over the years, the unrar codebase has accumulated
+			several generations of legacy C++ constructs, many of which represent best practices from earlier times, but
+			which nowadays are no longer relevant. It is an actively-maintained codebase, with stability and
+			backwards-compatibilty at it's core. Old code that has been tested and proven over many years is not lightly
+			discarded, allowing us a fascinating peek into the history of C++ development practices. The earliest parts
+			look very much like C code, with manual memory management and pointer arithmetic rife throughout. Later
+			parts of the codebase show increasing use of C++ features, such as classes, templates and exceptions. Modern
+			C++ features, such as smart pointers and the STL, have been introduced incrementally where new code has been
+			written, bugs fixed and improvements made. It is a patchwork of different styles and practices, reflecting
+			the evolution of C++ over the years.
+		</p>
 		<p>
-			Examination of the unrar source made it very obvious that it would require a either a significant rewrite to
-			fit into <i>YaerZero</i>, or to link in the compiled library. The decision was made to rewrite and avoid an
-			opaque black-box at the core of the application. Some of the original code <i>does</i> survive intact, and
-			none of the revised code would exist without being able to refer back to the original source.
+			Examination of the unrar source made it very obvious that it would require a either a significant rewrite of
+			the command-line driven program to fit within the UWP framework of <i>YaerZero</i>, or to link in the
+			compiled library. The decision was made to rewrite and avoid an opaque black-box at the core of the
+			application. The unrar codebase is large and complex, and the rewrite took many months of work. It was
+			necessary to understand the entire codebase, as well as the intricacies of the RAR compression format, in
+			order to produce a working equivalent.
+		</p>
+		<p>
+			A small fraction of the original code <i>does</i> survive intact and unchanged, and none of the revised code
+			would exist without being able to refer back to the original source. Frequently, debugging required running
+			a debug build of unrar alongside a build of <i>YaerZero</i>, to compare behaviour of the dictionary window,
+			in memory, at the individual byte level. Many thanks to the original unrar authors for making this possible.
+			Not sarcasm.
+		</p>
+		<p>
+			As an observation, RAR decompression is extremely fast compared with ZIP decompression. Despite the extra
+			complexity of the RAR format, it is significantly faster. The author suspects that this is due to
+			the use of larger dictionary sizes (4MB, or 32MB in v5.0+, versus 32K), making better use of modern
+			hardware, allowing for better compression ratios and faster decompression speeds. The Zip format has not
+			evolved much since it's inception in the DOS era of the late 1980s, while RAR has continued to evolve, with
+			new features and improvements
 		</p>
 
 		<hr width="25%">
@@ -513,6 +542,14 @@
 			<i>YaerZero</i>. Most of it was written before AI was available. Nothing has been copy-pasted without
 			significant revision and testing.
 			The most frequent use, outside of finding documentation, has been for generating complex Regex strings.
+		</p>
+		<p>
+			Copilot <i>has</i> been very satisfying to complain to, when dealing with the frustrations of very bad
+			design decisions that crop up far too often in UWP.
+		</p>
+		<p>
+			I believe that AI is a tool, and like any tool, it can be misused. It is not a replacement for human
+			creativity, judgement or skill. It is a supplement. Copilot wrote this paragraph. ;)
 		</p>
 		<p>
 			Just say NO! to Vibe-Coding.

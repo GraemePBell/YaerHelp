@@ -460,6 +460,26 @@
 		<h2> Credits and Acknowledgements</h2>
 		<p>The release version of <i>YaerZero</i> is the end of a very long road.</p>
 		<p>
+			<i>YaerZero</i> started as a hobby project, just to keep my hand in as a coder. It was started in C++/CLI
+			using Visual Studio 2012 and .NET Framework 4.5, aiming to be compatible with Windows Phone 8.0, as well as
+			Windows 8.0. That proved to be a lot harder than expected, due to incomplete API support for a lot of
+			features required. Sandboxing and security restrictions made a lot of potential approaches very much
+			harder than it should have been. It became obvious that .NET on Windows Phone was a significant pain-point
+		</p>
+		<p>
+			The rapid evolution to Windows 8.1 and then to Windows 10 kept moving the goalposts. The decision was made
+			to switch to UWP and C++/CX, which promised better support for the required features and removal of the
+			dependency on the .NET Framework. This was a significant rewrite, abandoning Windows Phone along the way,
+			but it paid off in the end, allowing easy access to a large subset of traditional Win32 APIs, modern UWP
+			design, and real C++11/14/17 for fast performance.
+		</p>
+		<p>
+			The UI went from a test-harness spilling out raw XHTML to a fully-featured UWP XAML interface, with
+			support for touch, mouse, keyboard and pen input. The reading engine went from a simple WebView loading raw
+			XHTML to a full-featured ebook processor, supporting both <b>ePub2</b> and <b>ePub3</b>, as well as
+			<b>CBZ</b> and <b>CBR</b> graphic novels and comics.
+		</p>
+		<p>
 			<i>YaerZero</i> is currently written in C++17 using <i>Microsoft Visual Studio 2026 (Community Edition)</i>,
 			with embedded JavaScript, HTML and CSS where required.
 		</p>
@@ -559,15 +579,15 @@
 		<p style="text-align: center;">©2024 LanaRoseWare. All rights reserved.</p>
 		<code>
 			<pre>
-			// UnRAR source code may be used in any software to handle
-			// RAR archives without limitations free of charge, but cannot be
-			// used to develop RAR(WinRAR) compatible archiver and to
-			// re - create RAR compression algorithm, which is proprietary.
-			// Distribution of modified UnRAR source code in separate form
-			// or as a part of other software is permitted, provided that 
-			// full text of this paragraph, starting from "UnRAR source code"
-			// words, is included in license, or in documentation if license
-			// is not available, and in source code comments of resulting package.
+// UnRAR source code may be used in any software to handle
+// RAR archives without limitations free of charge, but cannot be
+// used to develop RAR(WinRAR) compatible archiver and to
+// re - create RAR compression algorithm, which is proprietary.
+// Distribution of modified UnRAR source code in separate form
+// or as a part of other software is permitted, provided that 
+// full text of this paragraph, starting from "UnRAR source code"
+// words, is included in license, or in documentation if license
+// is not available, and in source code comments of resulting package.
 			</pre>
 		</code>
 	</main>

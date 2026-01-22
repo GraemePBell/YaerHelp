@@ -515,7 +515,7 @@
 		<div style="clear:both"></div>
 		<hr />
 
-		<h2>Credits and Acknowledgements</h2>
+		<h2>Developer Notes, Credits and Acknowledgements</h2>
 
 		<p>
 			The release version of <i>YaerZero</i> is the end of a very long road.
@@ -538,6 +538,13 @@
 			This was a significant rewrite, abandoning Windows Phone along the way, but it paid off
 			in the end, allowing easy access to a large subset of traditional Win32 APIs,
 			modern UWP design, and real C++11/14/17 for fast performance.
+		</p>
+
+		<p>
+			The first pass at creating the program attempted to combine reading and display into a single step. That was
+			a poor choice — it quickly became clear that separating the two concerns would make both
+			easier to implement and maintain, as well as making library management and future expansion
+			much simpler.
 		</p>
 
 		<p>

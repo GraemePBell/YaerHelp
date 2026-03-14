@@ -1,0 +1,35 @@
+1) Open man.html in Calibre ePub Editor - edit in there not the raw file.
+2) Open
+	 [Tools]
+		[Edit Table of Contents]
+
+select 
+	[Generate Toc From Major Headings]
+	[ok] to accept
+	[ok] to close and generate ToC
+
+3) 
+	[Tools]
+		[Upgrade Book Internals]
+		[Keep NCX]
+
+		close the dialog
+
+4) 
+	[Tools]
+	[Add Cover]
+	select 000005.png
+	[ok]
+
+5) Edit content.opf
+	replace :
+		<dc:creator>Unknown</dc:creator>
+	with :
+		<dc:creator>Graeme P. Bell</dc:creator>
+		<dc:author>Graeme P. Bell></dc:creator>
+
+6) Edit man.html
+	      remove :
+	<h3 class="sigil_not_in_toc1">
+        	<a href="https://graemepbell.github.io/YaerHelp/man.epub">Release Notes as ePub</a>
+      	</h3>

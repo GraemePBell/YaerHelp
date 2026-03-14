@@ -1,5 +1,5 @@
-1) Open man.html in Calibre ePub Editor - edit in there not the raw file.
-2) Open
+1 - Open man.html in Calibre ePub Editor - edit in there not the raw file.
+2 - Open
 	 [Tools]
 		[Edit Table of Contents]
 
@@ -8,28 +8,37 @@ select
 	[ok] to accept
 	[ok] to close and generate ToC
 
-3) 
+3 - 
 	[Tools]
 		[Upgrade Book Internals]
 		[Keep NCX]
 
 		close the dialog
 
-4) 
+4 -
 	[Tools]
 	[Add Cover]
 	select 000005.png
 	[ok]
 
-5) Edit content.opf
+5 -
+	Edit content.opf
 	replace :
 		<dc:creator>Unknown</dc:creator>
 	with :
 		<dc:creator>Graeme P. Bell</dc:creator>
 		<dc:author>Graeme P. Bell></dc:creator>
 
-6) Edit man.html
+6 -
+	Edit man.html
 	      remove :
-	<h3 class="sigil_not_in_toc1">
-        	<a href="https://graemepbell.github.io/YaerHelp/man.epub">Release Notes as ePub</a>
-      	</h3>
+			<h3 class="sigil_not_in_toc1">
+					<a href="https://graemepbell.github.io/YaerHelp/man.epub">Release Notes as ePub</a>
+			</h3>
+
+7 - Save and close.
+
+8 - Use usual process to update:
+
+	Open VS Code - open folder C:\Users\mac_l\source\repos\YaerHelp 
+	Use GitHub version control to update - with appropriate message.

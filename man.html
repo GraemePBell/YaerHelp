@@ -1,776 +1,736 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<html>
 
 <head>
-	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-	<meta http-equiv="X-UA-Compatible" content="ie=edge" />
-	<title>Yet Another Ebook Reader</title>
-	<link href="./yaer.css" rel="stylesheet" type="text/css" />
-	<link rel="icon" type="image/png" href="./favicon.png" />
+  <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+
+  <link href="style.css" rel="stylesheet" type="text/css" />
+  <link href="yaer.css" rel="stylesheet" type="text/css" />
+  <title>YaerZero Manual</title>
 </head>
 
 <body>
-	<header style="text-align:center"> <img class="full-bleed" style="align-self:stretch; opacity:0.3"
-			src="ControlStrip.png" alt="" />
-		<h1><i>YaerZero</i></h1>
-		<h2>Yet Another Ebook Reader</h2>
-		<h3>Version 1.0.18.0</h3>
-	</header>
-	<main class="content">
-		<h4><a href="https://graemepbell.github.io/YaerHelp/PrivacyPolicy.html">YearZero Privacy Policy</a></h4>
-		<div id="Description"> <img class="float-img" width="200" src="yaer_fallback.png" alt="" />
-
-			<div class="float-text" id="text">
-
-
-				<h3>Description</h3>
-				<p><i>YaerZero</i> is an ebook reader, currently supporting:</p>
-				<ul>
-					<li><b>ePub 2</b></li>
-					<li><b>ePub 3</b></li>
-					<li><b>CBZ</b> graphic novels and comics</li>
-					<li><b>CBR</b> graphic novels and comics</li>
-				</ul>
-			</div>
-		</div>
-		<div style="clear:both">
-			<p>&nbsp;</p>
-			<h4>ePub 2.x and 3.x</h4>
-			<p> These are open standards for electronic books, created and maintained by the <b><a
-						href="https://idpf.org/epub/dir/">International Digital Publishing Forum</a></b> (IDPF).
-				<b>ePub</b> files are essentially zipped collections of <i>XHTML</i> files, images, <i>CSS</i>
-				stylesheets, and various <i>metadata</i> files. <i>YaerZero</i> supports both <b>ePub2</b> and
-				<b>ePub3</b> formats, allowing users to read a wide variety of ebooks with rich formatting and
-				multimedia content.
-			</p>
-			<p><b>ePub</b> format books are available from various sources, including:</p>
-			<ul>
-				<li> <a href="https://www.gutenberg.org/">Project Gutenberg</a> is dedicated to preserving free public
-					domain books in various formats. </li>
-				<li> <a href="https://standardebooks.org/">Standard Ebooks</a> provide beautifully formatted versions of
-					<b>Project Gutenberg</b> ebooks.
-				</li>
-				<li> <a href="https://www.smashwords.com/">Smashwords</a> is an ebook retailer serving readers around
-					the globe. </li>
-				<li> <a href="https://openlibrary.org/">Open Library</a> is an open, editable library catalog, building
-					towards a web page for every book ever published. </li>
-				<li> <a href="https://manybooks.net/">ManyBooks</a> was established in 2004 with the vision of providing
-					an extensive library of books in digital format for free on the Internet. </li>
-			</ul>
-			<p>Plus many, many more.</p>
-		</div>
-		<div style="clear:both"><br /></div>
-		<div style="clear:both">
-			<p><i>YaerZero</i> supports as much of these standards as is required to view most DRM-free books available
-				at the time of writing. It does not support audiobook or synchronised audio-reading capabilities. At all
-				times it should degrade gracefully.</p>
-			<h4>CBZ and CBR (CBx)</h4>
-			<p> <b>CBZ</b> (<i>Comic Book Zip</i>) and <b>CBR</b> (<i>Comic Book Rar</i>) are popular formats for
-				digital comics and graphic novels. These formats are essentially compressed archives (<b>ZIP</b> for
-				<b>CBZ</b> and <b>RAR</b> for <b>CBR</b>) containing a series of image files that represent the pages of
-				the comic. <i>YaerZero</i> allows users to read <b>CBZ</b> and <b>CBR</b> files, providing an optimal
-				reading experience for graphic content. Where the archive contains a <i>ComicInfo.xml</i> file,
-				<i>YaerZero</i> will use that to display Author, Artist, Title and any Description present.
-			</p>
-			<p> As the only difference between these formats is the type of compression used, we will refer to both of
-				these formats as <b>CBx</b>, unless it matters. </p>
-			<p><b>CBx</b> format comics can be found on various platforms, including:</p>
-			<ul>
-				<li> <a href="https://www.digitalcomicmuseum.com/">Digital Comic Museum</a> — a free online library of
-					public domain Golden Age comics. </li>
-				<li> <a href="https://getcomics.info/">GetComics</a> — a website offering a wide range of free comic
-					book downloads in <b>CBx</b> formats. </li>
-				<li> <a href="https://comicbookplus.com/">Comic Book +</a> — a massive site where every day is party
-					day! The original, and still the best site to read and download Golden Age comic books. They also
-					hold a large and growing selection of Silver Age comic books, comic strips, pulp fiction, old time
-					radio (OTR), fanzines, a lively and active forum, plus lots more. </li>
-			</ul>
-			<p> Collections of both free and paid content are available from many other sources as well. We highly
-				recommend supporting your favourite authors and artists by purchasing their work through legitimate
-				channels. </p>
-			<p> The <a href="https://humblebundle.com"><b>Humble Bundle</b></a> site is an excellent source for
-				collected works in various fields and formats at very reasonable prices. They regularly have textbooks
-				and comic collections at significant discounts. </p>
-			<p> A good source of information on ebook formats is <a
-					href="https://en.wikipedia.org/wiki/E-book#File_formats">Wikipedia's E-book File Formats</a>
-				article. </p>
-			<hr class="sigil_split_marker" />
-		</div>
-
-		<div style="clear:both">
-			<h3>The Initial Experience – An Overview</h3>
-			<h4>When you first launch <i>YaerZero</i></h4>
-
-			<img class="responsive" src="Screenshot 2025-12-12 190935.png" alt="YaerZero Initial Interface Screenshot"
-				style="float: right; margin-left:1em;" />
-
-			<p>You will see an interface resembling the one to the right:</p>
-			<p>
-				At the top is the familiar menu bar with our application icon and name,
-				some space, and three icons.
-			</p>
-
-			<h5>The Menu Bar Icons</h5>
-			<ul style="overflow:auto">
-				<li>
-					<span style="font-family: 'Segoe Fluent Icons'; font-size:16pt;"><b></b></span>
-					Help and documentation.<br /><br />
-				</li>
-				<li>
-					<span style="font-family: 'Segoe Fluent Icons'; font-size:16pt;"><b></b></span>
-					Full Screen Experience Toggle.<br /><br />
-				</li>
-				<li>
-					<span style="font-family: 'Segoe Fluent Icons'; font-size:16pt;"><b></b></span>
-					Theme Toggle.<br /><br />
-				</li>
-			</ul>
-
-			<p>
-				To the right, there is the usual Windows furniture —
-				<b>Minimize</b>, <b>Maximize</b>/<b>Restore</b>, and <b>Close</b> buttons.
-			</p>
-
-			<hr width="25%" />
-
-			<h4>The Main Library Window</h4>
-			<p><br /></p>
-
-			<h5>The untitled top-left section</h5>
-			<p>We have our default cover, bearing the <i>YaerZero</i> name.</p>
-
-			<p>
-				The image used for the application icon and for the default book cover
-				is of <i>Trinity College Library</i> in Dublin. This beautiful library
-				is the current home of <i>The Book of Kells</i>. The original photograph
-				was taken by Graeme P. Bell, and the final image was created using
-				<i>Paint.NET</i>. No AI tools were used.
-			</p>
-
-			<p>
-				When a book is selected, this image will change to the cover (if any)
-				present in the selected ebook.
-			</p>
-
-			<p>
-				The bar beneath the image will show roughly how much reading progress
-				has been made in the selected book. <b>Title</b>, <b>Author</b>,
-				<b>Artist</b>, and <b>Description</b> will be replaced by values from
-				the selected ebook.
-			</p>
-
-			<h5>Recent Books</h5>
-			<p>
-				Located at the top right, this section displays a list of the six most
-				recently accessed books, including any that have been newly loaded.
-			</p>
-
-			<p>
-				Each entry includes:
-				<br /><br />
-				• A small book cover thumbnail for visual identification.<br />
-				• The book title displayed prominently.<br />
-				• The author's name listed below the title.<br /><br />
-				This section allows users to quickly resume reading their most recent
-				selections.
-			</p>
-
-			<h5>Library Navigation</h5>
-			<p>
-				A dedicated Library section allows users to browse either their complete
-				collection or a filtered view.
-			</p>
-
-			<ul>
-				<li>
-					<span style="font-family: 'Segoe Fluent Icons'; font-size:16pt;"><b></b></span>
-					<b>Filter</b> drop-down (default: "<b>All</b>"). This enables users
-					to narrow down the displayed books based on whether the book is an
-					<b>ePub</b> or a <b>CBx</b>.<br /><br />
-				</li>
-
-				<li>
-					<span style="font-family: 'Segoe Fluent Icons'; font-size:16pt;"><b></b></span>
-					<b>Sort</b> drop-down (default: "<b>Title</b>") to organize entries
-					by <b>Title</b> or <b>Author</b>.<br /><br />
-				</li>
-
-				<li>
-					<span style="font-family: 'Segoe Fluent Icons'; font-size:16pt;"><b></b></span>
-					<b>Search</b> enables a search box, which filters the library in
-					real-time based on the entered text, matching against either
-					<b>Title</b> or <b>Author</b>.
-				</li>
-			</ul>
-
-			<h5>The Bottom Bar</h5>
-			<p>
-				At the bottom-left is the grayed-out
-				<span style="font-family: 'Segoe Fluent Icons'; font-size:16pt;"><b></b></span>
-				<b>Current Book</b> button. When a book is being read, this will display
-				the name of the book, and selecting it will open the book in the reading
-				view.
-			</p>
-
-			<p>
-				The <b>Details View</b> button is a toggle. Initially,
-				<i>YaerZero</i> loads with the library in <b>Covers</b> mode, displaying
-				book covers and reading progress for each volume. Swapping to
-				<b>Details</b> mode displays a smaller version of the cover, Title,
-				Author, and progress.
-			</p>
-
-			<p>
-				And finally we have the
-				<span style="font-family: 'Segoe Fluent Icons'; font-size:16pt;"><b></b></span>
-				<b>Add Book</b> button — selecting this will bring up a multiple-select
-				file-picker dialog box.
-			</p>
-
-			<br />
-			<hr class="sigil_split_marker" />
-			<br />
-		</div>
-		<div style="clear:both">
-			<h3 style="clear: both;">Adding Books to <i>YaerZero</i></h3>
-
-			<h4>By File Picker...</h4>
-			<p>
-				Books can be added using the file-picker dialog box to browse the user's system.
-				The user may import a single book, and <i>YaerZero</i> will open the reader view
-				as soon as it has processed enough to do so. Once the “working” indicator in the
-				bottom right finishes, the book will be safely stored in the library and the full
-				functionality of <i>YaerZero</i> will be available.
-			</p>
-
-			<p>
-				If multiple books are imported simultaneously, <i>YaerZero</i> will not return
-				control until all selected books have been imported — unless the user chooses to
-				cancel the process.
-			</p>
-
-			<h4>By Double-Clicking, Right-Clicking/Long-Hold and Select...</h4>
-			<p>
-				If <i>YaerZero</i> is the default reader (for <b>.epub</b>, <b>.cbz</b> and
-				<b>.cbr</b> files), double-clicking on a book file will import the book into the
-				library and launch the reader view as soon as enough of the book has been processed.
-				This may result in some images not being in place initially, but do not be concerned —
-				<i>YaerZero</i> will continue working in the background and will finish importing.
-				The user may even switch to another book in the library.
-			</p>
-
-			<p>
-				Once the “working” indicator in the bottom right finishes, the new book will be
-				safely stored in the library, with all elements in place.
-			</p>
-
-			<p><b>Drag-and-Drop...</b></p>
-			<p>
-				The user may use <i>Drag-and-Drop</i> to import single or multiple files, with the
-				same caveats as using the file-picker.
-			</p>
-
-			<h4><b>Single Book vs Multiple Book Import</b></h4>
-			<p>
-				When importing multiple books, <i>YaerZero</i> will disable most of its user interface
-				while working. If a single book is imported, it will endeavour to return control as
-				quickly as possible, presenting the ebook in readable form while disabling only those
-				parts of the user experience that require a completely processed book.
-			</p>
-
-			<p>
-				This is recommended when the user has a single new book they wish to read
-				<i style="font-weight: bold;">now!</i> Multiple books may be imported <i>en masse</i>;
-				however, this is only recommended when building a library from a pre-existing folder.
-				It can be very slow.
-			</p>
-
-			<h4>Speed of Processing</h4>
-			<p>
-				<i>YaerZero</i> imports ebooks by decompressing the original file and processing the
-				contents into a format that can be rapidly presented back to the user.
-			</p>
-
-			<p>
-				This process can be extremely swift for a plain <i>Gutenberg.org</i> <b>ePub</b> of a
-				short story, or it may be much slower for an omnibus edition <b>CBx</b> of a long-running
-				graphic novel series.
-			</p>
-
-			<p>
-				The author has found that the very slowest books to process are generally heavily
-				illustrated textbooks by reputable publishers. They tend to have interesting structures
-				(often requiring reformatting into canonical <b>ePub</b> format before they can be
-				processed) and many hundreds, or even thousands, of relatively small images.
-			</p>
-
-			<p>
-				At its fastest, <i>YaerZero</i> will complete processing before the user realises it has
-				even started. At its slowest, it’s time for a coffee.
-			</p>
-
-			<p>
-				However, once a book is processed and present in the library, load times are extremely rapid.
-			</p>
-
-			<h4>Library Size</h4>
-			<p>
-				<i>YaerZero</i> accesses local storage to store, manage, and present books. A large processed
-				library will eventually cause <i>YaerZero</i> to slow down in daily use. We have tested it with
-				libraries of over 1500 books of various kinds, and it is still quite usable, but we recommend
-				smaller libraries of perhaps 200 processed books or fewer to keep performance snappy.
-			</p>
-
-			<p>
-				We also note that while <b>ePub</b> formatted books are generally small (often less than
-				1 <i>Megabyte</i>), <b>CBx</b> graphic novels can run to many <i>Gigabytes</i>! Storing a processed
-				version can be wasteful of space. Once they have been read, the user should remove them from the
-				<i>YaerZero</i> library (<i>please</i> keep backups of your original books).
-			</p>
-		</div>
-
-		<hr width="25%" />
-
-		<div class="quin">
-
-			<figure class="side left">
-				<img src="Screenshot 2025-12-12 191924.png" alt="Covers View" />
-				<figcaption><i>Covers View</i></figcaption>
-			</figure>
-
-			<p class="text-1">
-				Now that the library has some books in it, the user may choose to view them in either
-				<b>Covers</b> mode (the default) or <b>Details</b> mode.
-			</p>
-
-			<p class="text-2">
-				Selecting (or tapping) any book, in either mode (or in the <b>Recent Books</b> section),
-				will display that book in the top-left panel, showing the <b>Cover</b>, <b>Title</b>,
-				<b>Author</b>, <b>Artist</b> (if available), and <b>Description</b> (if available).
-			</p>
-
-			<p class="text-3">
-				Double‑tapping on the book in any of these three locations will open the book in the
-				Reader View. Once a book has been opened in the Reader View, the <b>Current Book</b>
-				button in the bottom-left will become active, displaying the book title. Selecting this
-				button will also open the book in the Reader View.
-			</p>
-
-			<p class="text-4">
-				Hold‑tapping or right‑clicking on the book in any of these three locations will bring up
-				a context menu with options to <b>Open</b> the book in the Reader View, or
-				<b>Remove</b> the book from the library.
-			</p>
-
-			<p class="text-5">
-				The Library (in either Covers or Details view) can be scrolled using the mouse wheel,
-				touchpad, or by touch‑dragging on touch‑enabled devices. It also supports multiple
-				selection using standard OS methods (Shift‑Click, Ctrl‑Click, etc.) for batch removal.
-			</p>
-
-			<figure class="side right">
-				<img src="Screenshot 2025-12-12 192030.png" alt="Details View" />
-				<figcaption><i>Details View</i></figcaption>
-			</figure>
-
-		</div>
-
-		<hr />
-		<h3>The Reader View</h3>
-
-		<div>
-			<img class="responsive" src="Screenshot 2025-12-18 141003.png" alt="Reader View Screenshot"
-				style="float: left; margin-right:1em; max-width: 50%;" />
-
-			<p>
-				The <b>Reader</b> view is intended to minimize distractions, allowing readers
-				to focus on the content of their chosen book.
-			</p>
-
-			<p>
-				All user interface controls are found at the edges of the app, away from the
-				main content area.
-			</p>
-
-			<h3>The Title Bar</h3>
-
-			<p>
-				In addition to the controls already described for the <b>Library</b> view,
-				the Reader View adds two new buttons to the Title Bar for <b>ePub</b> books.
-				They will not be present for <b>CBx</b> books.
-			</p>
-
-			<ul style="overflow:auto">
-				<li>
-					<span style="font-family: 'Segoe Fluent Icons'; font-size:16pt;"><b></b></span>
-					<b>Increase Font Size</b>.<br /><br />
-				</li>
-				<li>
-					<span style="font-family: 'Segoe Fluent Icons'; font-size:16pt;"><b></b></span>
-					<b>Decrease Font Size</b>.<br /><br />
-				</li>
-			</ul>
-
-			<p>
-				These allow adjustments to the document font size for reading comfort.
-				<i>YaerZero</i> attempts to honour the book’s intended typography and does
-				not support user-selected typefaces.
-			</p>
-
-			<h3>The Side Bar Buttons</h3>
-
-			<ul style="overflow:auto">
-				<li>
-					<span style="font-family: 'Segoe Fluent Icons'; font-size:16pt;"><b></b></span>
-					<b>Page Left</b>.<br /><br />
-				</li>
-				<li>
-					<span style="font-family: 'Segoe Fluent Icons'; font-size:16pt;"><b></b></span>
-					<b>Page Right</b>.<br /><br />
-				</li>
-			</ul>
-
-			<p>
-				These buttons move through the book one page at a time. When going backwards
-				through a chapter break, they go to the <i>end</i> of the previous chapter.
-			</p>
-
-			<p>
-				If the reading system has a mouse with a scroll wheel, <i>YaerZero</i> will
-				page through the loaded book as if using these buttons —
-				<i>scroll‑wheel forward</i> for <i>page right</i> / <i>next page</i>,
-				and <i>scroll‑wheel back</i> for <i>page left</i> / <i>previous page</i>.
-			</p>
-
-			<div style="clear:both"></div>
-
-			<h3>The Bottom Bar</h3>
-
-			<ul style="overflow:auto">
-
-				<li>
-					<span style="font-family: 'Segoe Fluent Icons'; font-size:16pt;"><b></b></span>
-					<b>Library View</b>.<br />
-					Returns to the Library View. The current book remains loaded and retains
-					the current read position until another book is loaded. The views can be
-					switched back and forth freely. Swapping to another book retains the
-					reading position of the old book.<br /><br />
-				</li>
-
-				<li>
-					<span style="font-family: 'Segoe Fluent Icons'; font-size:16pt;"><b></b></span>
-					<b>Contents Page</b>.<br />
-					Shows a Contents Page. <i>YaerZero</i> uses the <b>ePub3</b> contents
-					page feature. For <b>ePub2</b>, an equivalent contents page is created
-					from the <i>NCX</i> file. For <b>Comics</b>/<b>Graphic Novels</b>, an
-					ordered page of thumbnails of all images in the archive is shown.
-					Selecting an item jumps to that position in the book, resetting the
-					read position.<br /><br />
-				</li>
-
-				<li>
-					<span style="font-family: 'Segoe Fluent Icons'; font-size:16pt;"><b></b></span>
-					<b>Home</b>.<br />
-					For <b>all</b> books, returns to the cover, resetting the read position.<br /><br />
-				</li>
-
-				<li>
-					<span style="font-family: 'Segoe Fluent Icons'; font-size:16pt;"><b></b></span>
-					<b>Previous</b>.<br />
-					For <b>ePub</b> books, jumps to the <i>start</i> of the previous chapter,
-					resetting the read position.<br />
-					For <b>CBx</b> books, this jumps to the previous page (equivalent to
-					Page Left).<br /><br />
-				</li>
-
-				<li>
-					<b>Progress indicators</b><br />
-					– A double bar for <b>ePub</b> books: the top bar represents chapters,
-					and the lower bar indicates progress within the current chapter.<br />
-					– A single bar for <b>Comics</b>/<b>Graphic Novels</b> indicating pages read.<br /><br />
-				</li>
-
-				<li>
-					<span style="font-family: 'Segoe Fluent Icons'; font-size:16pt;"><b></b></span>
-					<b>Next</b>.<br />
-					For <b>ePub</b> books, jumps to the <i>start</i> of the next chapter,
-					resetting the read position.<br />
-					For <b>CBx</b> books, this jumps to the next page (equivalent to
-					Page Right).<br /><br />
-				</li>
-
-				<li>
-					<span style="font-family: 'Segoe Fluent Icons'; font-size:16pt;"><b></b></span>
-					<b>Final Page</b>.<br />
-					For <b>ePub</b> books, jumps to the <i>start</i> of the final chapter,
-					resetting the read position.<br />
-					For <b>CBx</b> books, this jumps to the last page image.<br /><br />
-				</li>
-
-			</ul>
-
-			<p>
-				In general, for each book, <i>YaerZero</i> remembers which paragraph
-				(<b>ePub</b>) or page (<b>CBx</b>) was last viewed.
-			</p>
-
-		</div>
-
-		<div style="clear:both"></div>
-		<hr />
-
-		<h2>Developer Notes, Credits and Acknowledgements</h2>
-
-		<p>
-			The release version of <i>YaerZero</i> is the end of a very long road.
-		</p>
-
-		<p>
-			<i>YaerZero</i> started as a hobby project, just to keep my hand in as a coder.
-			It was originally written in C++/CLI using Visual Studio 2012 and .NET Framework 4.5,
-			aiming to be compatible with Windows Phone 8.0 as well as Windows 8.0.
-			That proved to be a lot harder than expected, due to incomplete API support for many
-			required features. Sandboxing and security restrictions made a lot of potential
-			approaches far more difficult than they should have been. It became obvious that
-			.NET on Windows Phone was a significant pain point.
-		</p>
-
-		<p>
-			The rapid evolution to Windows 8.1 and then to Windows 10 kept moving the goalposts.
-			The decision was made to switch to UWP and C++/CX, which promised better support for
-			the required features and removed the dependency on the .NET Framework.
-			This was a significant rewrite, abandoning Windows Phone along the way, but it paid off
-			in the end, allowing easy access to a large subset of traditional Win32 APIs,
-			modern UWP design, and real C++11/14/17 for fast performance.
-		</p>
-
-		<p>
-			The first pass at creating the program attempted to combine reading and display into a single step. That was
-			a poor choice — it quickly became clear that separating the two concerns would make both
-			easier to implement and maintain, as well as making library management and future expansion
-			much simpler.
-		</p>
-
-		<p>
-			The UI went from a test harness spilling out raw XHTML to a fully featured UWP XAML
-			interface, with support for touch, mouse, keyboard, and pen input. The reading engine
-			went from a simple WebView loading raw XHTML to a full-featured ebook processor,
-			supporting both <b>ePub2</b> and <b>ePub3</b>, as well as <b>CBZ</b> and <b>CBR</b>
-			graphic novels and comics.
-		</p>
-
-		<p>
-			<i>YaerZero</i> is currently written in C++17 using
-			<i>Microsoft Visual Studio 2026 (Community Edition)</i>, with embedded JavaScript,
-			HTML, and CSS where required.
-		</p>
-
-		<p>
-			<b>ePub</b> processing requires handling ZIP decompression.
-			The unzip decompression algorithm is public domain. Many different C language
-			implementations were examined before deciding to implement a more focused C++ version,
-			better suited to the task than a generalised unzip library.
-		</p>
-
-		<p>
-			Once unzip was working and <b>ePub</b> processing was functional, it seemed obvious to
-			add <b>CBZ</b> support. Indeed, it “just worked” once a presentation format compatible
-			with the existing UI was decided upon.
-		</p>
-
-		<p>
-			<b>CBR</b> was a very different deal. Once decompressed, it would slot straight into the
-			<b>CBZ</b> handling pipeline. Decompression was the problem.
-		</p>
-
-		<p>
-			<b>CBR</b> uses <b>RAR</b> compression, which is proprietary to
-			<a href="https://www.win-rar.com/"><i>RARLAB</i></a>.
-			The command-line and linkable-library UnRAR C++ source is publicly available on
-			<a href="https://github.com/pmachapman/unrar">GitHub</a> free to use, as long as it is
-			not used to reverse-engineer the RAR compression algorithm.
-			The current README and license are available at the link above.
-			UnRAR also contains other sources that require (and deserve) acknowledgement —
-			please refer to
-			<a href="https://github.com/pmachapman/unrar/blob/master/acknow.txt">acknow.txt</a>
-			for further details.
-		</p>
-
-		<p>
-			UnRAR has a long history. Over the years, the codebase has accumulated several
-			generations of legacy C++ constructs, many of which represent best practices from
-			earlier times but are no longer relevant today. It is an actively maintained codebase,
-			with stability and backwards compatibility at its core. Old code that has been tested
-			and proven over many years is not lightly discarded, giving us a fascinating peek into
-			the history of C++ development practices.
-		</p>
-
-		<p>
-			The earliest parts look very much like C code, with manual memory management and pointer
-			arithmetic throughout. Later parts show increasing use of C++ features such as classes,
-			templates, and exceptions. Modern C++ features — smart pointers, STL containers, etc. —
-			have been introduced incrementally where new code has been written, bugs fixed, or
-			improvements made. It is a patchwork of different styles and practices, reflecting the
-			evolution of C++ over the years.
-		</p>
-
-		<p>
-			Examination of the UnRAR source made it very clear that it would require either a
-			significant rewrite of the command-line driven program to fit within the UWP framework
-			of <i>YaerZero</i>, or linking in the compiled library. The decision was made to rewrite
-			and avoid an opaque black box at the core of the application. The UnRAR codebase is large
-			and complex, and the rewrite took many months of work. It was necessary to understand the
-			entire codebase, as well as the intricacies of the RAR compression format, in order to
-			produce a working equivalent.
-		</p>
-
-		<p>
-			A small fraction of the original code <i>does</i> survive intact and unchanged, and none
-			of the revised code would exist without being able to refer back to the original source.
-			Frequently, debugging required running a debug build of UnRAR alongside a build of
-			<i>YaerZero</i>, comparing behaviour of the dictionary window in memory at the individual
-			byte level. Many thanks to the original UnRAR authors for making this possible.
-			Not sarcasm.
-		</p>
-
-		<p>
-			As an observation: RAR decompression is extremely fast compared with ZIP decompression.
-			Despite the extra complexity of the RAR format, it is significantly faster. The author
-			suspects this is due to the use of larger dictionary sizes (4MB, or 32MB in v5.0+,
-			versus 32K), making better use of modern hardware and allowing for better compression
-			ratios and faster decompression speeds. The ZIP format has not evolved much since its
-			inception in the DOS era of the late 1980s, while RAR has continued to evolve with new
-			features and improvements.
-		</p>
-
-		<p>
-			<b>Future directions</b>.<br />
-			I hope to move the project to C++/WinRT in the near future, to take advantage of the
-			more modern language projections and better support for asynchronous programming.
-			This will be a significant effort, but one that will improve the maintainability and
-			performance of the application. That would allow me to update the codebase to C++20
-			and beyond.
-		</p>
-
-		<p>
-			I may also move to WebView2 for rendering, as WebView is being deprecated. This would
-			allow better support for modern web standards and enable more rendering effects.
-		</p>
-		<hr width="25%" />
-		<h3>Version 1.0.18.0</h3>
-
-		<p>
-			Bug fixes and performance improvements, including:
-		<ul>
-			<li>Fixes for books with internal html files containing ! characters.</li>
-			<li>Reliability and stability fixes.</li>
-		</ul>
-		</p>
-
-		<hr width="25%" />
-		<h3>Version 1.0.17.0</h3>
-
-		<p>
-			Bug fixes and performance improvements, including:
-		<ul>
-			<li>Fixed a regression in merged epub handling.</li>
-			<li>Fixed instabilities caused when files listed in epub contents are missing from the archive.
-			</li>
-			<li>Better keyboard handling and more tooltips</li>
-			<li>Reliability and stability fixes.</li>
-		</ul>
-		</p>
-
-		<hr width="25%" />
-		<h3>Version 1.0.16.0</h3>
-
-		<p>
-			Minor bug fixes and performance improvements, including:
-		<ul>
-			<li>RAR4 Decoding error in extremely rare cases.</li>
-			<li>Reliability and performance fixes.</li>
-		</ul>
-		</p>
-		<hr width="25%" />
-		<h3>Version 1.0.15.0</h3>
-
-		<p>
-			Minor bug fixes and performance improvements, including:
-		<ul>
-			<li>Improved display on scaled screens.</li>
-			<li>Reliability and performance fixes.</li>
-		</ul>
-		</p>
-
-		<hr width="25%" />
-
-		<h3>AI Statement</h3>
-
-		<p>
-			The first commit to this project was made in 2015 — well before any publicly
-			available AI coding assistants became available.
-		</p>
-
-		<p>
-			In May 2024, Copilot was integrated into Visual Studio 2022, and I was initially
-			hostile to using it. I soon discovered that it was a very good way of finding
-			documentation — a process that has become increasingly frustrating over the years.
-			I remember when the Win32 API reference and Stroustrup were all that was required,
-			but those days are long past.
-		</p>
-
-		<p>
-			With later revisions, I have found AI to be generally helpful at finding information
-			outside of my core competencies, but it is still overconfident, obsequious, and prone
-			to hallucination. While AI has been used to review code and suggest technical
-			improvements, there is no purely AI‑generated code within <i>YaerZero</i>.
-			Most of it was written before AI was available. Nothing has been copy‑pasted without
-			significant revision and testing.
-		</p>
-
-		<p>
-			The most frequent use, outside of finding documentation, has been generating complex
-			regular expressions.
-		</p>
-
-		<p>
-			Copilot <i>has</i> been very satisfying to complain to when dealing with the frustrations
-			of very bad design decisions that crop up far too often in UWP.
-		</p>
-
-		<p>
-			I believe that AI is a tool, and like any tool, it can be misused. It is not a replacement
-			for human creativity, judgement, or skill. It is a supplement.
-			Copilot wrote this paragraph. ;)
-		</p>
-
-		<p>
-			Just say NO! to Vibe‑Coding.
-		</p>
-
-		<h3>Privacy Policy</h3>
-
-		<p>
-			<i>YaerZero</i> does not collect, store, or transmit any personal data.
-			All processing is done locally on the user's device.
-		</p>
-		<p> There are no telemetry or analytics features included in the application.
-			User privacy is respected and protected at all times.</p>
-		<p> For more information, please contact the developer at
-			<a href="mailto:mac_logo@hotmail.com">mac_logo@hotmail.com</a>.
-		</p>
-
-		<hr width="25%" />
-		<h3>Licenses and Acknowledgements</h3>
-		<code>
-			<h4>Boost C++ Libraries</h4>
-		<pre>
-This app makes use of parts of the <a href="https://www.boost.org/" target="_blank"><b>Boost C++ Libraries</b></a>,
-distributed under the <b>Boost Software License</b>, Version 1.0.
+  <div class="calibre1" id="calibre_link-0">
+    <header class="calibre2">
+
+      <h1 class="sigil_not_in_toc"><i class="calibre3">YaerZero</i></h1>
+
+      <div class="calibre4"></div>
+      <h2 id="calibre_link-12" class="calibre5">Yet Another Ebook Reader</h2>
+
+      <h3 id="calibre_link-37" class="sigil_not_in_toc1">Version 1.0.18.0</h3>
+
+      <h3 class="sigil_not_in_toc1">
+        <a href="https://graemepbell.github.io/YaerHelp/man.epub">Release Notes as ePub</a>
+
+      </h3>
+    </header>
+
+    <main class="content">
+      <h3 id="calibre_link-13" class="sigil_not_in_toc1"><a
+          href="https://graemepbell.github.io/YaerHelp/PrivacyPolicy.html">YearZero Privacy Policy</a></h3>
+
+      <div id="calibre_link-38" class="calibre6">
+        <img class="float-img" width="200" src="images/000005.jpeg" alt="" />
+
+        <div class="float-text" id="calibre_link-39">
+          <h3 id="calibre_link-14" class="sigil_not_in_toc1">Description</h3>
+
+          <p class="calibre7"><i class="calibre8">YaerZero</i> is an ebook reader, currently supporting:</p>
+
+          <ul class="calibre9">
+            <li class="calibre10"><b class="calibre11">ePub 2</b></li>
+
+            <li class="calibre10"><b class="calibre11">ePub 3</b></li>
+
+            <li class="calibre10"><b class="calibre11">CBZ</b> graphic novels and comics</li>
+
+            <li class="calibre10"><b class="calibre11">CBR</b> graphic novels and comics</li>
+          </ul>
+        </div>
+      </div>
+    </main>
+  </div>
+
+
+  <div class="calibre1" id="calibre_link-1">
+
+
+    <main class="content">
+      <div class="calibre12">
+        <p class="calibre7">&nbsp;</p>
+
+        <h4 class="calibre13">ePub 2.x and 3.x</h4>
+
+        <p class="calibre7">These are open standards for electronic books, created and maintained by the <b
+            class="calibre11"><a href="https://idpf.org/epub/dir/">International Digital Publishing Forum</a></b>
+          (IDPF). <b class="calibre11">ePub</b> files are essentially zipped collections of <i
+            class="calibre8">XHTML</i> files, images, <i class="calibre8">CSS</i> stylesheets, and various <i
+            class="calibre8">metadata</i> files. <i class="calibre8">YaerZero</i> supports both <b
+            class="calibre11">ePub2</b> and <b class="calibre11">ePub3</b> formats, allowing users to read a wide
+          variety of ebooks with rich formatting and multimedia content.</p>
+
+        <p class="calibre7"><b class="calibre11">ePub</b> format books are available from various sources, including:
+        </p>
+
+        <ul class="calibre9">
+          <li class="calibre10"><a href="https://www.gutenberg.org/">Project Gutenberg</a> is dedicated to preserving
+            free public domain books in various formats.</li>
+
+          <li class="calibre10"><a href="https://standardebooks.org/">Standard Ebooks</a> provide beautifully formatted
+            versions of <b class="calibre11">Project Gutenberg</b> ebooks.</li>
+
+          <li class="calibre10"><a href="https://www.smashwords.com/">Smashwords</a> is an ebook retailer serving
+            readers around the globe.</li>
+
+          <li class="calibre10"><a href="https://openlibrary.org/">Open Library</a> is an open, editable library
+            catalog, building towards a web page for every book ever published.</li>
+
+          <li class="calibre10"><a href="https://manybooks.net/">ManyBooks</a> was established in 2004 with the vision
+            of providing an extensive library of books in digital format for free on the Internet.</li>
+        </ul>
+
+        <p class="calibre7">Plus many, many more.</p>
+      </div>
+
+      <div class="calibre12">
+        <br class="calibre6" />
+      </div>
+
+      <div class="calibre12">
+        <p class="calibre7"><i class="calibre8">YaerZero</i> supports as much of these standards as is required to view
+          most DRM-free books available at the time of writing. It does not support audiobook or synchronised
+          audio-reading capabilities. At all times it should degrade gracefully.</p>
+      </div>
+    </main>
+  </div>
+
+
+  <div class="calibre1" id="calibre_link-2">
+
+
+    <main class="content">
+      <div class="calibre12">
+        <h4 class="calibre13">CBZ and CBR (CBx)</h4>
+
+        <p class="calibre7"><b class="calibre11">CBZ</b> (<i class="calibre8">Comic Book Zip</i>) and <b
+            class="calibre11">CBR</b> (<i class="calibre8">Comic Book Rar</i>) are popular formats for digital comics
+          and graphic novels. These formats are essentially compressed archives (<b class="calibre11">ZIP</b> for <b
+            class="calibre11">CBZ</b> and <b class="calibre11">RAR</b> for <b class="calibre11">CBR</b>) containing a
+          series of image files that represent the pages of the comic. <i class="calibre8">YaerZero</i> allows users to
+          read <b class="calibre11">CBZ</b> and <b class="calibre11">CBR</b> files, providing an optimal reading
+          experience for graphic content. Where the archive contains a <i class="calibre8">ComicInfo.xml</i> file, <i
+            class="calibre8">YaerZero</i> will use that to display Author, Artist, Title and any Description present.
+        </p>
+
+        <p class="calibre7">As the only difference between these formats is the type of compression used, we will refer
+          to both of these formats as <b class="calibre11">CBx</b>, unless it matters.</p>
+
+        <p class="calibre7"><b class="calibre11">CBx</b> format comics can be found on various platforms, including:</p>
+
+        <ul class="calibre9">
+          <li class="calibre10"><a href="https://www.digitalcomicmuseum.com/">Digital Comic Museum</a> &mdash; a free
+            online library of public domain Golden Age comics.</li>
+
+          <li class="calibre10"><a href="https://getcomics.info/">GetComics</a> &mdash; a website offering a wide range
+            of free comic book downloads in <b class="calibre11">CBx</b> formats.</li>
+
+          <li class="calibre10"><a href="https://comicbookplus.com/">Comic Book +</a> &mdash; a massive site where every
+            day is party day! The original, and still the best site to read and download Golden Age comic books. They
+            also hold a large and growing selection of Silver Age comic books, comic strips, pulp fiction, old time
+            radio (OTR), fanzines, a lively and active forum, plus lots more.</li>
+        </ul>
+
+        <p class="calibre7">Collections of both free and paid content are available from many other sources as well. We
+          highly recommend supporting your favourite authors and artists by purchasing their work through legitimate
+          channels.</p>
+
+        <p class="calibre7">The <a href="https://humblebundle.com"><b class="calibre11">Humble Bundle</b></a> site is an
+          excellent source for collected works in various fields and formats at very reasonable prices. They regularly
+          have textbooks and comic collections at significant discounts.</p>
+
+        <p class="calibre7">A good source of information on ebook formats is <a
+            href="https://en.wikipedia.org/wiki/E-book#File_formats">Wikipedia's E-book File Formats</a> article.</p>
+      </div>
+    </main>
+  </div>
+
+
+  <div class="calibre1" id="calibre_link-3">
+    <main class="content">
+      <div class="calibre12">
+        <h3 class="sigil_not_in_toc1">The Initial Experience &ndash; An Overview</h3>
+
+        <h4 id="calibre_link-15" class="calibre13">When you first launch <i class="calibre8">YaerZero</i></h4>
+
+        <img class="responsive" src="images/000000.png" alt="YaerZero Initial Interface Screenshot" />
+
+        <p class="calibre7">You will see an interface resembling the one to the right:</p>
+
+        <p class="calibre7">At the top is the familiar menu bar with our application icon and name, some space, and
+          three icons.</p>
+
+        <h5 id="calibre_link-16" class="calibre14">The Menu Bar Icons</h5>
+
+        <ul class="calibre15">
+          <li class="calibre10"><span class="calibre16"><b class="calibre17"></b></span> Help and documentation.<br
+              class="calibre6" /><br class="calibre6" /></li>
+
+          <li class="calibre10"><span class="calibre16"><b class="calibre17"></b></span> Full Screen Experience
+            Toggle.<br class="calibre6" /><br class="calibre6" /></li>
+
+          <li class="calibre10"><span class="calibre16"><b class="calibre17"></b></span> Theme Toggle.<br
+              class="calibre6" /><br class="calibre6" /></li>
+        </ul>
+
+        <p class="calibre7">To the right, there is the usual Windows furniture &mdash; <b
+            class="calibre11">Minimize</b>, <b class="calibre11">Maximize</b>/<b class="calibre11">Restore</b>, and <b
+            class="calibre11">Close</b> buttons.</p>
+
+        <hr width="25%" class="calibre18" />
+
+        <h3 id="calibre_link-17" class="sigil_not_in_toc1">The Main Library Window</h3>
+
+        <p class="calibre7"><br class="calibre6" /></p>
+
+        <h5 id="calibre_link-18" class="calibre14">The untitled top-left section</h5>
+
+        <p class="calibre7">We have our default cover, bearing the <i class="calibre8">YaerZero</i> name.</p>
+
+        <p class="calibre7">The image used for the application icon and for the default book cover is of <i
+            class="calibre8">Trinity College Library</i> in Dublin. This beautiful library is the current home of <i
+            class="calibre8">The Book of Kells</i>. The original photograph was taken by Graeme P. Bell, and the final
+          image was created using <i class="calibre8">Paint.NET</i>. No AI tools were used.</p>
+
+        <p class="calibre7">When a book is selected, this image will change to the cover (if any) present in the
+          selected ebook.</p>
+
+        <p class="calibre7">The bar beneath the image will show roughly how much reading progress has been made in the
+          selected book. <b class="calibre11">Title</b>, <b class="calibre11">Author</b>, <b
+            class="calibre11">Artist</b>, and <b class="calibre11">Description</b> will be replaced by values from the
+          selected ebook.</p>
+
+        <h5 id="calibre_link-19" class="calibre14">Recent Books</h5>
+
+        <p class="calibre7">Located at the top right, this section displays a list of the six most recently accessed
+          books, including any that have been newly loaded.</p>
+
+        <p class="calibre7">Each entry includes: <br class="calibre6" /><br class="calibre6" /> • A small book cover
+          thumbnail for visual identification.<br class="calibre6" /> • The book title displayed prominently.<br
+            class="calibre6" /> • The author's name listed below the title.<br class="calibre6" /><br
+            class="calibre6" /> This section allows users to quickly resume reading their most recent selections.</p>
+
+        <h5 id="calibre_link-20" class="calibre14">Library Navigation</h5>
+
+        <p class="calibre7">A dedicated Library section allows users to browse either their complete collection or a
+          filtered view.</p>
+
+        <ul class="calibre9">
+          <li class="calibre10"><span class="calibre16"><b class="calibre17"></b></span> <b
+              class="calibre11">Filter</b> drop-down (default: "<b class="calibre11">All</b>"). This enables users to
+            narrow down the displayed books based on whether the book is an <b class="calibre11">ePub</b> or a <b
+              class="calibre11">CBx</b>.<br class="calibre6" /><br class="calibre6" /></li>
+
+          <li class="calibre10"><span class="calibre16"><b class="calibre17"></b></span> <b class="calibre11">Sort</b>
+            drop-down (default: "<b class="calibre11">Title</b>") to organize entries by <b class="calibre11">Title</b>
+            or <b class="calibre11">Author</b>.<br class="calibre6" /><br class="calibre6" /></li>
+
+          <li class="calibre10"><span class="calibre16"><b class="calibre17"></b></span> <b
+              class="calibre11">Search</b> enables a search box, which filters the library in real-time based on the
+            entered text, matching against either <b class="calibre11">Title</b> or <b class="calibre11">Author</b>.
+          </li>
+        </ul>
+
+        <h5 id="calibre_link-21" class="calibre14">The Bottom Bar</h5>
+
+        <p class="calibre7">At the bottom-left is the grayed-out <span class="calibre16"><b
+              class="calibre17"></b></span> <b class="calibre11">Current Book</b> button. When a book is being read,
+          this will display the name of the book, and selecting it will open the book in the reading view.</p>
+
+        <p class="calibre7">The <b class="calibre11">Details View</b> button is a toggle. Initially, <i
+            class="calibre8">YaerZero</i> loads with the library in <b class="calibre11">Covers</b> mode, displaying
+          book covers and reading progress for each volume. Swapping to <b class="calibre11">Details</b> mode displays a
+          smaller version of the cover, Title, Author, and progress.</p>
+
+        <p class="calibre7">And finally we have the <span class="calibre16"><b class="calibre17"></b></span> <b
+            class="calibre11">Add Book</b> button &mdash; selecting this will bring up a multiple-select file-picker
+          dialog box.</p>
+
+        <br class="calibre6" />
+
+        <br class="calibre6" />
+      </div>
+    </main>
+  </div>
+
+
+  <div class="calibre1" id="calibre_link-4">
+
+
+    <main class="content">
+      <div class="calibre12">
+        <h3 class="calibre19">Adding Books to <i class="calibre8">YaerZero</i></h3>
+
+        <h4 id="calibre_link-22" class="calibre13">By File Picker...</h4>
+
+        <p class="calibre7">Books can be added using the file-picker dialog box to browse the user's system. The user
+          may import a single book, and <i class="calibre8">YaerZero</i> will open the reader view as soon as it has
+          processed enough to do so. Once the “working” indicator in the bottom right finishes, the book will be safely
+          stored in the library and the full functionality of <i class="calibre8">YaerZero</i> will be available.</p>
+
+        <p class="calibre7">If multiple books are imported simultaneously, <i class="calibre8">YaerZero</i> will not
+          return control until all selected books have been imported &mdash; unless the user chooses to cancel the
+          process.</p>
+
+        <h4 id="calibre_link-23" class="calibre13">By Double-Clicking, Right-Clicking/Long-Hold and Select...</h4>
+
+        <p class="calibre7">If <i class="calibre8">YaerZero</i> is the default reader (for <b
+            class="calibre11">.epub</b>, <b class="calibre11">.cbz</b> and <b class="calibre11">.cbr</b> files),
+          double-clicking on a book file will import the book into the library and launch the reader view as soon as
+          enough of the book has been processed. This may result in some images not being in place initially, but do not
+          be concerned &mdash; <i class="calibre8">YaerZero</i> will continue working in the background and will finish
+          importing. The user may even switch to another book in the library.</p>
+
+        <p class="calibre7">Once the “working” indicator in the bottom right finishes, the new book will be safely
+          stored in the library, with all elements in place.</p>
+
+        <p class="calibre7"><b class="calibre11">Drag-and-Drop...</b></p>
+
+        <p class="calibre7">The user may use <i class="calibre8">Drag-and-Drop</i> to import single or multiple files,
+          with the same caveats as using the file-picker.</p>
+
+        <h4 id="calibre_link-24" class="calibre13"><b class="calibre11">Single Book vs Multiple Book Import</b></h4>
+
+        <p class="calibre7">When importing multiple books, <i class="calibre8">YaerZero</i> will disable most of its
+          user interface while working. If a single book is imported, it will endeavour to return control as quickly as
+          possible, presenting the ebook in readable form while disabling only those parts of the user experience that
+          require a completely processed book.</p>
+
+        <p class="calibre7">This is recommended when the user has a single new book they wish to read <i
+            class="calibre20">now!</i> Multiple books may be imported <i class="calibre8">en masse</i>; however, this is
+          only recommended when building a library from a pre-existing folder. It can be very slow.</p>
+
+        <h4 id="calibre_link-25" class="calibre13">Speed of Processing</h4>
+
+        <p class="calibre7"><i class="calibre8">YaerZero</i> imports ebooks by decompressing the original file and
+          processing the contents into a format that can be rapidly presented back to the user.</p>
+
+        <p class="calibre7">This process can be extremely swift for a plain <i class="calibre8">Gutenberg.org</i> <b
+            class="calibre11">ePub</b> of a short story, or it may be much slower for an omnibus edition <b
+            class="calibre11">CBx</b> of a long-running graphic novel series.</p>
+
+        <p class="calibre7">The author has found that the very slowest books to process are generally heavily
+          illustrated textbooks by reputable publishers. They tend to have interesting structures (often requiring
+          reformatting into canonical <b class="calibre11">ePub</b> format before they can be processed) and many
+          hundreds, or even thousands, of relatively small images.</p>
+
+        <p class="calibre7">At its fastest, <i class="calibre8">YaerZero</i> will complete processing before the user
+          realises it has even started. At its slowest, it’s time for a coffee.</p>
+
+        <p class="calibre7">However, once a book is processed and present in the library, load times are extremely
+          rapid.</p>
+
+        <h4 id="calibre_link-26" class="calibre13">Library Size</h4>
+
+        <p class="calibre7"><i class="calibre8">YaerZero</i> accesses local storage to store, manage, and present books.
+          A large processed library will eventually cause <i class="calibre8">YaerZero</i> to slow down in daily use. We
+          have tested it with libraries of over 1500 books of various kinds, and it is still quite usable, but we
+          recommend smaller libraries of perhaps 200 processed books or fewer to keep performance snappy.</p>
+
+        <p class="calibre7">We also note that while <b class="calibre11">ePub</b> formatted books are generally small
+          (often less than 1 <i class="calibre8">Megabyte</i>), <b class="calibre11">CBx</b> graphic novels can run to
+          many <i class="calibre8">Gigabytes</i>! Storing a processed version can be wasteful of space. Once they have
+          been read, the user should remove them from the <i class="calibre8">YaerZero</i> library (<i
+            class="calibre8">please</i> keep backups of your original books).</p>
+      </div>
+
+      <hr width="25%" class="calibre18" />
+
+      <div class="quin">
+        <figure class="side">
+          <img src="images/000001.png" alt="Covers View" class="calibre21" />
+
+          <figcaption><i class="calibre8">Covers View</i></figcaption>
+        </figure>
+
+        <p class="text">Now that the library has some books in it, the user may choose to view them in either <b
+            class="calibre11">Covers</b> mode (the default) or <b class="calibre11">Details</b> mode.</p>
+
+        <p class="text1">Selecting (or tapping) any book, in either mode (or in the <b class="calibre11">Recent
+            Books</b> section), will display that book in the top-left panel, showing the <b
+            class="calibre11">Cover</b>, <b class="calibre11">Title</b>, <b class="calibre11">Author</b>, <b
+            class="calibre11">Artist</b> (if available), and <b class="calibre11">Description</b> (if available).</p>
+
+        <p class="text2">Double‑tapping on the book in any of these three locations will open the book in the Reader
+          View. Once a book has been opened in the Reader View, the <b class="calibre11">Current Book</b> button in the
+          bottom-left will become active, displaying the book title. Selecting this button will also open the book in
+          the Reader View.</p>
+
+        <p class="text3">Hold‑tapping or right‑clicking on the book in any of these three locations will bring up a
+          context menu with options to <b class="calibre11">Open</b> the book in the Reader View, or <b
+            class="calibre11">Remove</b> the book from the library.</p>
+
+        <p class="text4">The Library (in either Covers or Details view) can be scrolled using the mouse wheel, touchpad,
+          or by touch‑dragging on touch‑enabled devices. It also supports multiple selection using standard OS methods
+          (Shift‑Click, Ctrl‑Click, etc.) for batch removal.</p>
+
+        <figure class="side1">
+          <img src="images/000002.png" alt="Details View" class="calibre21" />
+
+          <figcaption><i class="calibre8">Details View</i></figcaption>
+        </figure>
+      </div>
+    </main>
+  </div>
+
+
+  <div class="calibre1" id="calibre_link-5">
+
+
+    <main class="content">
+      <h3 class="sigil_not_in_toc1">The Reader View</h3>
+
+      <div class="calibre6">
+        <img class="responsive1" src="images/000003.png" alt="Reader View Screenshot" />
+
+        <p class="calibre7">The <b class="calibre11">Reader</b> view is intended to minimize distractions, allowing
+          readers to focus on the content of their chosen book.</p>
+
+        <p class="calibre7">All user interface controls are found at the edges of the app, away from the main content
+          area.</p>
+
+        <h3 id="calibre_link-27" class="sigil_not_in_toc1">The Title Bar</h3>
+
+        <p class="calibre7">In addition to the controls already described for the <b class="calibre11">Library</b> view,
+          the Reader View adds two new buttons to the Title Bar for <b class="calibre11">ePub</b> books. They will not
+          be present for <b class="calibre11">CBx</b> books.</p>
+
+        <ul class="calibre15">
+          <li class="calibre10"><span class="calibre16"><b class="calibre17"></b></span> <b class="calibre11">Increase
+              Font Size</b>.<br class="calibre6" /><br class="calibre6" /></li>
+
+          <li class="calibre10"><span class="calibre16"><b class="calibre17"></b></span> <b class="calibre11">Decrease
+              Font Size</b>.<br class="calibre6" /><br class="calibre6" /></li>
+        </ul>
+
+        <p class="calibre7">These allow adjustments to the document font size for reading comfort. <i
+            class="calibre8">YaerZero</i> attempts to honour the book’s intended typography and does not support
+          user-selected typefaces.</p>
+
+        <h3 id="calibre_link-28" class="sigil_not_in_toc1">The Side Bar Buttons</h3>
+
+        <ul class="calibre15">
+          <li class="calibre10"><span class="calibre16"><b class="calibre17"></b></span> <b class="calibre11">Page
+              Left</b>.<br class="calibre6" /><br class="calibre6" /></li>
+
+          <li class="calibre10"><span class="calibre16"><b class="calibre17"></b></span> <b class="calibre11">Page
+              Right</b>.<br class="calibre6" /><br class="calibre6" /></li>
+        </ul>
+
+        <p class="calibre7">These buttons move through the book one page at a time. When going backwards through a
+          chapter break, they go to the <i class="calibre8">end</i> of the previous chapter.</p>
+
+        <p class="calibre7">If the reading system has a mouse with a scroll wheel, <i class="calibre8">YaerZero</i> will
+          page through the loaded book as if using these buttons &mdash; <i class="calibre8">scroll‑wheel forward</i>
+          for <i class="calibre8">page right</i> / <i class="calibre8">next page</i>, and <i
+            class="calibre8">scroll‑wheel back</i> for <i class="calibre8">page left</i> / <i class="calibre8">previous
+            page</i>.</p>
+
+        <div class="calibre12"></div>
+
+        <h3 id="calibre_link-29" class="sigil_not_in_toc1">The Bottom Bar</h3>
+
+        <ul class="calibre15">
+          <li class="calibre10"><span class="calibre16"><b class="calibre17"></b></span> <b class="calibre11">Library
+              View</b>.<br class="calibre6" /> Returns to the Library View. The current book remains loaded and retains
+            the current read position until another book is loaded. The views can be switched back and forth freely.
+            Swapping to another book retains the reading position of the old book.<br class="calibre6" /><br
+              class="calibre6" /></li>
+
+          <li class="calibre10"><span class="calibre16"><b class="calibre17"></b></span> <b class="calibre11">Contents
+              Page</b>.<br class="calibre6" /> Shows a Contents Page. <i class="calibre8">YaerZero</i> uses the <b
+              class="calibre11">ePub3</b> contents page feature. For <b class="calibre11">ePub2</b>, an equivalent
+            contents page is created from the <i class="calibre8">NCX</i> file. For <b class="calibre11">Comics</b>/<b
+              class="calibre11">Graphic Novels</b>, an ordered page of thumbnails of all images in the archive is shown.
+            Selecting an item jumps to that position in the book, resetting the read position.<br class="calibre6" /><br
+              class="calibre6" /></li>
+
+          <li class="calibre10"><span class="calibre16"><b class="calibre17"></b></span> <b
+              class="calibre11">Home</b>.<br class="calibre6" /> For <b class="calibre11">all</b> books, returns to the
+            cover, resetting the read position.<br class="calibre6" /><br class="calibre6" /></li>
+
+          <li class="calibre10"><span class="calibre16"><b class="calibre17"></b></span> <b
+              class="calibre11">Previous</b>.<br class="calibre6" /> For <b class="calibre11">ePub</b> books, jumps to
+            the <i class="calibre8">start</i> of the previous chapter, resetting the read position.<br
+              class="calibre6" /> For <b class="calibre11">CBx</b> books, this jumps to the previous page (equivalent to
+            Page Left).<br class="calibre6" /><br class="calibre6" /></li>
+
+          <li class="calibre10"><b class="calibre11">Progress indicators</b><br class="calibre6" /> &ndash; A double bar
+            for <b class="calibre11">ePub</b> books: the top bar represents chapters, and the lower bar indicates
+            progress within the current chapter.<br class="calibre6" /> &ndash; A single bar for <b
+              class="calibre11">Comics</b>/<b class="calibre11">Graphic Novels</b> indicating pages read.<br
+              class="calibre6" /><br class="calibre6" /></li>
+
+          <li class="calibre10"><span class="calibre16"><b class="calibre17"></b></span> <b
+              class="calibre11">Next</b>.<br class="calibre6" /> For <b class="calibre11">ePub</b> books, jumps to the
+            <i class="calibre8">start</i> of the next chapter, resetting the read position.<br class="calibre6" /> For
+            <b class="calibre11">CBx</b> books, this jumps to the next page (equivalent to Page Right).<br
+              class="calibre6" /><br class="calibre6" />
+          </li>
+
+          <li class="calibre10"><span class="calibre16"><b class="calibre17"></b></span> <b class="calibre11">Final
+              Page</b>.<br class="calibre6" /> For <b class="calibre11">ePub</b> books, jumps to the <i
+              class="calibre8">start</i> of the final chapter, resetting the read position.<br class="calibre6" /> For
+            <b class="calibre11">CBx</b> books, this jumps to the last page image.<br class="calibre6" /><br
+              class="calibre6" />
+          </li>
+        </ul>
+
+        <p class="calibre7">In general, for each book, <i class="calibre8">YaerZero</i> remembers which paragraph (<b
+            class="calibre11">ePub</b>) or page (<b class="calibre11">CBx</b>) was last viewed.</p>
+      </div>
+
+      <div class="calibre12"></div>
+    </main>
+  </div>
+
+
+  <div class="calibre1" id="calibre_link-6">
+
+
+    <main class="content">
+      <h2 class="calibre5">Developer Notes, Credits and Acknowledgements</h2>
+
+      <p class="calibre7">The release version of <i class="calibre8">YaerZero</i> is the end of a very long road.</p>
+
+      <p class="calibre7"><i class="calibre8">YaerZero</i> started as a hobby project, just to keep my hand in as a
+        coder. It was originally written in C++/CLI using Visual Studio 2012 and .NET Framework 4.5, aiming to be
+        compatible with Windows Phone 8.0 as well as Windows 8.0. That proved to be a lot harder than expected, due to
+        incomplete API support for many required features. Sandboxing and security restrictions made a lot of potential
+        approaches far more difficult than they should have been. It became obvious that .NET on Windows Phone was a
+        significant pain point.</p>
+
+      <p class="calibre7">The rapid evolution to Windows 8.1 and then to Windows 10 kept moving the goalposts. The
+        decision was made to switch to UWP and C++/CX, which promised better support for the required features and
+        removed the dependency on the .NET Framework. This was a significant rewrite, abandoning Windows Phone along the
+        way, but it paid off in the end, allowing easy access to a large subset of traditional Win32 APIs, modern UWP
+        design, and real C++11/14/17 for fast performance.</p>
+
+      <p class="calibre7">The first pass at creating the program attempted to combine reading and display into a single
+        step. That was a poor choice &mdash; it quickly became clear that separating the two concerns would make both
+        easier to implement and maintain, as well as making library management and future expansion much simpler.</p>
+
+      <p class="calibre7">The UI went from a test harness spilling out raw XHTML to a fully featured UWP XAML interface,
+        with support for touch, mouse, keyboard, and pen input. The reading engine went from a simple WebView loading
+        raw XHTML to a full-featured ebook processor, supporting both <b class="calibre11">ePub2</b> and <b
+          class="calibre11">ePub3</b>, as well as <b class="calibre11">CBZ</b> and <b class="calibre11">CBR</b> graphic
+        novels and comics.</p>
+
+      <p class="calibre7"><i class="calibre8">YaerZero</i> is currently written in C++17 using <i
+          class="calibre8">Microsoft Visual Studio 2026 (Community Edition)</i>, with embedded JavaScript, HTML, and CSS
+        where required.</p>
+
+      <p class="calibre7"><b class="calibre11">ePub</b> processing requires handling ZIP decompression. The unzip
+        decompression algorithm is public domain. Many different C language implementations were examined before
+        deciding to implement a more focused C++ version, better suited to the task than a generalised unzip library.
+      </p>
+
+      <p class="calibre7">Once unzip was working and <b class="calibre11">ePub</b> processing was functional, it seemed
+        obvious to add <b class="calibre11">CBZ</b> support. Indeed, it “just worked” once a presentation format
+        compatible with the existing UI was decided upon.</p>
+
+      <p class="calibre7"><b class="calibre11">CBR</b> was a very different deal. Once decompressed, it would slot
+        straight into the <b class="calibre11">CBZ</b> handling pipeline. Decompression was the problem.</p>
+
+      <p class="calibre7"><b class="calibre11">CBR</b> uses <b class="calibre11">RAR</b> compression, which is
+        proprietary to <a href="https://www.win-rar.com/"><i class="calibre8">RARLAB</i></a>. The command-line and
+        linkable-library UnRAR C++ source is publicly available on <a
+          href="https://github.com/pmachapman/unrar">GitHub</a> free to use, as long as it is not used to
+        reverse-engineer the RAR compression algorithm. The current README and license are available at the link above.
+        UnRAR also contains other sources that require (and deserve) acknowledgement &mdash; please refer to <a
+          href="https://github.com/pmachapman/unrar/blob/master/acknow.txt">acknow.txt</a> for further details.</p>
+
+      <p class="calibre7">UnRAR has a long history. Over the years, the codebase has accumulated several generations of
+        legacy C++ constructs, many of which represent best practices from earlier times but are no longer relevant
+        today. It is an actively maintained codebase, with stability and backwards compatibility at its core. Old code
+        that has been tested and proven over many years is not lightly discarded, giving us a fascinating peek into the
+        history of C++ development practices.</p>
+
+      <p class="calibre7">The earliest parts look very much like C code, with manual memory management and pointer
+        arithmetic throughout. Later parts show increasing use of C++ features such as classes, templates, and
+        exceptions. Modern C++ features &mdash; smart pointers, STL containers, etc. &mdash; have been introduced
+        incrementally where new code has been written, bugs fixed, or improvements made. It is a patchwork of different
+        styles and practices, reflecting the evolution of C++ over the years.</p>
+
+      <p class="calibre7">Examination of the UnRAR source made it very clear that it would require either a significant
+        rewrite of the command-line driven program to fit within the UWP framework of <i class="calibre8">YaerZero</i>,
+        or linking in the compiled library. The decision was made to rewrite and avoid an opaque black box at the core
+        of the application. The UnRAR codebase is large and complex, and the rewrite took many months of work. It was
+        necessary to understand the entire codebase, as well as the intricacies of the RAR compression format, in order
+        to produce a working equivalent.</p>
+
+      <p class="calibre7">A small fraction of the original code <i class="calibre8">does</i> survive intact and
+        unchanged, and none of the revised code would exist without being able to refer back to the original source.
+        Frequently, debugging required running a debug build of UnRAR alongside a build of <i
+          class="calibre8">YaerZero</i>, comparing behaviour of the dictionary window in memory at the individual byte
+        level. Many thanks to the original UnRAR authors for making this possible. Not sarcasm.</p>
+
+      <p class="calibre7">As an observation: RAR decompression is extremely fast compared with ZIP decompression.
+        Despite the extra complexity of the RAR format, it is significantly faster. The author suspects this is due to
+        the use of larger dictionary sizes (4MB, or 32MB in v5.0+, versus 32K), making better use of modern hardware and
+        allowing for better compression ratios and faster decompression speeds. The ZIP format has not evolved much
+        since its inception in the DOS era of the late 1980s, while RAR has continued to evolve with new features and
+        improvements.</p>
+
+      <p class="calibre7"><b class="calibre11">Future directions</b>.<br class="calibre6" /> I hope to move the project
+        to C++/WinRT in the near future, to take advantage of the more modern language projections and better support
+        for asynchronous programming. This will be a significant effort, but one that will improve the maintainability
+        and performance of the application. That would allow me to update the codebase to C++20 and beyond.</p>
+
+      <p class="calibre7">I may also move to WebView2 for rendering, as WebView is being deprecated. This would allow
+        better support for modern web standards and enable more rendering effects.</p>
+    </main>
+  </div>
+
+
+  <div class="calibre1" id="calibre_link-7">
+    <main class="content">
+      <h2 class="calibre5">Version History</h2>
+
+      <h3 id="calibre_link-30" class="sigil_not_in_toc1">Version 1.0.18.0</h3>
+
+      <p class="calibre7">Bug fixes and performance improvements, including:</p>
+
+      <ul class="calibre9">
+        <li class="calibre10">Fixes for books with internal html files containing ! characters.</li>
+
+        <li class="calibre10">Reliability and stability fixes.</li>
+      </ul>
+
+      <p class="calibre7"></p>
+
+      <hr width="25%" class="calibre18" />
+
+      <h3 id="calibre_link-31" class="sigil_not_in_toc1">Version 1.0.17.0</h3>
+
+      <p class="calibre7">Bug fixes and performance improvements, including:</p>
+
+      <ul class="calibre9">
+        <li class="calibre10">Fixed a regression in merged epub handling.</li>
+
+        <li class="calibre10">Fixed instabilities caused when files listed in epub contents are missing from the
+          archive.</li>
+
+        <li class="calibre10">Better keyboard handling and more tooltips</li>
+
+        <li class="calibre10">Reliability and stability fixes.</li>
+      </ul>
+
+      <p class="calibre7"></p>
+
+      <hr width="25%" class="calibre18" />
+
+      <h3 id="calibre_link-32" class="sigil_not_in_toc1">Version 1.0.16.0</h3>
+
+      <p class="calibre7">Minor bug fixes and performance improvements, including:</p>
+
+      <ul class="calibre9">
+        <li class="calibre10">RAR4 Decoding error in extremely rare cases.</li>
+
+        <li class="calibre10">Reliability and performance fixes.</li>
+      </ul>
+
+      <p class="calibre7"></p>
+
+      <hr width="25%" class="calibre18" />
+
+      <h3 id="calibre_link-33" class="sigil_not_in_toc1">Version 1.0.15.0</h3>
+
+      <p class="calibre7">Minor bug fixes and performance improvements, including:</p>
+
+      <ul class="calibre9">
+        <li class="calibre10">Improved display on scaled screens.</li>
+
+        <li class="calibre10">Reliability and performance fixes.</li>
+      </ul>
+
+
+      <hr width="25%" class="calibre18" />
+
+      <h3 id="calibre_link-34" class="sigil_not_in_toc1">Version 1.0.14.0</h3>
+
+      <p class="calibre7">Initial Release</p>
+
+      <p class="calibre7"></p>
+    </main>
+  </div>
+
+
+  <div class="calibre1" id="calibre_link-8">
+    <main class="content">
+      <h2 id="calibre_link-40" class="calibre5">AI Statement</h2>
+
+      <p class="calibre7">The first commit to this project was made in 2015 &mdash; well before any publicly available
+        AI coding assistants became available.</p>
+
+      <p class="calibre7">In May 2024, Copilot was integrated into Visual Studio 2022, and I was initially hostile to
+        using it. I soon discovered that it was a very good way of finding documentation &mdash; a process that has
+        become increasingly frustrating over the years. I remember when the Win32 API reference and Stroustrup were all
+        that was required, but those days are long past.</p>
+
+      <p class="calibre7">With later revisions, I have found AI to be generally helpful at finding information outside
+        of my core competencies, but it is still overconfident, obsequious, and prone to hallucination. While AI has
+        been used to review code and suggest technical improvements, there is no purely AI‑generated code within <i
+          class="calibre8">YaerZero</i>. Most of it was written before AI was available. Nothing has been copy‑pasted
+        without significant revision and testing.</p>
+
+      <p class="calibre7">The most frequent use, outside of finding documentation, has been generating complex regular
+        expressions.</p>
+
+      <p class="calibre7">Copilot <i class="calibre8">has</i> been very satisfying to complain to when dealing with the
+        frustrations of very bad design decisions that crop up far too often in UWP.</p>
+
+      <p class="calibre7">I believe that AI is a tool, and like any tool, it can be misused. It is not a replacement for
+        human creativity, judgement, or skill. It is a supplement. Copilot wrote this paragraph. ;)</p>
+
+      <p class="calibre7">Just say NO! to Vibe‑Coding.</p>
+    </main>
+  </div>
+
+
+  <div class="calibre1" id="calibre_link-9">
+    <main class="content">
+      <h2 class="calibre5">Privacy Policy</h2>
+
+      <p class="calibre7"><i class="calibre8">YaerZero</i> does not collect, store, or transmit any personal data. All
+        processing is done locally on the user's device.</p>
+
+      <p class="calibre7">There are no telemetry or analytics features included in the application. User privacy is
+        respected and protected at all times.</p>
+
+      <p class="calibre7">For more information, please contact the developer at <a
+          href="mailto:mac_logo@hotmail.com">mac_logo@hotmail.com</a>.</p>
+    </main>
+  </div>
+
+
+  <div class="calibre1" id="calibre_link-10">
+    <main class="content">
+      <h2 class="calibre5">Licenses and Acknowledgements</h2>
+
+      <code class="calibre22">
+
+
+  <h3 id="calibre_link-35" class="sigil_not_in_toc1">Boost C++ Libraries</h3>
+
+
+		
+
+  <pre class="calibre23">This app makes use of parts of the <a href="https://www.boost.org/" target="_blank"><b class="calibre11">Boost C++ Libraries</b></a>,
+distributed under the <b class="calibre11">Boost Software License</b>, Version 1.0.
 The original license text is available at: 
 <a href="https://www.boost.org/LICENSE_1_0.txt" target="_blank">https://www.boost.org/LICENSE_1_0.txt</a>
 
-The <b>Boost Software License</b> does <i>not</i> require me to include 
+The <b class="calibre11">Boost Software License</b> does <i class="calibre8">not</i> require me to include 
 the full text of the license, distribute the source code, or 
 provide attribution, but I would like to acknowledge the use of 
 Boost and thank the developers for their work on these libraries. 
@@ -778,22 +738,27 @@ Boost provides a wide range of powerful and efficient C++
 libraries that have been invaluable in the development of this 
 application. 
 
-All C++ code <i>that makes use of</i> the <b>Boost C++ Libraries</b>, in this 
+All C++ code <i class="calibre8">that makes use of</i> the <b class="calibre11">Boost C++ Libraries</b>, in this 
 application, is original and written by the author, with the 
-exception of the parts of the <b>Boost C++ Libraries</b> used 
-'as-is' under the terms of the <b>Boost Software License</b>.
+exception of the parts of the <b class="calibre11">Boost C++ Libraries</b> used 
+'as-is' under the terms of the <b class="calibre11">Boost Software License</b>.
 
 It is the opinion of the author that every C++ developer should 
-be familiar with <b>Boost</b>. The libraries contain a wealth of 
+be familiar with <b class="calibre11">Boost</b>. The libraries contain a wealth of 
 functionality that can speed and enhance C++ development. 
 
-Many features that are now part of the <i>C++ Standard Library</i>
-were first developed and tested in <b>Boost</b> and the libraries 
+Many features that are now part of the <i class="calibre8">C++ Standard Library</i>
+were first developed and tested in <b class="calibre11">Boost</b> and the libraries 
 continue to be a valuable resource for all C++ developers. 
 </pre>
-			<h4>UnRAR</h4>	
-<pre>
-// UnRAR source code may be used in any software to handle
+
+
+			
+
+  <h3 id="calibre_link-36" class="sigil_not_in_toc1">UnRAR</h3>
+
+	
+  <pre class="calibre23">// UnRAR source code may be used in any software to handle
 // RAR archives without limitations free of charge, but cannot be
 // used to develop RAR (WinRAR) compatible archivers or to
 // re-create the RAR compression algorithm, which is proprietary.
@@ -802,12 +767,126 @@ continue to be a valuable resource for all C++ developers.
 The original license text is available at:
 <a href="https://github.com/pmachapman/unrar/blob/master/license.txt" target="_blank">unrar license.txt</a>
 </pre>
-</code>
-		<hr />
 
-		<p style="text-align: center;">©2024 LanaRoseWare. All rights reserved.</p>
 
-	</main>
+  </code>
+
+      <hr class="calibre18" />
+
+      <p class="calibre24">©2024 LanaRoseWare. All rights reserved.</p>
+    </main>
+  </div>
+
+
+  <div class="calibre1" id="calibre_link-11">
+    <div class="sgc-toc-title">Table of Contents</div>
+    <div class="sgc-toc-level">
+      <a href="#calibre_link-12">Yet Another Ebook Reader</a>
+      <div class="sgc-toc-level1">
+        <a href="#calibre_link-13">YearZero Privacy Policy</a>
+      </div>
+      <div class="sgc-toc-level1">
+        <a href="#calibre_link-14">Description</a>
+        <div class="sgc-toc-level1">
+          <a href="#calibre_link-1">ePub 2.x and 3.x</a>
+        </div>
+        <div class="sgc-toc-level1">
+          <a href="#calibre_link-2">CBZ and CBR (CBx)</a>
+        </div>
+      </div>
+      <div class="sgc-toc-level1">
+        <a href="#calibre_link-3">The Initial Experience &ndash; An Overview</a>
+        <div class="sgc-toc-level1">
+          <a href="#calibre_link-15">When you first launch YaerZero</a>
+          <div class="sgc-toc-level1">
+            <a href="#calibre_link-16">The Menu Bar Icons</a>
+          </div>
+        </div>
+      </div>
+      <div class="sgc-toc-level1">
+        <a href="#calibre_link-17">The Main Library Window</a>
+        <div class="sgc-toc-level1">
+          <a href="#calibre_link-18">The untitled top-left section</a>
+        </div>
+        <div class="sgc-toc-level1">
+          <a href="#calibre_link-19">Recent Books</a>
+        </div>
+        <div class="sgc-toc-level1">
+          <a href="#calibre_link-20">Library Navigation</a>
+        </div>
+        <div class="sgc-toc-level1">
+          <a href="#calibre_link-21">The Bottom Bar</a>
+        </div>
+      </div>
+      <div class="sgc-toc-level1">
+        <a href="#calibre_link-4">Adding Books to YaerZero</a>
+        <div class="sgc-toc-level1">
+          <a href="#calibre_link-22">By File Picker...</a>
+        </div>
+        <div class="sgc-toc-level1">
+          <a href="#calibre_link-23">By Double-Clicking, Right-Clicking/Long-Hold and Select...</a>
+        </div>
+        <div class="sgc-toc-level1">
+          <a href="#calibre_link-24">Single Book vs Multiple Book Import</a>
+        </div>
+        <div class="sgc-toc-level1">
+          <a href="#calibre_link-25">Speed of Processing</a>
+        </div>
+        <div class="sgc-toc-level1">
+          <a href="#calibre_link-26">Library Size</a>
+        </div>
+      </div>
+      <div class="sgc-toc-level1">
+        <a href="#calibre_link-5">The Reader View</a>
+      </div>
+      <div class="sgc-toc-level1">
+        <a href="#calibre_link-27">The Title Bar</a>
+      </div>
+      <div class="sgc-toc-level1">
+        <a href="#calibre_link-28">The Side Bar Buttons</a>
+      </div>
+      <div class="sgc-toc-level1">
+        <a href="#calibre_link-29">The Bottom Bar</a>
+      </div>
+    </div>
+    <div class="sgc-toc-level">
+      <a href="#calibre_link-6">Developer Notes, Credits and Acknowledgements</a>
+    </div>
+    <div class="sgc-toc-level">
+      <a href="#calibre_link-7">Version History</a>
+      <div class="sgc-toc-level1">
+        <a href="#calibre_link-30">Version 1.0.18.0</a>
+      </div>
+      <div class="sgc-toc-level1">
+        <a href="#calibre_link-31">Version 1.0.17.0</a>
+      </div>
+      <div class="sgc-toc-level1">
+        <a href="#calibre_link-32">Version 1.0.16.0</a>
+      </div>
+      <div class="sgc-toc-level1">
+        <a href="#calibre_link-33">Version 1.0.15.0</a>
+      </div>
+      <div class="sgc-toc-level1">
+        <a href="#calibre_link-34">Version 1.0.14.0</a>
+      </div>
+    </div>
+    <div class="sgc-toc-level">
+      <a href="#calibre_link-8">AI Statement</a>
+    </div>
+    <div class="sgc-toc-level">
+      <a href="#calibre_link-9">Privacy Policy</a>
+    </div>
+    <div class="sgc-toc-level">
+      <a href="#calibre_link-10">Licenses and Acknowledgements</a>
+      <div class="sgc-toc-level1">
+        <a href="#calibre_link-35">Boost C++ Libraries</a>
+      </div>
+      <div class="sgc-toc-level1">
+        <a href="#calibre_link-36">UnRAR</a>
+      </div>
+    </div>
+  </div>
+
 </body>
 
 </html>

@@ -15,6 +15,8 @@ select
 
 		close the dialog
 
+		Edit nav.html to change ol> to ul>
+
 4 -
 	[Tools]
 	[Add Cover]

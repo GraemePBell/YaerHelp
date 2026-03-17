@@ -1,3 +1,4 @@
+<!doctype html>
 <html>
 
 <head>
@@ -26,6 +27,10 @@
         <li class="calibre10">Under-the-hood technical changes: Upgraded to the latest version of Boost. Moved the
           Thumbnailing code into it's own class. Tweaked the unzip code to make it more readable. Added Microsoft's C++
           Core <a href="https://github.com/microsoft/GSL">Guidelines Support Library</a>.</li>
+
+        <li class="calibre10">Bug Fix: Fixed an issue with books containing colon ':' characters in the names of files
+          within their archives. Discovered while testing on an CBZ file created on Linux. The file name is illegal on
+          Windows.</li>
       </ul>
 
       <h3 class="sigil_not_in_toc1">Version 1.0.18.0</h3>

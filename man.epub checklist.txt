@@ -29,7 +29,7 @@ select
 		<dc:creator>Unknown</dc:creator>
 	with :
 		<dc:creator>Graeme P. Bell</dc:creator>
-		<dc:author>Graeme P. Bell></dc:creator>
+		<dc:author>Graeme P. Bell</dc:creator>
 
 6 -
 	Edit man.html

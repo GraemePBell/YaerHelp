@@ -30,6 +30,10 @@ html {
 	margin: 3em;
 }
 
+.center {
+	text-align: center
+}
+
 img.fullpage {
 	clear: both;
 	text-align: center;
@@ -57,6 +61,29 @@ body {
 	min-width: 5em;
 	width: 30vw;
 	max-width: 15em;
+	float: right;
+	height: auto;
+	margin-left: 1em;
+	max-width: 15em;
+	min-width: 5em;
+	width: 30vw;
+}
+
+
+.fluent-text {
+	font-family: "Segoe Fluent Icons";
+	font-size: 1.29167em;
+	line-height: 1.2
+}
+
+.block_ul {
+	display: block;
+	list-style-type: disc;
+	margin-bottom: 1em;
+	margin-left: 0;
+	margin-right: 0;
+	margin-top: 1em;
+	overflow: auto
 }
 
 /* Mobile-friendly stacking */
@@ -109,17 +136,11 @@ else {
 }
 
 .quin {
-	display: grid;
-	grid-template-columns: auto 1fr auto;
-	grid-template-areas:
-		"left text1 right"
-		"left text2 right"
-		"left text3 right"
-		"left text4 right"
-		"left text5 right";
-	column-gap: 1em;
-	/* row-gap: 1em; */
 	align-items: start;
+	column-gap: 1em;
+	display: grid;
+	grid-template-areas: "left text1 right" "left text2 right" "left text3 right" "left text4 right" "left text5 right";
+	grid-template-columns: auto 1fr auto
 }
 
 .left {

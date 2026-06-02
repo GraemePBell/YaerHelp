@@ -24,6 +24,36 @@
 
       <hr width="25%" />
   -->
+      <h3>Version 1.0.23.0</h3>
+      <p>Bug fixes and performance improvements, including:</p>
+      <ul>
+        <li>
+          Bug Fix for extremely long cover file names in ePubs.
+        </li>
+        <li>
+          Mitigation for erroneous<b>&lt;/img&gt;</b> tags.
+          The HTML specification defines the <b>&lt;img&gt;</b> tag as a "void" element, which means it cannot have any
+          content
+          and must not have an end tag.
+          However, some ePubs do include an end tag for the element, even though this is not valid according to the
+          specification.
+        </li>
+        <li>
+          Mitigation for a bad or missing MIMETYPE file in otherwise valid ePubs.
+        </li>
+        <li>
+          Added the ability to play embedded video files, if supported by the embedded browser.
+        </li>
+        <li>
+          Many small stability, reliability and portability fixes.
+        </li>
+        <li>
+          Updated to Boost 1.91.
+        </li>
+      </ul>
+
+      <hr width="25%" />
+
       <h3>Version 1.0.22.0</h3>
       <p>Bug fixes and performance improvements, including:</p>
       <ul>

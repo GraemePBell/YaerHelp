@@ -663,7 +663,7 @@
 
       <p>It produced code so bad, that it could compromise the entire system.</p>
 
-      <p>Initially, it looked a bit clunky, but serviceable. It used a <code>function(int argc, wchart_t argv[])</code>
+      <p>Initially, it looked a bit clunky, but serviceable. It used a <br /><code>function(int argc, wchar_t* argv[])</code><br />
         interface, which was not ideal, but there's a lot of history to it, and a lot of excellent examples of safe
         usage, out in the wild. Internally, the function was looping over the input <code>argc</code> times and
         passing pointers to the data into a struct, for what I surmised must be extra processing. Again, I was a bit

@@ -31,7 +31,7 @@ select
 6 -
 	[Tools]
 	[Add Cover]
-	select 000005.png
+	select 000005.jpeg
 	[ok]
 
 7 -

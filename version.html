@@ -24,6 +24,23 @@
 
       <hr width="25%" />
   -->
+      <h3>Version 2.0.04.0</h3>
+      <p>Minor feature release.</p>
+      <ul>
+        <li>
+          Added pictorial tooltips back to into the Library Views.
+        </li>
+        <li>
+          Stability fixes.
+        </li>
+        <li>Fix for very rare, but not rare enough, crash on right-click due to WinUI's more aggressive virtualisation
+          of ListView controls. It now handles the event more gracefully. Commentary - Why does it recycle a control
+          when it's just been interacted with? That seems a bit *too* aggressive.</li>
+        <li>Fix for issue with umlauts in file paths.</li>
+        <li>Fix for WebView2 not loading UTF8 reliably if not explicitly specified with a BOM.</li>
+      </ul>
+
+      <hr width="25%" />
       <h3>Version 2.0.03.0</h3>
       <p>Minor feature release.</p>
       <ul>
@@ -42,7 +59,7 @@
         <li>Better Contents Page handling.</li>
       </ul>
 
-
+      <hr width="25%" />
       <h3>Version 2.0.02.0</h3>
       <p>Minor bugfix release.</p>
       <ul>

@@ -24,6 +24,36 @@
 
       <hr width="25%" />
   -->
+      <h3>Version 2.0.06.0</h3>
+      <p>Minor feature release.</p>
+      <ul>
+        <li>
+          Added support for deleting books from the library, most recent list and the panel, using the keyboard shortcut
+          Ctrl+D.
+        </li>
+        <li>
+          Additional UI feedback on long-running delete operations.
+        </li>
+        <li>
+          Progress bar for long-running import operations.
+        </li>
+        <li>
+          Small code optimisations with C++20/23 language features.
+        </li>
+      </ul>
+      <p>In-wild Bug Fixes - both caused by the WebView2 chromium engine having some interesting CSS edge cases.
+        EdgeHTML either ignored or handled these cases better. Can always rely on legitimate publishers to push the
+        boundaries of well-formed content. In this cases, both books had used preprocessors to generate final the CSS
+        and they left artifacts behind. I have opinions on this.</p>
+      <ul>
+        <li>
+          Fix for black on black text in a book due to complex CSS in the header style element.
+        </li>
+        <li>
+          Fix for a full WebView2 hang when opening an epub with complex and somewhat malformed CSS, in a CSS file, interacted with YaerZero's own layout, causing WebView2 to go a bit loopy.
+        </li>
+      </ul>
+      <hr width="25%" />
       <h3>Version 2.0.05.0</h3>
       <p>Minor bug-fix release.</p>
       <ul>

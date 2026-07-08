@@ -43,14 +43,15 @@
       </ul>
       <p>In-wild Bug Fixes - both caused by the WebView2 chromium engine having some interesting CSS edge cases.
         EdgeHTML either ignored or handled these cases better. Can always rely on legitimate publishers to push the
-        boundaries of well-formed content. In this cases, both books had used preprocessors to generate final the CSS
-        and they left artifacts behind. I have opinions on this.</p>
+        boundaries of well-formed content. In these cases, both book publishers had used preprocessors to generate final
+        the CSS and they left artifacts behind. I have opinions on this.</p>
       <ul>
         <li>
           Fix for black on black text in a book due to complex CSS in the header style element.
         </li>
         <li>
-          Fix for a full WebView2 hang when opening an epub with complex and somewhat malformed CSS, in a CSS file, interacted with YaerZero's own layout, causing WebView2 to go a bit loopy.
+          Fix for a full WebView2 hang when opening an epub with complex and somewhat malformed CSS, in a CSS file,
+          interacted with YaerZero's own layout, causing WebView2 to go a bit loopy.
         </li>
       </ul>
       <hr width="25%" />

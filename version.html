@@ -24,6 +24,23 @@
 
       <hr width="25%" />
   -->
+      <h3>Version 2.0.07.0</h3>
+      <p>Minor feature release.</p>
+      <ul>
+        <li>
+          Thumbnailing of images now <i>explicitly</i> uses up to 15 parallel threads - or hardware threads minus one -
+          whichever is fewer. This results in a significant speedup of Comic Book processing on modern, multicore,
+          CPUs. The previous implementation based on the UWP version serialised output as thumbnailing was very much
+          faster on UWP.
+        </li>
+      </ul>
+      <p>Bug Fix.</p>
+      <ul>
+        <li>
+          Regression of handling internal covers in merged epubs.
+        </li>
+      </ul>
+      <hr width="25%" />
       <h3>Version 2.0.06.0</h3>
       <p>Minor feature release.</p>
       <ul>

@@ -24,6 +24,57 @@
 
       <hr width="25%" />
   -->
+      <h3>Version 2.0.08.0</h3>
+      <p>Minor bug-fix release.</p>
+      <ul>
+        <li>
+          Speed, reliability and "quality-of-life" improvements.
+        </li>
+      </ul>
+      <p>Commentary:</p>
+      <ul>
+        <li>
+          <p>As a programmer who likes to get down in the weeds, so-to-speak, that kind of utterly uninformative
+            "release notes" are an, admittedly minor, irritation. Stuff changed, nothing I can explain without getting
+            more technical than an average user wants to know.</p>
+          <p>I'm not an average user - maybe you're not either.</p>
+          <p>Some CSS management fixes, re-organising the code that parses and regularises incoming CSS.</p>
+          <p>Continuing to replace std::wstring and local string literals with constexpr std::wstring_view. Likewise,
+            replacing std::vector with constexpr std::array, wherever the size is fixed and known at compile time.</p>
+          <p>
+            Fixed a problem with one particular epub that caused the program to hang on thumbnail generation. Still
+            investigating the root cause, but the result was a duplication in the list of thumbnails to be generated and
+            the code was waiting on an image that would never appear. De-duplicated the std::vector, while still trying
+            to figure out why the code would write twice, just for that one book. It's all very strange, but the bodge
+            is in place and the program no longer hangs on that book.
+            The root cause will be found and fixed in a future release.
+          </p>
+          <p>
+            Gathered together all the string literals used as file extensions, moved them into a single header file and
+            made them constexpr std::wstring_view. When in the heat of coding it's too easy to type ".jpg" rather than a
+            consistent constant name (wide_JPG_ext, u8_JPG_ext, narrow_JPG_ext, or whatever). Or ".jpg" in one place and
+            ".jpeg" in another, or ".cbz" and ".zip". Or worse, ".jpg" and ".JPG". I found no errors, but now it's all
+            in one place and consistent.
+          </p>
+          <p>
+            Fixed an edge-case in content page handling, where the old content page from a previous book was being held
+            and overwriting the new value. It required a series of steps to reproduce that was very rare in the UWP
+            version (effectively unreproducible because UWP just does the right thing when marshalling data across the
+            ABI), but it became slightly more likely in the WinUI version where I have to mimic the UWP marshalling
+            behaviour.
+          </p>
+          <p>
+            Handled the fallback case of a missing cover image. This was a solved problem in the EdgeHTML version, but
+            WebView2 is a bit more awkward about HTML reading from the APP package. The simplest solution was, if a book
+            has no cover, to copy the fallback cover image, from the APP package, into the book images folder and
+            reference it from there.
+          </p>
+          <p>
+            Displaying ampersands in book titles regressed. Now fixed.
+          </p>
+        </li>
+      </ul>
+      <hr width="25%" />
       <h3>Version 2.0.07.0</h3>
       <p>Minor feature release.</p>
       <ul>

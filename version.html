@@ -24,11 +24,45 @@
 
       <hr width="25%" />
   -->
+      <h3>Version 2.0.11.0</h3>
+      <p>Performance Improvements release.</p>
+      <ul>
+        <li>
+          Generally faster and less memory heavy. The biggest gains are in ePub and CBZ import.
+        </li>
+      </ul>
+      <p>Commentary:</p>
+      <ul>
+        <li>
+          <p>
+            Lots of small changes, such as more use of constexpr, std::string_view and improvements in initialisation.
+            Code has been re-ordered of code to
+            make better use of data locality, cache-efficiency and reduce the chances of pipeline stalls. This results
+            in
+            a general improvemnent in performance and memory usage.
+          </p>
+          <p>
+            The biggest gains are in ePub and CBZ import, where, along with the other changes, the unzip code has been
+            restructured using std::span to
+            avoid making unnecessary copies of data, while remaining safe and robust. The speed gain can be up to 50%
+            and average memory usage is reduced by a similar amount.
+          </p>
+          <p>
+            The code is now more readable and maintainable, while also being faster and much more memory efficient.
+          </p>
+          <p>
+            These are the kind of changes that I was keen to incorporate into the codebase, but was unable due to, due
+            to the UWP codebase being locked to C++17.
+          </p>
+        </li>
+      </ul>
+      <hr width="25%" />
       <h3>Version 2.0.10.0</h3>
       <p>Minor bug-fix release.</p>
       <ul>
         <li>
-          Fix for WebView2 not liking CSS with Windows-style paths for font-face entries. EdgeHTML was a bit more lax in this
+          Fix for WebView2 not liking CSS with Windows-style paths for font-face entries. EdgeHTML was a bit more lax in
+          this
           respect.
         </li>
       </ul>

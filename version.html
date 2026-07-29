@@ -24,8 +24,38 @@
 
       <hr width="25%" />
   -->
+      <h3>Version 2.0.12.0</h3>
+      <p>Performance Improvements Release - The Sequel.</p>
+      <ul>
+        <li>
+          Even faster and even less memory-heavy. Significant speed gains in both ZIP (ePub and CBZ), and in RAR (CBR)
+          decompression.
+        </li>
+      </ul>
+      <p>Commentary:</p>
+      <ul>
+        <li>
+          <p>
+            Applying the lessons learned in the previous release, I have used std::span wherever sensible. I no longer
+            copy or move data buffers around, passing std::span has
+            reduced expensive heap allocations and overall memory usage.
+          </p>
+          <p>
+            I'd like to say it's 10x now, and on some books it is, but the average improvement is between 2x and 5x. It
+            is never slower.
+            The most pleasing improvement is on large, illustrated, technical epubs where the time to complete
+            processing has dropped from a full-on coffee-break, to an appreciative sip and a nibble on a biccie.
+          </p>
+          <p>
+            C++20/23 gave me these optimisations, without sacrificing safety or the readability of my code. The
+            architecture is still mine, but the code is now more modern, more efficient and more maintainable.
+            I am very pleased with the results.
+          </p>
+        </li>
+      </ul>
+      <hr width="25%" />
       <h3>Version 2.0.11.0</h3>
-      <p>Performance Improvements release.</p>
+      <p>Performance Improvements Release.</p>
       <ul>
         <li>
           Generally faster and less memory heavy. The biggest gains are in ePub and CBZ import.

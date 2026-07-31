@@ -131,12 +131,10 @@
 
 				<p><b>CBZ</b> (<i>Comic Book Zip</i>) and <b>CBR</b> (<i>Comic Book Rar</i>) are popular formats for
 					digital
-					comics
-					and graphic novels. These formats are compressed archives (<b>ZIP</b> for <b>CBZ</b> and
+					comics and graphic novels. These formats are compressed archives (<b>ZIP</b> for <b>CBZ</b> and
 					<b>RAR</b> for <b>CBR</b>) containing a series of image files that represent the pages of the comic.
 					<i>YaerZero</i> allows users to
-					read <b>CBZ</b> and <b>CBR</b> files, providing an optimal reading
-					experience for graphic content. Where the archive contains a <i>ComicInfo.xml</i> file,
+					read <b>CBZ</b> and <b>CBR</b> files. Where the archive contains a <i>ComicInfo.xml</i> file,
 					<i>YaerZero</i> will
 					use that to display Author, Artist, Title and any Description present.
 				</p>
@@ -355,32 +353,34 @@
 				<h4>Speed of Processing</h4>
 
 				<p><i>YaerZero</i> imports ebooks by decompressing the original file and
-					processing the contents into a format that can be rapidly presented back to the user.</p>
+					processing the contents into a standardised format and layout that can be rapidly presented back to
+					the user.</p>
 
-				<p>This process can be extremely swift for a plain <i>Gutenberg.org</i> <b>ePub</b> of a short story, or
-					it may be much slower for an omnibus edition <b>CBx</b> of a long-running graphic novel series.</p>
-
-				<p>The author has found that the very slowest books to process are generally heavily
-					illustrated textbooks by reputable publishers, <i>e.g.</i> computer programming books. They tend to
-					have interesting structures (often requiring reformatting into canonical <b>ePub</b> format before
-					they can be processed) and many hundreds, or even thousands, of relatively small images.</p>
+				<p>This can be extremely swift - less than a second, depending on the device - for a plain
+					<i>Gutenberg.org</i> <b>ePub</b> of a short story, or
+					it may be much slower - minutes for an omnibus edition <b>CBx</b> of a long-running graphic novel
+					series. Currently (Version 2.0.12) on a 16 core 9th Generation Intel i9, a CBx book with 1000 4K
+					images takes about a minute to fully process. Decompression is fast, but the thumbnailing of larger
+					images, to a reasonable quality, is very intensive and depends on available hardware cores.
+				</p>
 
 				<p>At its fastest, <i>YaerZero</i> will complete processing before the user
-					realises it has even started. At its slowest, it’s time for a coffee.</p>
+					realises it has even started. At its slowest, over multiple large graphic novels, it may be time for
+					a coffee.</p>
 
 				<p>Once a book is processed and present in the library, load times are, generally, extremely
 					rapid. High quality graphic-novels <i>can</i> be a challenge, since they may contain images much
-					larger than the resolution of the physical screen of the device.</p>
+					larger than the resolution of the physical screen of the device. 24bit images at upwards of 8K
+					resolution take a noticable time to be displayed.</p>
 
 				<h4>Library Size</h4>
 
 				<p><i>YaerZero</i> accesses local storage to store, manage, and present books.
 					A large processed library will eventually cause <i>YaerZero</i> to slow down in daily use. It
 					has been tested it with libraries of over 1500 books of various kinds, and it is still quite usable,
-					but it is
-					recommended that users keep their libraries to a more manageable size. The author would smaller
-					libraries of
-					less than 500 processed books to keep performance snappy.</p>
+					but it is recommended that users keep their libraries to a more manageable size. The author suggests
+					smaller
+					libraries of less than 500 processed books to keep performance snappy.</p>
 
 				<p>I also note that while <b>ePub</b> formatted books are generally small
 					(often less than 1 <i>Megabyte</i>), <b>CBx</b> graphic novels can run to

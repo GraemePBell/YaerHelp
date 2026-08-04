@@ -24,6 +24,55 @@
 
       <hr width="25%" />
   -->
+
+      <h3>Version 2.0.13.0</h3>
+      <p>Minor Bug Fix Release.</p>
+      <ul>
+        <li>
+          Fixed a rare crash caused by reporting multiple broken books in a single, extended operation.
+        </li>
+      </ul>
+      <p>Commentary:</p>
+      <ul>
+        <li>
+          <p>
+            The code was correctly handling unrecoverable archive errors, but reporting it via a custom dialog could
+            result in
+            instability, if the first dialog wasn't dismissed quickly enough. Could, but definitely not always. The
+            asynchronous code meant the diagnostics were rarely in the current thread context.
+          </p>
+          <p>
+            It proved easy to fix, once I got it to be reproducible - two very broken ePub (ZIP) archives in rapid
+            succession.
+            The code was trying to display a second dialog, while the first was still being handled by the Windows
+            Runtime. According to spec, it should either queue or drop the second dialog and carry on. It wasn't doing
+            either reliably. Probably because of my custom dialog.
+          </p>
+          <p>
+            WinUIs handling of MessageDialogs is a bit quirky,
+            requiring a valid and appropriate HWND, which is not always reliably available, so my custom implementation
+            was needed.
+            The
+            fix was to queue and process the dialogs manually.
+          </p>
+          <p>
+            Honestly, that blew me away - WinUI uses it's own internal window handles and they don't always have a valid
+            system
+            HWND available, because, I guess, Windows Runtime does it's own thing. This is not documented anywhere I
+            could find. I found out during the initial port from UWP to WinUI by <i>trying to use</i> the WinUI
+            MessageDialog class and having it sporadically fail
+            with "Invalid HWND" errors. Hence the custom dialog and hence the bug.
+          </p>
+        </li>
+        <li>
+          Some other minor improvements involving std::span&lt;uint8_t&gt; replacing raw pointers in more functions.
+          Renaming of some
+          variables to better reflect usage. Removal of redundant code, e.g. 32-bit build checks. Ongoing checks on
+          compiler issues and workarounds.
+        </li>
+      </ul>
+      <hr width="25%" />
+
       <h3>Version 2.0.12.0</h3>
       <p>Performance Improvements Release - The Sequel.</p>
       <ul>

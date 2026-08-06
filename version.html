@@ -24,6 +24,41 @@
 
       <hr width="25%" />
   -->
+      <h3>Version 2.0.14.0</h3>
+      <p>Minor Bug Fix release.</p>
+      <ul>
+        <li>
+          Mitigation for internal files with ampersands in their names causing WebView2 to fail to parse HTML
+          referencing them, even if the filenames were in quoted attributes.
+        </li>
+      </ul>
+      <p>Commentary:</p>
+      <ul>
+        <li>
+          <h4>Bug fix</h4>
+          <p>
+            I find it difficult to believe that this had not turned up in my in-the-wild test suite before, but now
+            it has, and so it's an issue. Of course, I could say that it's a malformed book, but since other readers
+            handle it, so must YaerZero. The fix is trivial. I have full control of names and they already go through a
+            sanitisation pass, where I can choose any safe character to replace the ampersand. I went with '+' since
+            it's a valid character in both a URI, and a Windows filename, while also being semantically similar to an
+            ampersand.
+          </p>
+        </li>
+        <li>
+          <h4>Code Modernisation</h4>
+          <p>
+            Unrar unpacking interfaces now almost completely raw-pointer free. std::span almost everywhere, smart
+            pointers where needed with std::array and std::vector used for actual data.
+          </p>
+          <p>
+            The only hold-outs are the PPM code and the Virtual Machine for decompression filters. Since the PPM code
+            never seems to get exercised by any of the real-world books I test on, it's not a high priority. The VM code
+            is underway, but as one might expect, it's rather heavy on pointer arithmetic.
+          </p>
+        </li>
+      </ul>
+      <hr width="25%" />
 
       <h3>Version 2.0.13.0</h3>
       <p>Minor Bug Fix Release.</p>
@@ -35,6 +70,7 @@
       <p>Commentary:</p>
       <ul>
         <li>
+          <h4>Bug fix</h4>
           <p>
             The code was correctly handling unrecoverable archive errors, but reporting it via a custom dialog could
             result in
@@ -65,10 +101,13 @@
           </p>
         </li>
         <li>
-          Some other minor improvements involving std::span&lt;uint8_t&gt; replacing raw pointers in more functions.
-          Renaming of some
-          variables to better reflect usage. Removal of redundant code, e.g. 32-bit build checks. Ongoing checks on
-          compiler issues and workarounds.
+          <h4>Code Modernisation</h4>
+          <p>
+            Some other minor improvements involving std::span&lt;uint8_t&gt; replacing raw pointers in more functions.
+            Renaming of some
+            variables to better reflect usage. Removal of redundant code, e.g. 32-bit build checks. Ongoing checks on
+            compiler issues and workarounds.
+          </p>
         </li>
       </ul>
       <hr width="25%" />
@@ -84,6 +123,7 @@
       <p>Commentary:</p>
       <ul>
         <li>
+          <h4>Code Modernisation</h4>
           <p>
             Applying the lessons learned in the previous release, I have used std::span wherever sensible. I no longer
             copy or move data buffers around, passing std::span has
@@ -113,6 +153,7 @@
       <p>Commentary:</p>
       <ul>
         <li>
+          <h4>Code Modernisation</h4>
           <p>
             Lots of small changes, such as more use of constexpr, std::string_view and improvements in initialisation.
             Code has been re-ordered to

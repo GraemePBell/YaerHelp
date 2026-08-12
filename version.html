@@ -24,6 +24,105 @@
 
       <hr width="25%" />
   -->
+      <h3>Version 2.0.15.0</h3>
+      <p>Minor Code Quality Release.</p>
+      <ul>
+        <li>
+          Quality improvements in the Rar Virtual Machine, including removal of raw pointers and use of
+          <code>std::span&lt;uint8_t&gt;</code> for all data buffers.
+        </li>
+      </ul>
+      <p>Commentary:</p>
+      <ul>
+        <li>
+          <h4>Bug fixes</h4>
+          <p>
+            Nothing visible to the end user, but a few latent bugs were found and fixed. The code is now more robust and
+            less likely to fail on malformed input.
+          </p>
+        </li>
+        <li>
+          <h4>Code Modernisation</h4>
+          <p>
+            I completed the removal of raw pointers from the Rar Virtual Machine. After that, I checked whether
+            converting to
+            <code>std::span</code> had exposed any latent bounds‑checking issues by running Address Sanitiser over my
+            problematic
+            books
+            test‑suite. ASAN reported exactly one issue: a single filter over a single file in a single book, again
+            inside the Rar
+            VM. Nothing else was flagged.
+          </p>
+          <p>
+            The underlying memory access was still within the allocated buffer, but the code was now operating inside a
+            subspan with
+            stricter bounds, and was inadvertently stepping past the end of that block.
+          </p>
+          <p>
+            Was it a bug? Not in practice, but it was a potential bug, lying in wait for a malformed input.
+          </p>
+          <p>
+            That particular VM filter combined with the particular image would have produced an broken image file, if
+            erroneous data was used, rather than merely accessed, but the image was unpacked and saved without any
+            problems.
+          </p>
+          <p>
+            However, although the code was only accessing valid memory, it was doing so in a way that no longer matched
+            the stricter
+            limits I had chosen for the new subspans.
+          </p>
+          <p>
+            The fix was to check the number of bytes remaining in the current working <code>std::span</code> and adjust
+            the size of
+            the subspan
+            accordingly.
+          </p>
+          <p>
+            A problem with a simple fix, but it was a good test of my code, my use of <code>std::span</code> and proved
+            to me that ASAN was working correctly &ndash; the execution-speed penalty is prohibitive when it's enabled.
+            It's nice to know it's doing something valuable when I run it.
+          </p>
+          <p>
+            I then ran a full-debug build over my test-suites, to see if it picked up anything the ASAN build didn't.
+            There
+            was another OBI-WAN (Off-By-One, or fencepost) bug, in the adjacent function to the one ASAN had flagged. It
+            is worth noting that I asked Github Copilot about it and it suggesed putting an assert in the failing
+            function. The function that was asserting already.<br /> *shrug*<br />
+            I can't wait for C++26 and the new contracts feature that will let me turn these into compile-time asserts.
+          </p>
+          <p>
+            Why not always use debug builds? Because they are <i>slow</i>. I have a large test suite of books and
+            running them all in debug mode takes a lot longer than in release mode. A run over my pathologically-broken
+            books test-suite takes about 3 minutes in release mode, but nearly an hour in debug mode.
+          </p>
+          <p>
+            Also, debug is not the same binary as release. Optimisations can (and do!) change a lot of code. It's almost
+            always
+            better to code and test on release builds and check failures in debug.
+          </p>
+          <h5>Other Changes</h5>
+          <p>
+            I implemented a banned list of 3rd-party metadata files that sometimes occur in epubs, but cause more hassle
+            than they are
+            worth. Those files are never processed now. The defensive logic, for each of those types can be removed in a
+            later release.
+          </p>
+          <p>
+            Early in development, I had generated <code>8-bit char</code> filenames for the html encapsulated images in
+            graphic
+            novel pages, by using <code>std::filesystem::path</code> as a shortcut. When replacing it with a real
+            <code>std::wstring</code> to <code>std::string</code> function(and later <code>std::u8string</code>), I
+            missed an instance. This
+            could result in very occasionally incorrect characters in (and only in) URIs linking to images with "odd"
+            names. The <code>path</code> uses the system locale to convert wide-characters to 8-bit chars, in this case
+            <code>Win1252</code> and not <code>UTF-8</code>. Finding the missed call allowed me to simplify and
+            remove a swathe of unnecessary translation and checking code, that had built up around handling
+            special-cases.
+          </p>
+        </li>
+      </ul>
+      <hr width="25%" />
+
       <h3>Version 2.0.14.0</h3>
       <p>Minor Bug Fix release.</p>
       <ul>

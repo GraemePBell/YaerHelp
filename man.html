@@ -31,7 +31,7 @@
 			</h3>
 		</header>
 
-		<main class="content">
+		<main>
 			<h3 class="sigil_not_in_toc1"><a href="https://graemepbell.github.io/YaerHelp/PrivacyPolicy.html"
 					target="_blank">YearZero Privacy
 					Policy</a></h3>
@@ -52,17 +52,13 @@
 						<li><b>CBZ</b> graphic novels and comics</li>
 
 						<li><b>CBR</b> graphic novels and comics</li>
+
+						<li><b>PDF</b> Portable documents, books and comics</li>
 					</ul>
 				</div>
 			</div>
-		</main>
-	</div>
 
 
-	<div>
-
-
-		<main class="content">
 			<div>
 				<p>&nbsp;</p>
 
@@ -107,7 +103,34 @@
 			</div>
 
 			<div>
-				<br />
+
+				<h4>PDF Portable Document Format</h4>
+
+				<p>
+					Originating with Adobe in the 1990s, but now under the aegis of the International Standards
+					Organisation - ISO (ISO 32000) -PDF is the <i>de-facto</i> standard for electronic documents. PDF
+					documents are intended to look, as far as practicable, identical on all readers.
+				</p>
+
+				<p><b>PDF</b> format books are available from various sources, including:
+				</p>
+				<ul>
+					<li><a href="https://www.pdfbooksworld.com/" target="_blank">PDF Books World</a> PDF Books World
+						library is a high quality resource for free PDF books, which are digitized version of books
+						attained the
+						public domain status. </li>
+
+					<li><a href="https://www.baen.com/" target="_blank">Baen</a> Books has been bringing readers
+						pulse-pounding, thought-provoking adventures straight from the
+						heart of science fiction and fantasy for decades. As well as their commercial books, they
+						maintain a large library of free books.</li>
+
+					<li><a href="https://www.smashwords.com/" target="_blank">Smashwords</a>, <a
+							href="https://openlibrary.org/" target="_blank">Open Library</a> and <a
+							href="https://manybooks.net/" target="_blank">ManyBooks</a> provide many of their ebooks in
+						PDF format.</li>
+				</ul>
+				<p>&nbsp;</p>
 			</div>
 
 			<div>
@@ -118,14 +141,7 @@
 					degrade
 					gracefully.</p>
 			</div>
-		</main>
-	</div>
 
-
-	<div>
-
-
-		<main class="content">
 			<div>
 				<h4>CBZ and CBR (CBx)</h4>
 
@@ -175,12 +191,7 @@
 						href="https://en.wikipedia.org/wiki/E-book#File_formats" target="_blank">Wikipedia's E-book File
 						Formats</a> article.</p>
 			</div>
-		</main>
-	</div>
 
-
-	<div>
-		<main class="content">
 			<div>
 				<h3 class="sigil_not_in_toc1">The Initial Experience &ndash; An Overview</h3>
 
@@ -298,14 +309,7 @@
 
 				<br />
 			</div>
-		</main>
-	</div>
 
-
-	<div>
-
-
-		<main class="content">
 			<div>
 				<h3>Adding Books to <i>YaerZero</i></h3>
 
@@ -431,15 +435,9 @@
 					<figcaption><i>Details View</i></figcaption>
 				</figure>
 			</div>
-		</main>
-	</div>
 
 
-	<div>
-
-
-		<main class="content">
-			<h3>The Reader View</h3>
+			<h3>The ePUB and CBX Reader View</h3>
 
 			<div>
 				<img class="responsive" src="images/000003.png" alt="Reader View Screenshot"
@@ -491,8 +489,8 @@
 					<i>previous page</i>.
 				</p>
 
-				<div></div>
-
+			</div>
+			<div>
 				<h3>The Bottom Bar</h3>
 
 				<ul class="block_ul">
@@ -546,15 +544,35 @@
 					last viewed.</p>
 			</div>
 
-			<div></div>
-		</main>
-	</div>
+			<h3>The PDF Reader View</h3>
 
+			<div>
+				<img class="responsive" src="images/000004.png" alt="Reader View Screenshot"
+					style="float: right;  margin-right:1rem; margin-bottom:1rem;max-width: 50%;" />
 
-	<div>
+				<p>The <b>PDF Reader</b> view is far more restricted than the other views. There is only
+					limited scope for customisation available, with it being based on the WebView2
+					internal PDF Viewer. Facilties for controlling and interacting with the PDF are limited to those
+					provided by the control. The design of the PDF format does not allow for simple, on-the-fly,
+					modification by intent. It was built as a replacement for immutable paper documents. YearZero is not
+					a full-featured, dedicted PDF reader, but it is adequate for
+					reading most books.
+				</p>
 
+				<h3>The Bottom Bar</h3>
 
-		<main class="content">
+				<ul class="block_ul">
+					<li><span class="fluent-text"><b></b></span> <b>Library
+							View</b>.<br /> Returns to the Library View. <br /><br /></li>
+				</ul>
+
+				<p>Within the PDF View, there are various standard controls used by all common PDF viewers.</p>
+				<p>The PDF view example image is from "Rogue Trooper - Tales of Nu-Earth" Volume 01, "Rogue Trooper",
+					by Gerry Finley-Day and Dave Gibbons. Collection published by <a
+						href="https://www.rebellion.com">Rebellion</a>, originally
+					published in <a href="https://2000ad.com/">2000AD</a> prog 228.</p>
+			</div>
+
 			<h2>Developer Notes, Credits and Acknowledgements</h2>
 
 			<p>The release version of <i>YaerZero</i> is the end of a very long road.</p>
@@ -659,38 +677,27 @@
 				behaviour of the dictionary window in memory at the individual byte
 				level. Many thanks to the original UnRAR authors for making this possible. Not sarcasm.</p>
 
-			<p>As an observation: RAR decompression is extremely fast compared with ZIP decompression.
-				Despite the extra complexity of the RAR format, it is significantly faster. The author suspects this is
-				due to
-				the use of larger dictionary sizes (4MB, or 32MB in v5.0+, versus 32K), making better use of modern
-				hardware and
-				allowing for better compression ratios and faster decompression speeds. The ZIP format has not evolved
-				much
-				since its inception in the DOS era of the late 1980s, while RAR has continued to evolve with new
-				features and
-				improvements.</p>
+			<p>
+				As of Version 2, <i>YaerZero</i> has been rewritten, moving from the Microsoft C++/UWP compiler which is
+				stuck at C++17 and onto the more recent Standard C++23, to use the C++/WinRT projection and the modern WinUI framework. It
+				now also uses WebView2 rather than the unmaintained and deprecated EdgeHTML control for page layout. This will
+				allow new features to be added much more readily
+			</p>
 
-			<p>As of Version 2, <i>YaerZero</i> has been rewritten, moving from the Microsoft C++/UWP compiler which is
-				stuck
-				at
-				C++17 and
-				onto the more recent Standard C++23, to use the C++/WinRT projection and the modern WinUI framework. It
-				now also
-				uses WebView2 rather than the unmaintained and deprecated EdgeHTML control for page layout. This will
-				allow new
-				features to be added much more readily</p>
-
-			<p><b>Future directions</b>.<br /> Perhaps I will enable PDF reading with the modern WebView2. I will
-				definitely
-				move onto C++26 as soon as it becomes available to me. There are still many rough edges from the
-				transition to
-				WinUI and I will be looking to smooth those over, particularly accessibility.</p>
+			<h3>Future directions</h3>
+			<p>
+				There are still many rough edges from the transition to WinUI and I will be looking to smooth them over, particularly accessibility. Using UWP, Version 1 was built with an eye to accessibility by default. Sadly, WinUI is not as fully featured. Even as of August 2026, there are still many missing and unimplemented APIs in the C++/WinRT projection. I am watching keenly for any improvements in this situation, since we were promised that WinUI is the future. Sadly, adding new ways to integrate AI into my workflow seems to have a higher priority than actual functionality.
+			</p>
+			<p>
+				I plan to look at improving the page layout code, using more modern standards that were not available in EdgeHTML. I am particularly intrigued by recent improvements in CSS, possibly reducing the need for JavaScript.  
+			</p>
+			<p>
+				I also fully intend to explore the additional benefits of C++23 (and 26 when available). I don't expect to
+				get quite the boost that <b>std::span</b> brought, but you never know.
+			</p>
+			
 			<p>I welcome feedback and suggestions.</p>
-		</main>
-	</div>
 
-	<div>
-		<main class="content">
 			<h2>AI Statement</h2>
 
 			<h3><i>YaerZero</i> Version 1</h3>
@@ -765,7 +772,7 @@
 			<p>
 			<pre>
     	<code>function(int argc, wchar_t* argv[])</code>
-	</pre>
+		</pre>
 			</p>
 			interface, which was not ideal, but there's a lot of history to it, and a lot of excellent examples of safe
 			usage, out in the wild. Internally, the function was looping over the input <code>argc</code> times and
@@ -817,12 +824,10 @@
 			<p>Anyone trusting Agentic Code without review is making a grave error.</p>
 
 			<p>The Slop is real.</p>
-		</main>
-	</div>
+			<h3><i>YaerZero</i> Version 2.1 </h3>
 
-
-	<div>
-		<main class="content">
+			<p>The development of <i>YaerZero</i> Version 2.1 has seen Copilot being relegated back to mostly a better search engine. It has provided a few code snippets, but nothing that was integrated into the codebase without extensive modification. I have used <i>Github Copilot</i> to help debug a few crashes, but mostly it gets those <i>badly</i> wrong. It's not very good at understanding exceptions across async code. Neither am I, but at least I don't assume every asynchronous exception happens in start-up code.
+			</p>
 			<h2>Privacy Policy</h2>
 
 			<p><i>YaerZero</i> does not collect, store, or transmit any personal data. All
@@ -833,18 +838,13 @@
 
 			<p>For more information, please contact the developer at <a
 					href="mailto:mac_logo@hotmail.com">mac_logo@hotmail.com</a>.</p>
-		</main>
-	</div>
 
-
-	<div>
-		<main class="content">
 			<h2>Licenses and Acknowledgements</h2>
 
 			<code>
 
-
-  <h3 class="sigil_not_in_toc1">Boost C++ Libraries</h3>
+<!-- 
+  		<h3 class="sigil_not_in_toc1">Boost C++ Libraries</h3>
 
 
 		
@@ -875,18 +875,8 @@ Many features that are now part of the <i>C++ Standard Library</i>
 were first developed and tested in <b>Boost</b> and the libraries 
 continue to be a valuable resource for all C++ developers. 
 </pre>
-<br/>
-<h3 class="sigil_not_in_toc1">Microsoft GSL: Guidelines Support Library</h3>
 
-
-<pre>This app makes use of parts of Microsoft's implementation of
-the <a href="https://github.com/microsoft/GSL" target="_blank"><b>C++ Core Guidelines Support Library</b></a>, distributed under
-the <b>MIT License</b>.
-The original license text is available at:<br />
-<a href="https://github.com/microsoft/GSL/blob/main/LICENSE" target="_blank">https://github.com/microsoft/GSL/blob/main/LICENSE</a>.
-
-</pre>
-
+ -->
 			
 
   <h3 class="sigil_not_in_toc1">UnRAR</h3>
@@ -908,9 +898,11 @@ The original license text is available at:<br />
 			<hr />
 
 			<p>©2024 - 2026 LanaRoseWare. All rights reserved.</p>
-		</main>
-	</div>
 
+
+		</main>
+
+	</div>
 
 </body>
 

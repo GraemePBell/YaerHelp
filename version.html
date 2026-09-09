@@ -36,25 +36,25 @@
 					the code to do all the work. The engine was there, the gearbox had been upgraded, but the selector
 					didn’t have a slot for the new gear. Oops. It works now.
 					<br />
-					YaerZero was displaying the truncated internal name, rather than the original name. Sorted now.
+					YaerZero was displaying the truncated internal name of PDFs, rather than the original name. Sorted
+					now.
 				</li>
 				<li>
 					<h5>Performance Improvements</h5>
 					Moving from the <i>UWP</i> Task based multiprocessing to the <i>WinRT</i> and <i>C++ co-routines</i>
 					model meant that my
-					singleton model for decoding books had been quietly deprecated (and practically removed).
+					singleton model for decoding books had been quietly deprecated (and in-practice removed).
 					The UWP version had been firmly
-					single-tasking in it’s approach to book processing. I had attempted a more parallel approach, but
-					the logic was never quite as straight-forward as it should have been. With UWP, it had been
-					surprisingly
-					difficult
-					to get rid of internal shared data and flags when trying to pass information between background
-					tasks and the UI.
-					Combined with the logically (if not necessarily)
-					sequential nature of decompression, this made multi-tasking challenging. Plus, solid RAR
-					archives absolutely require sequential decoding.
+					On modern, multicore processors, the singleton model left a lot of CPU power sitting idle. With the
+					singleton
+					book-structure decoder now not really singleton, I could allocate a thread to each book, without
+					worrying unduly about
+					internal decompressor state. With WinUI requiring me to manage much more of the details of
+					information flow, it allowed
+					me to reach to the point where each Book Structure Processor was safely self-contained.
 					<br /><br />
-					On modern, multicore processors, this leaves a lot of CPU power sitting idle. With the singleton
+					On modern, multicore processors, the singleton model left a lot of CPU power sitting idle. With the
+					singleton
 					book-structure decoder now <i>not</i> really singleton, I could allocate a thread to each book,
 					without
 					worrying unduly about internal decompressor state. With WinUI requiring me to manage much more of
@@ -67,9 +67,9 @@
 					processor and simultaneously overload RAM. Loading and decompressing being the most memory intensive
 					steps. Depending on feedback, I may throttle based on available RAM as well. We’ll see how it goes.
 					<br /><br />
-					A quick test run revealed only one issue. Explicitly clearing a bunch of containers could cause a
-					use-after-free, if the final book in an import was large enough to still be decompressing. So I
-					removed the explicit clearing and let RAII do it’s thing.
+					A quick test run revealed only one issue, easily solved by replacing explicit memory management. So
+					I removed the
+					explicit calls and let RAII do it’s thing.
 					<br /><br />
 					The performance gain is, of course highly dependent on the processor - the greater the number of
 					cores, the

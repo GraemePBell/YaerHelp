@@ -23,6 +23,49 @@
 
       <hr width="25%" />
   -->
+			<h3>Version 2.1.5</h3>
+			<h4>Bug Fixes</h4>
+			<ul>
+				<li>
+					<i>Current book</i> is now always the Most Recent Book <i>loaded</i> when using the Current Book
+					Buttons.
+					<br />
+					<br />
+					Sort on Author wasn't working properly.
+				</li>
+				<li>
+					<h5>Bug Fixes (the short details)</h5>
+					The currently displayed book (in the library) is selected based on which control the user had last
+					selected, but it is not necessarily fully loaded. The process of displaying a selected book would
+					set preconditions to alter the current book under certain circumstances, but not others.<br />
+					This behaviour is intentional. I use a finite-state machine to determine how the many possible
+					user-interactions map to outputs.
+					<br />
+					If the preconditions were met, it would result in me assuming the wrong value for the current book
+					("top of the Library List"), prior to using the Current Book button. I now force the FSM by passing
+					it "top of the MRU list" and *then* read, rather than assuming correctness. The actual current book
+					is <i>always</i> top of the Most Recently Used list.
+					<br />
+					That's a fancy way of saying I made an assumption about a complex set of interactions and I was
+					wrong.
+					<br /><br />
+					When removing the Boost library, I introduced a typo resulting in a comparison failure when sorting
+					on Author name. <br />
+					Hands up, it was a bad copy-pasta-edit. I duplicated my code to
+					upper-case the names, but forgot to rename the variables. That is not-at-all embarrassing. Don't do
+					this at home, kids. And really, don't do it front of witnesses. There will be (well-deserved)
+					mockery.
+					<br />
+					It was discovered in debug mode when the latest stable version of the MSVC build tools asserted with
+					"invalid comparator", while scanning what should have been identical strings in a std::stable_sort.
+					<br />
+					I do like well-placed asserts.
+				</li>
+			</ul>
+
+			<hr width="25%" />
+
+
 			<h3>Version 2.1.4</h3>
 			<h4>Bug Fixes and Performance Improvements</h4>
 			<ul>

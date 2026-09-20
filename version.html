@@ -87,23 +87,15 @@
 					Moving from the <i>UWP</i> Task based multiprocessing to the <i>WinRT</i> and <i>C++ co-routines</i>
 					model meant that my
 					singleton model for decoding books had been quietly deprecated (and in-practice removed).
-					The UWP version had been firmly
-					On modern, multicore processors, the singleton model left a lot of CPU power sitting idle. With the
-					singleton
-					book-structure decoder now not really singleton, I could allocate a thread to each book, without
-					worrying unduly about
-					internal decompressor state. With WinUI requiring me to manage much more of the details of
-					information flow, it allowed
-					me to reach to the point where each Book Structure Processor was safely self-contained.
-					<br /><br />
-					On modern, multicore processors, the singleton model left a lot of CPU power sitting idle. With the
-					singleton
-					book-structure decoder now <i>not</i> really singleton, I could allocate a thread to each book,
+					The UWP version had been firmly locked to sequential decoding, one book at a time.
+					On modern, multicore processors, this singleton model left a lot of CPU power sitting idle. The move
+					to WinRT meant that the
+					book-structure decoder was no longer really singleton, I could allocate a thread to each book,
 					without
-					worrying unduly about internal decompressor state. With WinUI requiring me to manage much more of
-					the details of information
-					flow, it allowed me to reach to the point where my Book Structure Processor was safely
-					self-contained.
+					worrying unduly about
+					internal decompressor state. WinUI requiring me to manage much more of the internal details of the
+					information flow allowed
+					me to reach to a point where each Book Structure Processor was safely self-contained.
 					<br /><br />
 					I decided to use a thread-pool of no more than
 					<i>half</i> the available hardware threads or 8, whichever is smaller. I didn’t want to swamp the
@@ -121,7 +113,8 @@
 					processing time. On a large library of small ePubs, the efficiency does get within shouting distance
 					of the theoretical limits. Which is nice. My library of Gutenberg.org top 100 epub2 and epub3 books
 					has dropped from 45 to 20 seconds. The problematic-books suite is now only 65 seconds, down from 95.
-					Not bad, considering the Windows GUI overheads.
+					Not bad, considering the Windows GUI overheads and all the data marshalling going on in that part of
+					the code.
 				</li>
 			</ul>
 

@@ -42,9 +42,45 @@
 				<li>
 					<h5>Quality Of Life Improvements</h5>
 					<p>
-						Code tidying &amp; removal of dead code. Removal of more raw for-loops, replacement of
-						unordered_sets and unordered_maps with flat_sets and flat_maps. Simplified the handling of file
-						extensions.
+						Code tidying & removal of dead code. Dead code in my context is code that I commented out at
+						least a version ago and
+						didn't miss. I can always go back to source-control if I need it.
+						<br /><br />
+						Removal of more raw for-loops. Raw for-loops are a definite code-smell and are to be avoided
+						wherever possible.
+						Unfortunately, sometimes in decompression algorithms we are iterating through raw buffers. I'm
+						looking for bit patterns
+						that are not (yet) wrapped in nice, safe, object wrappers - they are just bytes and a running
+						count,. I keep looking to
+						do better, but this is down in the weeds. This is the point where C++ says "You *can* use the
+						sharp knives".
+						<br /><br />
+
+						Replacement of unordered_sets and unordered_maps with flat_sets and flat_maps. On the scale that
+						I'm using them, it's
+						not a big deal, but the C++23 flat_* containers are a better fit for my use-case. Single
+						initialisation, multiple
+						access, small and simple datasets (single-digit thousands at most, not 10's of thousands),
+						definitely L1-cache-line
+						sized items and predictable order of access. So, really the poster-child case for flat access.
+						<br /><br />
+
+						The flat_* containers are a great example of understanding the machine vs understanding the
+						theory. The flat_*
+						containers have an algorithmic complexity - O(log n) as opposed to O(1)-amortised for
+						unordered_*. That is not bad, but
+						neither is it great. It is offset by having contiguous data and the prefetcher being able to
+						easily predict the next
+						block of memory needed in L1. Of course, if the dataset gets too large and cache-locality gets
+						broken, then the
+						algorithmic complexity becomes *highly* relevant.
+						<br /><br />
+
+						Simplified the handling of file extensions. I have an iterable set of valid book extensions, a
+						function to cleanly do
+						comparisons, and I was not using them everywhere possible. So now I am, and if I add a new
+						book-type, I don't need to do
+						anywhere near as many checks. I noticed this while doing the flat_set migration.
 					</p>
 				</li>
 			</ul>

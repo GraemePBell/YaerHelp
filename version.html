@@ -23,6 +23,27 @@
 
       <hr width="25%" />
   -->
+			<h3>Version 2.1.7</h3>
+			<h4>Bug Fixe</h4>
+			<ul>
+				<li>
+					<h5>Bug fixes</h5>
+					<p>
+						Better reporting of duplicate and unrecognised books.
+					</p>
+					<p>
+						std::string_views are fast, lightweight proxies for real strings, but they are only proxies.
+						Always back local string_view variables with real strings. If we forget to do that, it may work.
+						It'll usually work. That's not a promise tho, string_views are views and do not own the memory.
+						I ended up looking at the wrong things, when double-importing very large libraries. Worked fine
+						on sub-200 book libraries, 255 books seemed to be a wee bit much and I ended up reporting with
+						Unicode Glyphs from somewhere in a Chinese codespace.
+					</p>
+				</li>
+			</ul>
+
+			<hr width="25%" />
+
 			<h3>Version 2.1.6</h3>
 			<h4>Bug Fixes, Package Updates and Quality-of-Life Improvements</h4>
 			<ul>

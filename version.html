@@ -5,7 +5,7 @@
 	<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 	<link href="style.css" rel="stylesheet" type="text/css" />
 	<link href="man.css" rel="stylesheet" type="text/css" />
-	<title>YaerZero Manual</title>
+	<title>YaerZero Version History</title>
 </head>
 
 <body>
@@ -23,6 +23,49 @@
 
       <hr width="25%" />
   -->
+			<h3>Version 2.1.8</h3>
+			<h4>Quality of Life Improvements</h4>
+			<ul>
+				<li>
+					<h5>Better handling of ePub descriptions</h5>
+					<p>
+						Some ePub books have a description in the metadata, but it is not always in a form that is very
+						well formatted. Some are just a single line of text, some are a single paragraph, some are
+						multiple paragraphs Some, being crafted by professional pubishers and typesetters, contain
+						Unicode characters - like m-dashes. I've improved the handling of some cases, but there are
+						still
+						a few that are not handled well. I will continue to improve this over time.
+					</p>
+					<h5>RAR2 Improvements</h5>
+					<p>
+						Tidied RAR2 handling, making it more consistent with later RAR versions. Removed a lot of dead
+						comments and added better ones. Removed redundant functions.
+					</p>
+					<h5>Removed RAR 1.5x support</h5>
+					<p>
+						RAR 1.5x is a very old format, belonging to the 16bit era, introduced
+						in 1995 and superceded in 1996 by RAR2. While the ZIP format was standardised and many archivers
+						are capable of producing ZIP files, RAR was always
+						proprietary and it is almost (but not quite) impossible to create new RAR1.5 archives. Only
+						ancient, 16bit versions of RAR are capable of producing them. Current
+						versions of WinRAR can and will convert them to the latest format.<br />
+						It's a code path that hasn't been exercised by any real-world archive since I implemented it.
+						<br />
+						Test archives are not trivial to produce. <br />
+						It is a lot of code to maintain for a format that is no longer in use and probably was never
+						even used for CBR creation. It was an easy decision
+						to remove it.<br />
+						If anyone misses it, please let me know and I will consider re-adding it. I don't expect anyone
+						to miss it.
+					</p>
+					<h5>WebView2 Update</h5>
+					<p>
+						Also updated to latest stable WebView 2.
+					</p>
+				</li>
+			</ul>
+
+			<hr width="25%" />
 			<h3>Version 2.1.7</h3>
 			<h4>Bug Fix</h4>
 			<ul>
@@ -43,7 +86,6 @@
 			</ul>
 
 			<hr width="25%" />
-
 			<h3>Version 2.1.6</h3>
 			<h4>Bug Fixes, Package Updates and Quality-of-Life Improvements</h4>
 			<ul>

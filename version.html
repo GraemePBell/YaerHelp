@@ -23,6 +23,36 @@
 
       <hr width="25%" />
   -->
+			<h3>Version 2.1.9</h3>
+			<h4>Bug Fix and Quality of Life Improvements</h4>
+			<ul>
+				<li>
+					<h5>Bug Fix: Ampersands in ComicInfo.xml fields</h5>
+					<p>
+						Now handles ampersand characters correctly in ComicInfo.xml fields. Not that there should be
+						HTML ampersand entities in the XML, but some people do it anyway.
+					</p>
+					<h5>QoL: Decompressor Improvements</h5>
+					<p>
+						Re-organised RAR and ZIP code to be more consistent, more readable and more maintainable.
+						Removed a lot of dead code and added
+						better comments. Removed as many raw for-loops as practical. There is a technique using
+						std::view for ranges that can be used to replace raw for-loops, however, it has costs that are
+						not aways acceptable. In particular, scanning through a large buffer, backwards, looking for
+						byte patterns was painfully slow compared to using a raw loop.
+					</p>
+					<h5>QoL: Better progresss reporting</h5>
+					<p>
+						Back before parallelisation, a book started and then finished, before going onto the next one.
+						No indication of
+						completion was required. Now we are parallelised, this is no longer the case and books start
+						when a thread becomes
+						available. I added some text to indicate book processing completion.
+					</p>
+				</li>
+			</ul>
+
+			<hr width="25%" />
 			<h3>Version 2.1.8</h3>
 			<h4>Quality of Life Improvements</h4>
 			<ul>

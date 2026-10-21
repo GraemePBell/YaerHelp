@@ -13,16 +13,70 @@
 		<main class="content">
 			<h2>YaerZero Version History</h2>
 			<!-- 
-      <h3>Version 2.1.xx.0</h3>
-      <p>Bug fixes and performance improvements, including:</p>
-      <ul>
-        <li>
-          
-        </li>
-      </ul>
+			<h3>Version 2.1.xx.0</h3>
+			<h4>Bug fixes and performance improvements, including:</h4>
+			<ul>
+				<li>
+					<h5>Bug Fix: Ampersands in ComicInfo.xml fields</h5>
+					<p>
 
-      <hr width="25%" />
+					</p>
+
+				</li>
+			</ul>
+
+		<hr width="25%" />
+
   -->
+			<h3>Version 2.1.10</h3>
+			<h4>Feature Addition: WebP format image support. Quality of Life Improvements.</h4>
+			<ul>
+				<li>
+					<h5>Feature Addition: WebP format image support</h5>
+					<p>
+						Added support for displaying WebP format images in the application. It was inevitable (like
+						Thanos), but until now, I had not seen it in a wild <b>CBx</b>. WEBP was first mooted by
+						<b>Google</b>
+						in 2010, and formally published as <a href="https://tools.ietf.org/html/rfc9649">RFC 9649</a> in
+						2024. It is a modern image format that provides both superior lossless and lossy compression for
+						images on the web. It supports transparency (like PNG) and animation (like GIF). The addition of
+						WebP support means that YaerZero can now handle a wider range of image formats, improving
+						compatibility with various comic book and graphic novel files.
+					</p>
+					<p>
+						In the interest of honesty, the code for displaying and thumbnailing WebP exists within WebView2
+						and Direct2D already, but I had not yet enabled that support in YaerZero. My pre-existing
+						framework simply needed to be told that WebP was a valid image format.
+					</p>
+
+				</li>
+				<li>
+					<h5>Quality of Life Improvements</h5>
+					<p>
+						Added <code>std::views::iota</code> based iteration to replace some more raw for-loops, reducing
+						potential for errors.
+					</p>
+					<p>
+						Like many before me, I was sceptical of the performance of this approach, but in practice it is,
+						<i>for this particular case</i>, marginally faster. Over the tight RAR <code>DecodeNumber</code>
+						loop, it shaved about 100ns per iteration. Not a lot, but that is one of the hottest loops, in
+						the
+						hottest path, in the RAR decoder. It is a win.
+					</p>
+					<p>
+						I <b>know</b>!
+					</p>
+					<p>
+						C++ programmer brags about
+						miniscule performance
+						gains. It's still good for an
+						improvement of over 5% with real CBR files.
+					</p>
+				</li>
+			</ul>
+
+			<hr width="25%" />
+
 			<h3>Version 2.1.9</h3>
 			<h4>Bug Fix and Quality of Life Improvements</h4>
 			<ul>
@@ -36,8 +90,9 @@
 					<p>
 						Re-organised RAR and ZIP code to be more consistent, more readable and more maintainable.
 						Removed a lot of dead code and added
-						better comments. Removed as many raw for-loops as practical. There is a technique using
-						std::view for ranges that can be used to replace raw for-loops, however, it has costs that are
+						better comments. Removed as many raw for-loops as practical. Using
+						std::views::iota for ranges that can be used to replace raw for-loops, however, it has costs
+						that are
 						not aways acceptable. In particular, scanning through a large buffer, backwards, looking for
 						byte patterns was painfully slow compared to using a raw loop.
 					</p>

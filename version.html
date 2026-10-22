@@ -34,21 +34,25 @@
 				<li>
 					<h5>Feature Addition: WebP format image support</h5>
 					<p>
-						Added support for displaying WebP format images in the application. It was inevitable (like
-						Thanos), but until now, I had not seen it in a wild <b>CBx</b>. WEBP was first mooted by
-						<b>Google</b>
-						in 2010, and formally published as <a href="https://tools.ietf.org/html/rfc9649">RFC 9649</a> in
-						2024. It is a modern image format that provides both superior lossless and lossy compression for
-						images on the web. It supports transparency (like PNG) and animation (like GIF). The addition of
-						WebP support means that YaerZero can now handle a wider range of image formats, improving
-						compatibility with various comic book and graphic novel files.
+						Added support for displaying WebP format images in the application. It was inevitable, but until
+						now, I had not seen it
+						in a wild <b>CBx</b>.
 					</p>
 					<p>
-						In the interest of honesty, the code for displaying and thumbnailing WebP exists within WebView2
-						and Direct2D already, but I had not yet enabled that support in YaerZero. My pre-existing
-						framework simply needed to be told that WebP was a valid image format.
+						WEBP was first mooted by
+						<b>Google</b>
+						in 2010, and formally published as <a href="https://tools.ietf.org/html/rfc9649">RFC 9649</a> in
+						2024. It is a more modern format that provides both lossless and lossy compression for the web.
+						It supports transparency (like PNG) and
+						animation (like GIF). The addition of WebP support means that YaerZero can now handle a wider
+						range of image types, improving support for more recent comic books and graphic novels.
 					</p>
-
+					<p>
+						In the interest of honesty, the code for displaying and thumbnailing WebP already existed within
+						my own code, WebView2 and Direct2D, but I had not enabled it. My pre-existing framework simply
+						needed to be told that WebP was now an accepted image format. I only needed a real-world test
+						case. I found eight this week.
+					</p>
 				</li>
 				<li>
 					<h5>Quality of Life Improvements</h5>

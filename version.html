@@ -28,6 +28,52 @@
 		<hr width="25%" />
 
   -->
+			<h3>Version 2.1.11</h3>
+			<h4>Bug fix and performance improvements, including:</h4>
+			<ul>
+				<li>
+					<h5>Bug Fix: Incorrect page on first load of bookmarked book</h5>
+					<p>
+						If a book had been partially read and was re-opened after closing YaerZero, the first page
+						displayed was the cover, rather than the last page read. Any subsequent navigation went to the
+						correct page, and further navigation in that book was correct.<br />This has been fixed. I'm
+						unsure when this bug was introduced, but I suspect it was during the port to WinUI. I suspect it
+						was masked by a number of factors : The first page of a book is usually the cover, so it was not
+						noticed until a book was bookmarked and re-opened. I recently eliminated wasteful potential
+						reloads during the initial navigation.
+					</p>
+				</li>
+				<li>
+					<h5>Quality of Life Improvements</h5>
+					<p>
+						More <code>std::views::iota</code> based iteration to replace raw for-loops, reducing
+						potential for errors.
+					</p>
+					<p>
+						Probably the last of those for a while. The few remaining raw loops are in the decompression
+						code and they do odd things with the index value, depending on the data being processed. Sharp
+						knives required.
+					</p>
+					<p>
+						Another round of initialisation vs assignment. Again, probably the last for a while.
+					</p>
+					<p>
+						Removed some C-isms from the code reading individual bits from the Zip bytestream. It worked,
+						but it was very much 1990s-style C and single character variable names. It is now much more
+						2020s-style C++, with more descriptive variable names, lots of const and constexpr,
+						range-checking and far less repetition.<br />
+						Combined with making as many fills and copies as possible into constexpr functions, the
+						resulting code is more robust and maintainable, at zero performance cost through the Zip
+						hot-path.<br />
+						I don't think there was much hope of making it faster, but it's not any worse than it was
+						before.
+						Just nicer to read.
+					</p>
+				</li>
+			</ul>
+
+			<hr width="25%" />
+
 			<h3>Version 2.1.10</h3>
 			<h4>Feature Addition: WebP format image support. Quality of Life Improvements.</h4>
 			<ul>
